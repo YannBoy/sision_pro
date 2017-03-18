@@ -1,0 +1,753 @@
+<extend name="Common:index"/>
+<block name="main">
+    <!--<script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>-->
+    <script src='__PUBLIC__/Admin/js/jquery-1.8.3.min.js'></script>
+    <!--<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>-->
+    <script src="__PUBLIC__/Admin/assets/js/123.js"></script>
+    <script src="__PUBLIC__/Admin/assets/js/124.js"></script>
+    <!--<script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>-->
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+                <li>
+                    <a href="#">成绩报表</a>
+                </li>
+                <li class="active">成绩分析</li>
+            </ul><!-- .breadcrumb -->
+        </div>
+        <div class="page-content" >
+            <div class="page-header" style="margin:0px">
+                <h1>
+                    成绩报表
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        成绩分析
+                    </small>
+                    <button type="button" class="btn btn-warning btn-xs pull-right" id="print">导出</button>
+                </h1>
+
+            </div><!-- /.page-header -->
+
+            <a href="{:U('ocode_rep',array('id'=>$_GET['id']))}"><button class="btn btn-info btn-xs pull-right getSubInfo" style="margin-top:8px;margin-left: 250px;">返回</button></a>
+            <!--<button type="button" class="pull-right btn-danger btn-xs tool" style="margin-top:8px;margin-left: 250px;">测量工具</button>-->
+            <div style="width:79%;margin: 0 auto;height:30px;margin-bottom:20px;" class="sub-ul">
+                <ul>
+                    <volist name="subname" id="subname">
+                        <a href="{:U('class_info',array('id'=>$_GET['id'],'subject'=>$subname['key'],'schoolname'=>$_GET['schoolname'],'classname'=>$_GET['classname']))}"><li class="sub-no {$subname.key}">{$subname.name}</li></a>
+                    </volist>
+
+                </ul>
+
+            </div>
+
+            <!--startprint-->
+            <div class="row" name="remove_tool">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <div class="tool_border" style="border-top:1px solid black;width:720px;position: absolute;display: none;cursor: pointer;z-index: 1000000;"></div>
+                                        <div class="rep_first">
+                                            <div style="padding-bottom:10px;border:1px solid #999;border-bottom:0px;width:720px">
+                                                <h2 class="center">{$Exam.name}</h2>
+                                                <div class="rep-header" style="border-top:1px solid #999;padding-top:10px">
+                                                    <p>考试时间: {$Exam.examtime}</p>
+                                                    <p>监测科目: {$chsub}</p>
+                                                    <p>监测学校:
+                                                        <?php echo $_GET['schoolname']?>
+                                                    </p>
+                                                    <p>监测班级:
+                                                        <?php echo $_GET['classname']?>
+                                                    </p>
+
+                                                </div>
+                                            </div>
+
+                                            <?php
+                                                $sub = $_GET['subject'] ? $_GET['subject'] : 'total';
+
+                                                if($sub != 'total'){
+                                            ?>
+                                            <div style="border:1px solid #999;width:720px;padding-bottom:20px">
+                                                <h3 class="center">知识点</h3>
+                                                <table class="table-bordered rep-tabel" >
+                                                    <volist name="know" id="know">
+                                                        <tr>
+                                                            <td class="center">{$i}</td>
+                                                            <td class="center">{$know.know_name}</td>
+                                                            <td style="padding-left:10px">{$know.know_keys}</td>
+                                                        </tr>
+                                                    </volist>
+                                                </table>
+                                            </div>
+                                            <div style="width:720px;padding-bottom:20px;" class="fracmodal">
+                                            </div>
+                                            <?php }?>
+                                            <?php if($_GET['subject'] == 'total' || $_GET['subject'] == ''){?>
+                                            <div style="margin-bottom: 478px;width:720px">
+                                                <!--<div id="compolite" style="width:359px;height:300px;border:1px solid #999;padding:10px"></div>-->
+                                                <div id="stand" style="width:359px;height:240px;border:1px solid #999;padding:10px;float:left"></div>
+                                                <div id="someall" style="width:359px;height:240px;border:1px solid #999;padding:10px;float:left"></div>
+                                                <div id="somealle" style="width:359px;height:240px;border:1px solid #999;padding:10px;float:left"></div>
+                                                <div id="radar" style="width:359px;height:240px;border:1px solid #999;padding:10px;float:left"></div>
+                                            </div>
+
+                                            <div id="imgdetails" style="width:720px;height:400px;padding:20px;border:1px solid #999;"></div>
+
+                                            <div style="padding-top:10px">
+                                                <table class="table-bordered" width="720">
+                                                    <tr>
+                                                        <th class="center">姓名</th>
+                                                        <th class="center">学籍号</th>
+                                                        <th class="center">语文</th>
+                                                        <th class="center">数学</th>
+                                                        <th class="center">英语</th>
+                                                        <th class="center">科学</th>
+                                                        <th class="center">社会</th>
+                                                        <th class="center">总分</th>
+                                                        <!--<th class="center">操作</th>-->
+                                                    </tr>
+                                                    <volist name="students" id="students">
+                                                        <tr>
+                                                            <td class="center">{$students.username}</td>
+                                                            <td class="center">{$students.usernum}</td>
+                                                            <td class="center">{$students.chi}</td>
+                                                            <td class="center">{$students.math}</td>
+                                                            <td class="center">{$students.eng}</td>
+                                                            <td class="center">{$students.sec}</td>
+                                                            <td class="center">{$students.soc}</td>
+                                                            <td class="center">{$students.total}</td>
+                                                            <!--<td class="center">-->
+                                                            <!--<a href="{:U('Report/student_rep',array('usernum'=>$students['usernum'],'id'=>$_GET['id'],'schoolname'=>$students['schoolname'],'classname'=>$students['classname']))}" target=""><button type="button" class="btn btn-info btn-xs">详情</button></a>-->
+                                                            <!--</td>-->
+                                                        </tr>
+                                                    </volist>
+                                                </table>
+                                            </div>
+                                            <?php }?>
+                                        </div>
+                                    </div><!-- /.table-responsive -->
+                                </div><!-- /span -->
+                            </div><!-- /row -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <!--endprint-->
+
+    <input type="hidden" class="schName" value="<?php echo $_GET['ocode']?>">
+
+    <!--<script src="__PUBLIC__/Admin/assets/js/report.js"></script>-->
+    <script>
+        var url = $('#oa_url').val();
+        $(document).ready(function () {
+            var course_bh = "<?php echo $_GET['subject']?>";
+            if(!course_bh)
+            {
+                course_bh = 'total';
+            }
+            var ocode = "<?php echo $_GET['ocode']?>";
+            var classname = "<?php echo $_GET['classname']?>";
+            var id = "<?php echo $_GET['id']?>";
+            $("."+course_bh).removeAttr('class');
+
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/getDifficulty",
+                type: 'POST',
+                data: {know_id:id,subject:course_bh,ocode:ocode,classname:classname},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#diffs').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: data.title+'试题难度对比低分情况'
+                            },
+                            xAxis: {
+                                categories: data.name
+                            },
+                            credits: {
+                                enabled: false
+                            },
+                            series: [{
+                                name: '全区',
+                                data: data.infos.ocode,
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.3f}', // one decimal
+                                    y: 8, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '12px'
+                                    }
+                                }
+                            }, {
+                                name: '本校',
+                                data: data.infos.sch,
+                                color:'green',
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.3f}', // one decimal
+                                    y: 8, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '12px'
+                                    }
+                                }
+                            },{
+                                name: '本班',
+                                data: data.infos.class,
+                                color:'red',
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.3f}', // one decimal
+                                    y: 8, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '12px'
+                                    }
+                                }
+                            }
+                            ]
+                        });
+                    }
+                }
+            });
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/getDifficulty",
+                type: 'POST',
+                data: {know_id:id,subject:course_bh,ocode:ocode,classname:classname},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#diffs').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: data.title+'试题难度对比低分情况'
+                            },
+                            xAxis: {
+                                categories: data.name
+                            },
+                            credits: {
+                                enabled: false
+                            },
+                            series: [{
+                                name: '全区',
+                                data: data.infos.ocode,
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.3f}', // one decimal
+                                    y: 8, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '12px'
+                                    }
+                                }
+                            }, {
+                                name: '本校',
+                                data: data.infos.sch,
+                                color:'green',
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.3f}', // one decimal
+                                    y: 8, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '12px'
+                                    }
+                                }
+                            },{
+                                name: '本班',
+                                data: data.infos.class,
+                                color:'red',
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.3f}', // one decimal
+                                    y: 8, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '12px'
+                                    }
+                                }
+                            }
+                            ]
+                        });
+                    }
+                }
+            });
+        });
+
+        $("#print").click(function () {
+            bdhtml=window.document.body.innerHTML;
+            sprnstr="<!--startprint-->";
+            eprnstr="<!--endprint-->";
+            prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+            prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+            window.document.body.innerHTML=prnhtml;
+            window.print();
+        });
+        $(document).ready(function () {
+            var sub = "<?php echo $_GET['subject']?>";
+            var relsub = sub ? sub : 'total';
+            var id = "<?php echo $_GET['id']?>";
+            var ocode = "<?php echo $_GET['schoolname']?>";
+            var classname = "<?php echo $_GET['classname']?>";
+            if(relsub == 'total')
+            {
+                $.ajax({
+                    url: "http://" + url + "/index.php/Comment/radar",
+                    type: 'POST',
+                    data: {id: id,ocode:ocode,classname:classname},
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        $('#radar').highcharts({
+                            chart: {
+                                polar: true,
+                                type: 'line'
+                            },
+                            title: {
+                                text: '科目分析',
+
+                            },
+                            pane: {
+                                size: '100%'
+                            },
+                            xAxis: {
+                                categories: data.subname,
+                                tickmarkPlacement: 'on',
+                                lineWidth: 0
+                            },
+                            yAxis: {
+                                gridLineInterpolation: 'polygon',
+                                lineWidth: 0,
+                                min: 0
+                            },
+                            tooltip: {
+                                shared: true,
+                                pointFormat: '<span style="color:{series.color}">{series.name}平均分: <b>{point.y:,.2f}分</b><br/>'
+                            },
+
+                            series: [{
+                                name: '全区',
+                                data: data.ocode,
+                                color: '#CC0000 ',
+                                pointPlacement: 'no'
+                            }, {
+                                name: "<?php echo $_GET['schoolname']?>",
+                                data: data.sch,
+                                color: '#DDAA00',
+                                pointPlacement: 'on'
+                            },{
+                                name: "<?php echo $_GET['classname']?>",
+                                data: data.class,
+                                color: '#00AA00',
+                                pointPlacement: 'on'
+                            }]
+                        });
+                    }
+                })
+
+            }else{
+                $.ajax({
+                    url: "http://" + url + "/index.php/Comment/division",
+                    type: 'POST',
+                    data: {id: id,schoolname:ocode,classname:classname,subject:sub},
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        if(data.success == true)
+                        {
+                            var count =data.classnum.date.length;
+                            for(var i = 0;i<count;i++){
+                                var randa = "radar"+i;
+                                var div = "<div id="+randa+" style='width:360px;height:390px;padding:10px;float:left;border: 1px solid #bbb;border-top:0px;'></div>";
+                                $('.fracmodal').append(div);
+                                $("#"+randa).highcharts({
+                                    chart: {
+                                        polar: true,
+                                        type: 'line'
+                                    },
+                                    title: {
+                                        text: data.classnum.names[i],
+
+                                    },
+                                    pane: {
+                                        size: '100%'
+                                    },
+                                    xAxis: {
+                                        categories: data.classnum.namenum[i],
+                                        tickmarkPlacement: 'on',
+                                        lineWidth: 0
+                                    },
+                                    yAxis: {
+                                        gridLineInterpolation: 'polygon',
+                                        lineWidth: 0,
+
+                                    },
+                                    tooltip: {
+                                        shared: true,
+                                        pointFormat: '<span style="color:{series.color}">{series.name}平均分: <b>{point.y:,.2f}分</b><br/>'
+                                    },
+
+                                    series: [{
+                                        name: '全区',
+                                        data: data.ocode.date[i],
+                                        pointPlacement: 'on',
+                                        dataLabels: {
+                                            enabled: true,
+                                            rotation:-90,
+                                            color: '#FFFFFF',
+                                            align: 'right',
+                                            format: '{point.y:.4f}', // one decimal
+                                            y: 10, // 10 pixels down from the top
+                                            style: {
+                                                fontSize: '0px',
+                                                fontFamily: 'Verdana, sans-serif'
+                                            }
+                                        }
+                                    }, {
+                                        name: "<?php echo $_GET['schoolname']?>",
+                                        data: data.schnum.date[i],
+                                        pointPlacement: 'on',
+                                        color: 'red',
+                                        dataLabels: {
+                                            enabled: true,
+                                            rotation:-90,
+                                            color: '#FFFFFF',
+                                            align: 'right',
+                                            format: '{point.y:.4f}', // one decimal
+                                            y: 10, // 10 pixels down from the top
+                                            style: {
+                                                fontSize: '0px',
+                                                fontFamily: 'Verdana, sans-serif'
+                                            }
+                                        }
+                                    },{
+                                        name: "<?php echo $_GET['classname']?>",
+                                        data: data.classnum.date[i],
+                                        pointPlacement: 'on',
+                                        color: 'green',
+                                        dataLabels: {
+                                            enabled: true,
+                                            rotation:-90,
+                                            color: '#FFFFFF',
+                                            align: 'right',
+                                            format: '{point.y:.4f}', // one decimal
+                                            y: 10, // 10 pixels down from the top
+                                            style: {
+                                                fontSize: '0px',
+                                                fontFamily: 'Verdana, sans-serif'
+                                            }
+                                        }
+                                    }
+                                    ]
+                                });
+                            }
+
+                        }
+
+                    }
+                })
+            };
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/classimgReportdetails",
+                type: 'POST',
+                data: {id:id,sub:relsub,ocode:ocode,classname:classname},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#imgdetails').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: ''
+                            },
+                            xAxis: {
+                                categories: data.name
+                            },
+                            yAxis: {
+                                min: 0,
+                                title: {
+                                    text: ''
+                                },
+                                ceiling:400,
+                                plotLines: [{
+                                    color: 'red',           //线的颜色，定义为红色
+                                    dashStyle: 'solid',     //默认值，这里定义为实线
+                                    value: 85,               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+                                    width: 1,                //标示线的宽度，2px
+                                    label:{
+                                        text:'',     //标签的内容
+                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                        x:-40  ,                       //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                        y:4
+                                    }
+                                },
+                                    {
+                                        color: 'green',           //线的颜色，定义为红色
+                                        dashStyle: 'solid',     //默认值，这里定义为实线
+                                        value: 30,               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+                                        width: 1 ,                //标示线的宽度，2px
+                                        label:{
+                                            text:'',     //标签的内容
+                                            align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                            x:-40  ,                       //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                            y:4
+                                        }            //标示线的宽度，2px
+                                    }
+                                ]
+                            },
+
+                            tooltip: {
+                                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                                shared: true
+                            },
+                            plotOptions: {
+                                column: {
+                                    stacking: 'percent',
+                                    pointWidth:28,
+                                    dataLabels: {
+                                        enabled: true,
+                                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                                        style: {
+                                            textShadow: '0 0 3px black'
+                                        }
+                                    }
+                                },
+                                series: {
+                                    allowPointSelect: false,//点击变色
+                                    cursor: 'pointer',
+                                    events: {
+                                        click: function(e) {
+                                            var school_name = "<?php echo $_GET['ocode']?>";
+                                            var class_name = e.point.category;
+                                            window.open('http://'+url+'/index.php/Report/class_info/id/'+id+'/classname/'+class_name+'/schoolname/'+school_name);
+                                        },
+                                        legendItemClick: function() {
+                                            return false;
+                                        }
+                                    }
+                                }
+                            },
+                            series: [{
+                                name: 'A (15%)',
+                                color: '#CC0000 ',
+                                data: data.info.A,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            }, {
+                                name: 'B (25%)',
+                                color: '#EE7700',
+                                data: data.info.B,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            }, {
+                                name: 'C (30%)',
+                                color: '#DDAA00',
+                                data: data.info.C,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            },{
+                                name: 'D (25%)',
+                                color: '#88AA00',
+                                data: data.info.D,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            },{
+                                name: 'E (5%)',
+                                color: '#00AA00',
+                                data: data.info.E,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            }]
+                        });
+                        $('#container').append("<div style='padding-left:240px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;85%</div>");
+                        $('#container').append("<div style='padding-left:80px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid green;float: left'></p>&nbsp;30%</div>");
+
+                    }
+                }
+            });
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/classgetcompos",
+                type: 'POST',
+                data: {id: id,ocode:ocode,classname:classname},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    $('#stand').highcharts({
+                        chart: {
+                            polar: true,
+                            type: 'line'
+                        },
+                        title: {
+                            text: '综合指数'
+                        },
+                        pane: {
+                            size: '100%'
+                        },
+                        xAxis: {
+                            categories: ['总分','语文','数学','英语','科学','社会'],
+                            tickmarkPlacement: 'on',
+                            lineWidth: 0
+                        },
+                        yAxis: {
+                            gridLineInterpolation: 'polygon',
+                            lineWidth: 0,
+                            min: 0
+                        },
+                        tooltip: {
+                            shared: true,
+                            pointFormat: '<span style="color:{series.color}">{series.name}平均分: <b>{point.y:,.2f}分</b><br/>'
+                        },
+                        series: [{
+                            name: '本班',
+                            data: data.data,
+                            color: '#CC0000 ',
+                            pointPlacement: 'no'
+                        }]
+                    });
+                }
+            });
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/getclassA",
+                type: 'POST',
+                data: {id: id,ocode:ocode,classname:classname},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    $('#someall').highcharts({
+                        chart: {
+                            polar: true,
+                            type: 'line'
+                        },
+                        title: {
+                            text: '班级各科前15%人数'
+                        },
+                        pane: {
+                            size: '100%'
+                        },
+                        xAxis: {
+                            categories: ['总分','语文','数学','英语','科学','社会'],
+                            tickmarkPlacement: 'on',
+                            lineWidth: 0
+                        },
+                        yAxis: {
+                            gridLineInterpolation: 'polygon',
+                            lineWidth: 0,
+                            min: 0
+                        },
+                        tooltip: {
+                            shared: true,
+                            pointFormat: '<span style="color:{series.color}">{series.name}平均分: <b>{point.y:,.0f}人</b><br/>'
+                        },
+                        series: [{
+                            name: '本班',
+                            data: data.data,
+                            color: '#CC0000 ',
+                            pointPlacement: 'no'
+                        }]
+                    });
+                }
+            });
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/getclassE",
+                type: 'POST',
+                data: {id: id,ocode:ocode,classname:classname},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    $('#somealle').highcharts({
+                        chart: {
+                            polar: true,
+                            type: 'line'
+                        },
+                        title: {
+                            text: '班级各科后30%人数'
+                        },
+                        pane: {
+                            size: '100%'
+                        },
+                        xAxis: {
+                            categories: ['总分','语文','数学','英语','科学','社会'],
+                            tickmarkPlacement: 'on',
+                            lineWidth: 0
+                        },
+                        yAxis: {
+                            gridLineInterpolation: 'polygon',
+                            lineWidth: 0,
+                            max: 0
+                        },
+                        tooltip: {
+                            shared: true,
+                            pointFormat: '<span style="color:{series.color}">{series.name}平均分: <b>{point.y:,.0f}人</b><br/>'
+                        },
+                        series: [{
+                            name: '本班',
+                            data: data.data,
+                            color: '#CC0000 ',
+                            pointPlacement: 'no'
+                        }]
+                    });
+                }
+            });
+
+
+        });
+
+
+
+    </script>
+</block>
+
+
+

@@ -1,0 +1,1 @@
+a:5:{i:0;s:2:"id";i:1;s:9:"school_id";i:2;s:6:"nav_id";s:3:"_pk";s:2:"id";s:5:"_type";a:3:{s:2:"id";s:6:"int(9)";s:9:"school_id";s:6:"int(9)";s:6:"nav_id";s:6:"int(9)";}}

@@ -1,0 +1,1038 @@
+<extend name="Common:index"/>
+<block name="main">
+    <?php
+        if($_GET['state'] == 0){
+            $type = 'classname';
+        }else{
+            $type = 'schoolname';
+        }
+    ?>
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">报表统计</a>
+                </li>
+            </ul><!-- .breadcrumb -->
+
+
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    报表统计
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        详细数据
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <form action="" method="post">
+                                            <table id="sample-table-1" class="table table-striped table-bordered table-hover" style="text-align:center;font-size:8px">
+                                                <tbody>
+                                                <tr class="success">
+                                                    <th class="center">语文</th>
+                                                    <th>{$chi_range.chi}</th>
+                                                    <th class="center">后{$res.bake}%分数线</th>
+                                                    <th class="center">{$chi_range.flootuser.flootfrac}</th>
+                                                    <th class="center">后{$res.bake}%总人数</th>
+                                                    <th class="center">{$chi_range.flootuser.flootnum}</th>
+                                                    <th></th>
+                                                    <th class="center">前{$res.front}%分数线</th>
+                                                    <th class="center">{$chi_range.firstuser.firstfrac}</th>
+                                                    <th class="center">前{$res.front}%总人数</th>
+                                                    <th class="center">{$chi_range.firstuser.firstnum}</th>
+                                                </tr>
+                                                <tr class="report-call-info">
+                                                    <th class="center">学校</th>
+                                                    <th >实考人数</th>
+                                                    <th >最高分</th>
+                                                    <th >最低分</th>
+                                                    <th >平均分</th>
+                                                    <th >平均分排名</th>
+                                                    <th >及格人数</th>
+                                                    <th >及格率</th>
+                                                    <th >及格率排名</th>
+                                                    <th >优秀人数</th>
+                                                    <th >优秀率</th>
+                                                    <th >优秀率排名</th>
+                                                    <th >后{$res.bake}%人数</th>
+                                                    <th >后{$res.bake}%率</th>
+                                                    <th >后{$res.bake}%率排名</th>
+                                                    <th >前{$res.front}%人数</th>
+                                                    <th >前{$res.front}%率</th>
+                                                    <th >前{$res.front}%率排名</th>
+                                                    <th>标准分</th>
+                                                </tr>
+
+                                                <volist name="chi" id="chi">
+                                                    <tr>
+                                                        <th class="center">{$chi[$type]}</th>
+                                                        <th class="center">{$chi.chi_count}</th>
+                                                        <th class="center">{$chi.chi_max}</th>
+                                                        <th class="center">{$chi.chi_min}</th>
+                                                        <th class="center"><?php echo sprintf("%.2f",$chi[chi_avg]);?></th>
+                                                        <th class="center">{$chi._avg_rank}</th>
+                                                        <th class="center">{$chi._passnum}</th>
+                                                        <th class="center">{$chi._passrate}%</th>
+                                                        <th class="center">{$chi._passrate_}</th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $chi['_excellnum'] ? $chi['_excellnum'] : 0;
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $chi['_excellrank'] ? $chi['_excellrank'] : 0;
+                                                            ?>%
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $chi['_excell_rank'] ? $chi['_excell_rank'] : $chi['_noexcellrank'];
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">{$chi._schflootnum}</th>
+                                                        <th class="center">{$chi._schflootrank}%</th>
+                                                        <th class="center">{$chi._schfloot_rank}</th>
+                                                        <th class="center">{$chi._schfirstnum}</th>
+                                                        <th class="center">{$chi._schfirstrank}%</th>
+                                                        <th class="center">{$chi._schfirst_rank}</th>
+                                                        <th class="center">{$chi.sch_avg}</th>
+                                                    </tr>
+                                                    <?php
+                                                        $i+1;
+                                                        $chiallnum += $chi[chi_count];
+                                                        $chimaxall .= ','.$chi[chi_max];
+                                                        $chiminall .= ','.$chi[chi_min];
+                                                        $chiavgall += sprintf("%.2f",$chi[chi_avg]);
+                                                        $chipassnum += $chi[_passnum];
+                                                        $chipassrate += $chi[_passrate];
+                                                        $chiexcellnum += $chi[_excellnum];
+                                                        $chiexcellrank += $chi[_excellrank];
+                                                        $chiflootnum += $chi[_schflootnum];
+                                                        $chiflootrank += $chi[_schflootrank];
+                                                        $chifirstnum += $chi[_schfirstnum];
+                                                        $chifirstrank += $chi[_schfirstrank];
+
+                                                        $chi_avg .= ','.sprintf("%.2f",$chi[chi_avg]);
+                                                        $chi_pass .= ','.$chi[_passrate];
+                                                        $chi_excell .= ','.$chi[_excellrank];
+                                                        $chi_floot .= ','.$chi[_schflootrank];
+                                                        $chi_first .= ','.$chi[_schfirstrank];
+                                                    ?>
+                                                </volist>
+                                                <tr>
+                                                    <th class="center">统计</th>
+                                                    <th>
+                                                        <?php
+                                                            echo $chiallnum;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chimaxmallstr =  substr($chimaxall,1);
+                                                            $chimaxmallstr = explode(',',$chimaxmallstr);
+
+                                                            $chimallstr = max($chimaxmallstr);
+                                                            echo $chimallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chiminmallstr =  substr($chiminall,1);
+                                                            $chiminmallstr = explode(',',$chiminmallstr);
+                                                            $chimallstr = min($chiminmallstr);
+                                                            echo $chimallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            echo sprintf("%.2f",$chiavgall/$i);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $chipassnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$chipassrate/$i).'%'?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $chiexcellnum;?></th>
+                                                    <th class="center"><?php echo $chiexcellrank/$i.'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $chiflootnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$chiflootrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $chifirstnum?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$chifirstrank/$i).'%';?></th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="center">极差</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th class="center">平均分</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($chi_avg,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">及格率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($chi_pass,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">优秀率</th>
+                                                    <th>
+                                                        <?php
+                                                            $chi_avg = substr($chi_excell,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">后20%人率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($chi_floot,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">前10%率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($chi_first,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr class="success">
+                                                    <th>数学</th>
+                                                    <th>{$math_range.math}</th>
+                                                    <th class="center">后{$res.bake}%分数线</th>
+                                                    <th class="center">{$math_range.flootuser.flootfrac}</th>
+                                                    <th class="center">后{$res.bake}%总人数</th>
+                                                    <th class="center">{$math_range.flootuser.flootnum}</th>
+                                                    <th></th>
+                                                    <th class="center">前{$res.front}%分数线</th>
+                                                    <th class="center">{$math_range.firstuser.firstfrac}</th>
+                                                    <th class="center">前{$res.front}%总人数</th>
+                                                    <th class="center">{$math_range.firstuser.firstnum}</th>
+                                                </tr>
+                                                <tr class="report-call-info">
+                                                    <th class="center">学校</th>
+                                                    <th >实考人数</th>
+                                                    <th >最高分</th>
+                                                    <th >最低分</th>
+                                                    <th >平均分</th>
+                                                    <th >平均分排名</th>
+                                                    <th >及格人数</th>
+                                                    <th >及格率</th>
+                                                    <th >及格率排名</th>
+                                                    <th >优秀人数</th>
+                                                    <th >优秀率</th>
+                                                    <th >优秀率排名</th>
+                                                    <th >后{$res.bake}%人数</th>
+                                                    <th >后{$res.bake}%率</th>
+                                                    <th >后{$res.bake}%率排名</th>
+                                                    <th >前{$res.front}%人数</th>
+                                                    <th >前{$res.front}%率</th>
+                                                    <th >前{$res.front}%率排名</th>
+                                                    <th >标准分</th>
+                                                </tr>
+                                                <volist name="math" id="math">
+                                                    <tr>
+                                                        <th class="center">{$math[$type]}</th>
+                                                        <th class="center">{$math.chi_count}</th>
+                                                        <th class="center">{$math.chi_max}</th>
+                                                        <th class="center">{$math.chi_min}</th>
+                                                        <th class="center"><?php echo sprintf("%.2f",$math[chi_avg]);?></th>
+                                                        <th class="center">{$math._avg_rank}</th>
+                                                        <th class="center">{$math._passnum}</th>
+                                                        <th class="center">{$math._passrate}%</th>
+                                                        <th class="center">{$math._passrate_}</th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $math['_excellnum'] ? $math['_excellnum'] : 0;
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $math['_excellrank'] ? $math['_excellrank'] : 0;
+                                                            ?>%
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $math['_excell_rank'] ? $math['_excell_rank'] : $math['_noexcellrank'];
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">{$math._schflootnum}</th>
+                                                        <th class="center">{$math._schflootrank}%</th>
+                                                        <th class="center">{$math._schfloot_rank}</th>
+                                                        <th class="center">{$math._schfirstnum}</th>
+                                                        <th class="center">{$math._schfirstrank}%</th>
+                                                        <th class="center">{$math._schfirst_rank}</th>
+                                                        <th class="center">{$math.sch_avg}</th>
+                                                    </tr>
+                                                    <?php
+                                                        $mathallnum += $math[chi_count];
+                                                        $mathmaxall .= ','.$math[chi_max];
+                                                        $mathminall .= ','.$math[chi_min];
+                                                        $mathavgall += sprintf("%.2f",$math[chi_avg]);
+                                                        $mathpassnum += $math[_passnum];
+                                                        $mathpassrate += $math[_passrate];
+                                                        $mathexcellnum += $math[_excellnum];
+                                                        $mathexcellrank += $math[_excellrank];
+                                                        $mathflootnum += $math[_schflootnum];
+                                                        $mathflootrank += $math[_schflootrank];
+                                                        $mathfirstnum += $math[_schfirstnum];
+                                                        $mathfirstrank += $math[_schfirstrank];
+
+                                                        $math_avg .= ','.sprintf("%.2f",$math[chi_avg]);
+                                                        $math_pass .= ','.$math[_passrate];
+                                                        $math_excell .= ','.$math[_excellrank];
+                                                        $math_floot .= ','.$math[_schflootrank];
+                                                        $math_first .= ','.$math[_schfirstrank];
+                                                    ?>
+                                                </volist>
+                                                <tr>
+                                                    <th class="center">统计</th>
+                                                    <th>
+                                                        <?php
+                                                            echo $mathallnum;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $mathmaxmallstr =  substr($mathmaxall,1);
+                                                            $mathmaxmallstr = explode(',',$mathmaxmallstr);
+
+                                                            $mathmallstr = max($mathmaxmallstr);
+                                                            echo $mathmallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $mathminmallstr =  substr($mathminall,1);
+                                                            $mathminmallstr = explode(',',$mathminmallstr);
+
+                                                            $mathmallstr = min($mathminmallstr);
+                                                            echo $mathmallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            echo sprintf("%.2f",$mathavgall/$i);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $mathpassnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$mathpassrate/$i).'%'?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $mathexcellnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$mathexcellrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $mathflootnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$mathflootrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $mathfirstnum?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$mathfirstrank/$i).'%';?></th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="center">极差</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th class="center">平均分</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($math_avg,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">及格率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($math_pass,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">优秀率</th>
+                                                    <th>
+                                                        <?php
+                                                            $chi_avg = substr($math_excell,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">后20%人率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($math_floot,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">前10%率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($math_first,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr class="success">
+                                                    <th>科学</th>
+                                                    <th>{$sec_range.sec}</th>
+                                                    <th class="center">后{$res.bake}%分数线</th>
+                                                    <th class="center">{$sec_range.flootuser.flootfrac}</th>
+                                                    <th class="center">后{$res.bake}%总人数</th>
+                                                    <th class="center">{$sec_range.flootuser.flootnum}</th>
+                                                    <th></th>
+                                                    <th class="center">前{$res.front}%分数线</th>
+                                                    <th class="center">{$sec_range.firstuser.firstfrac}</th>
+                                                    <th class="center">前{$res.front}%总人数</th>
+                                                    <th class="center">{$sec_range.firstuser.firstnum}</th>
+                                                </tr>
+                                                <tr class="report-call-info">
+                                                    <th class="center">学校</th>
+                                                    <th >实考人数</th>
+                                                    <th >最高分</th>
+                                                    <th >最低分</th>
+                                                    <th >平均分</th>
+                                                    <th >平均分排名</th>
+                                                    <th >及格人数</th>
+                                                    <th >及格率</th>
+                                                    <th >及格率排名</th>
+                                                    <th >优秀人数</th>
+                                                    <th >优秀率</th>
+                                                    <th >优秀率排名</th>
+                                                    <th >后{$res.bake}%人数</th>
+                                                    <th >后{$res.bake}%率</th>
+                                                    <th >后{$res.bake}%率排名</th>
+                                                    <th >前{$res.front}%人数</th>
+                                                    <th >前{$res.front}%率</th>
+                                                    <th >前{$res.front}%率排名</th>
+                                                    <th >标准分</th>
+                                                </tr>
+                                                <volist name="sec" id="sec">
+                                                    <tr>
+                                                        <th class="center">{$sec[$type]}</th>
+                                                        <th class="center">{$sec.chi_count}</th>
+                                                        <th class="center">{$sec.chi_max}</th>
+                                                        <th class="center">{$sec.chi_min}</th>
+                                                        <th class="center"><?php echo sprintf("%.2f",$sec[chi_avg]);?></th>
+                                                        <th class="center">{$sec._avg_rank}</th>
+                                                        <th class="center">{$sec._passnum}</th>
+                                                        <th class="center">{$sec._passrate}%</th>
+                                                        <th class="center">{$sec._passrate_}</th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excellnum'] ? $sec['_excellnum'] : 0;
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excellrank'] ? $sec['_excellrank'] : 0;
+                                                            ?>%
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excell_rank'] ? $sec['_excell_rank'] : $sec['_noexcellrank'];
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">{$sec._schflootnum}</th>
+                                                        <th class="center">{$sec._schflootrank}%</th>
+                                                        <th class="center">{$sec._schfloot_rank}</th>
+                                                        <th class="center">{$sec._schfirstnum}</th>
+                                                        <th class="center">{$sec._schfirstrank}%</th>
+                                                        <th class="center">{$sec._schfirst_rank}</th>
+                                                        <th class="center">{$sec.sch_avg}</th>
+                                                    </tr>
+                                                    <?php
+
+                                                        $secallnum += $sec[chi_count];
+                                                        $secmaxall .= ','.$sec[chi_max];
+                                                        $secminall .= ','.$sec[chi_min];
+                                                        $secavgall += sprintf("%.2f",$sec[chi_avg]);
+                                                        $secpassnum += $sec[_passnum];
+                                                        $secpassrate += $sec[_passrate];
+                                                        $secexcellnum += $sec[_excellnum];
+                                                        $secexcellrank += $sec[_excellrank];
+                                                        $secflootnum += $sec[_schflootnum];
+                                                        $secflootrank += $sec[_schflootrank];
+                                                        $secfirstnum += $sec[_schfirstnum];
+                                                        $secfirstrank += $sec[_schfirstrank];
+
+
+                                                        $sec_avg .= ','.sprintf("%.2f",$sec[chi_avg]);
+                                                        $sec_pass .= ','.$sec[_passrate];
+                                                        $sec_excell .= ','.$sec[_excellrank];
+                                                        $sec_floot .= ','.$sec[_schflootrank];
+                                                        $sec_first .= ','.$sec[_schfirstrank];
+                                                    ?>
+                                                </volist>
+                                                <tr>
+                                                    <th class="center">统计</th>
+                                                    <th>
+                                                        <?php
+                                                            echo $secallnum;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $secmaxmallstr =  substr($secmaxall,1);
+                                                            $secmaxmallstr = explode(',',$secmaxmallstr);
+
+                                                            $secmallstr = max($secmaxmallstr);
+                                                            echo $secmallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $secminmallstr =  substr($secminall,1);
+                                                            $secminmallstr = explode(',',$secminmallstr);
+
+                                                            $secmallstr = min($secminmallstr);
+                                                            echo $secmallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            echo sprintf("%.2f",$secavgall/$i);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $secpassnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$secpassrate/$i).'%'?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $secexcellnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$secexcellrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $secflootnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$secflootrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $secfirstnum?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$secfirstrank/$i).'%';?></th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="center">极差</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th class="center">平均分</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($sec_avg,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">及格率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($sec_pass,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">优秀率</th>
+                                                    <th>
+                                                        <?php
+                                                            $chi_avg = substr($sec_excell,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">后20%人率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($sec_floot,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">前10%率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($sec_first,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+
+                                                <tr class="success">
+                                                    <th>英语</th>
+                                                    <th>{$eng_range.eng}</th>
+                                                    <th class="center">后{$res.bake}%分数线</th>
+                                                    <th class="center">{$eng_range.flootuser.flootfrac}</th>
+                                                    <th class="center">后{$res.bake}%总人数</th>
+                                                    <th class="center">{$eng_range.flootuser.flootnum}</th>
+                                                    <th></th>
+                                                    <th class="center">前{$res.front}%分数线</th>
+                                                    <th class="center">{$eng_range.firstuser.firstfrac}</th>
+                                                    <th class="center">前{$res.front}%总人数</th>
+                                                    <th class="center">{$eng_range.firstuser.firstnum}</th>
+                                                </tr>
+                                                <tr class="report-call-info">
+                                                    <th class="center">学校</th>
+                                                    <th >实考人数</th>
+                                                    <th >最高分</th>
+                                                    <th >最低分</th>
+                                                    <th >平均分</th>
+                                                    <th >平均分排名</th>
+                                                    <th >及格人数</th>
+                                                    <th >及格率</th>
+                                                    <th >及格率排名</th>
+                                                    <th >优秀人数</th>
+                                                    <th >优秀率</th>
+                                                    <th >优秀率排名</th>
+                                                    <th >后{$res.bake}%人数</th>
+                                                    <th >后{$res.bake}%率</th>
+                                                    <th >后{$res.bake}%率排名</th>
+                                                    <th >前{$res.front}%人数</th>
+                                                    <th >前{$res.front}%率</th>
+                                                    <th >前{$res.front}%率排名</th>
+                                                    <th >标准分</th>
+                                                </tr>
+                                                <volist name="eng" id="sec">
+                                                    <tr>
+                                                        <th class="center">{$sec[$type]}</th>
+                                                        <th class="center">{$sec.chi_count}</th>
+                                                        <th class="center">{$sec.chi_max}</th>
+                                                        <th class="center">{$sec.chi_min}</th>
+                                                        <th class="center"><?php echo sprintf("%.2f",$sec[chi_avg]);?></th>
+                                                        <th class="center">{$sec._avg_rank}</th>
+                                                        <th class="center">{$sec._passnum}</th>
+                                                        <th class="center">{$sec._passrate}%</th>
+                                                        <th class="center">{$sec._passrate_}</th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excellnum'] ? $sec['_excellnum'] : 0;
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excellrank'] ? $sec['_excellrank'] : 0;
+                                                            ?>%
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excell_rank'] ? $sec['_excell_rank'] : $sec['_noexcellrank'];
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">{$sec._schflootnum}</th>
+                                                        <th class="center">{$sec._schflootrank}%</th>
+                                                        <th class="center">{$sec._schfloot_rank}</th>
+                                                        <th class="center">{$sec._schfirstnum}</th>
+                                                        <th class="center">{$sec._schfirstrank}%</th>
+                                                        <th class="center">{$sec._schfirst_rank}</th>
+                                                        <th class="center">{$sec.sch_avg}</th>
+                                                    </tr>
+                                                    <?php
+                                                        $engallnum += $sec[chi_count];
+                                                        $engmaxall .= ','.$sec[chi_max];
+                                                        $engminall .= ','.$sec[chi_min];
+                                                        $engavgall += sprintf("%.2f",$sec[chi_avg]);
+                                                        $engpassnum += $sec[_passnum];
+                                                        $engpassrate += $sec[_passrate];
+                                                        $engexcellnum += $sec[_excellnum];
+                                                        $engexcellrank += $sec[_excellrank];
+                                                        $engflootnum += $sec[_schflootnum];
+                                                        $engflootrank += $sec[_schflootrank];
+                                                        $engfirstnum += $sec[_schfirstnum];
+                                                        $engfirstrank += $sec[_schfirstrank];
+
+
+                                                        $eng_avg .= ','.sprintf("%.2f",$sec[chi_avg]);
+                                                        $eng_pass .= ','.$sec[_passrate];
+                                                        $eng_excell .= ','.$sec[_excellrank];
+                                                        $eng_floot .= ','.$sec[_schflootrank];
+                                                        $eng_first .= ','.$sec[_schfirstrank];
+                                                    ?>
+                                                </volist>
+                                                <tr>
+                                                    <th class="center">统计</th>
+                                                    <th>
+                                                        <?php
+                                                            echo $engallnum;
+                                                        ?>
+                                                    </th >
+                                                    <th class="center">
+                                                        <?php
+                                                            $engmaxmallstr =  substr($engmaxall,1);
+                                                            $engmaxmallstr = explode(',',$engmaxmallstr);
+
+                                                            $engmallstr = max($engmaxmallstr);
+                                                            echo $engmallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $engminmallstr =  substr($engminall,1);
+                                                            $engminmallstr = explode(',',$engminmallstr);
+
+                                                            $engmallstr = min($engminmallstr);
+                                                            echo $engmallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            echo sprintf("%.2f",$engavgall/$i);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $engpassnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$engpassrate/$i).'%'?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $engexcellnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$engexcellrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $engflootnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$engflootrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $engfirstnum?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$engfirstrank/$i).'%';?></th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="center">极差</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th class="center">平均分</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($eng_avg,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">及格率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($eng_pass,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">优秀率</th>
+                                                    <th>
+                                                        <?php
+                                                            $chi_avg = substr($eng_excell,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">后{$res.bake}%人率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($eng_floot,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">前{$res.front}%率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($eng_first,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr class="success">
+                                                    <th>总分</th>
+                                                    <th>{$total_range.total}</th>
+                                                    <th class="center">后{$res.bake}%分数线</th>
+                                                    <th class="center">{$total_range.flootuser.flootfrac}</th>
+                                                    <th class="center">后{$res.bake}%总人数</th>
+                                                    <th class="center">{$total_range.flootuser.flootnum}</th>
+                                                    <th></th>
+                                                    <th class="center">前{$res.front}%分数线</th>
+                                                    <th class="center">{$total_range.firstuser.firstfrac}</th>
+                                                    <th class="center">前{$res.front}%总人数</th>
+                                                    <th class="center">{$total_range.firstuser.firstnum}</th>
+                                                </tr>
+                                                <tr class="report-call-info">
+                                                    <th class="center">学校</th>
+                                                    <th >实考人数</th>
+                                                    <th >最高分</th>
+                                                    <th >最低分</th>
+                                                    <th >平均分</th>
+                                                    <th >平均分排名</th>
+                                                    <th >及格人数</th>
+                                                    <th >及格率</th>
+                                                    <th >及格率排名</th>
+                                                    <th >优秀人数</th>
+                                                    <th >优秀率</th>
+                                                    <th >优秀率排名</th>
+                                                    <th >后{$res.bake}%人数</th>
+                                                    <th >后{$res.bake}%率</th>
+                                                    <th >后{$res.bake}%率排名</th>
+                                                    <th >前{$res.front}%人数</th>
+                                                    <th >前{$res.front}%率</th>
+                                                    <th >前{$res.front}%率排名</th>
+                                                    <th >标准分</th>
+                                                </tr>
+                                                <volist name="total" id="sec">
+                                                    <tr>
+                                                        <th class="center">{$sec[$type]}</th>
+                                                        <th class="center">{$sec.chi_count}</th>
+                                                        <th class="center">{$sec.chi_max}</th>
+                                                        <th class="center">{$sec.chi_min}</th>
+                                                        <th class="center"><?php echo sprintf("%.2f",$sec[chi_avg]);?></th>
+                                                        <th class="center">{$sec._avg_rank}</th>
+                                                        <th class="center">{$sec._passnum}</th>
+                                                        <th class="center">{$sec._passrate}%</th>
+                                                        <th class="center">{$sec._passrate_}</th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excellnum'] ? $sec['_excellnum'] : 0;
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excellrank'] ? $sec['_excellrank'] : 0;
+                                                            ?>%
+                                                        </th>
+                                                        <th class="center">
+                                                            <?php
+                                                              echo   $sec['_excell_rank'] ? $sec['_excell_rank'] : $sec['_noexcellrank'];
+                                                            ?>
+                                                        </th>
+                                                        <th class="center">{$sec._schflootnum}</th>
+                                                        <th class="center">{$sec._schflootrank}%</th>
+                                                        <th class="center">{$sec._schfloot_rank}</th>
+                                                        <th class="center">{$sec._schfirstnum}</th>
+                                                        <th class="center">{$sec._schfirstrank}%</th>
+                                                        <th class="center">{$sec._schfirst_rank}</th>
+                                                        <th class="center">{$sec.sch_avg}</th>
+                                                    </tr>
+                                                    <?php
+                                                        $totalallnum += $sec[chi_count];
+                                                        $totalmaxall .= ','.$sec[chi_max];
+                                                        $totalminall .= ','.$sec[chi_min];
+                                                        $totalavgall += sprintf("%.2f",$sec[chi_avg]);
+                                                        $totalpassnum += $sec[_passnum];
+                                                        $totalpassrate += $sec[_passrate];
+                                                        $totalexcellnum += $sec[_excellnum];
+                                                        $totalexcellrank += $sec[_excellrank];
+                                                        $totalflootnum += $sec[_schflootnum];
+                                                        $totalflootrank += $sec[_schflootrank];
+                                                        $totalfirstnum += $sec[_schfirstnum];
+                                                        $totalfirstrank += $sec[_schfirstrank];
+
+                                                        $total_avg .= ','.sprintf("%.2f",$sec[chi_avg]);
+                                                        $total_pass .= ','.$sec[_passrate];
+                                                        $total_excell .= ','.$sec[_excellrank];
+                                                        $total_floot .= ','.$sec[_schflootrank];
+                                                        $total_first .= ','.$sec[_schfirstrank];
+                                                    ?>
+                                                </volist>
+                                                <tr>
+                                                    <th class="center">统计</th>
+                                                    <th>
+                                                        <?php
+                                                            echo $totalallnum;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $engmaxmallstr =  substr($engmaxall,1);
+                                                            $engmaxmallstr = explode(',',$engmaxmallstr);
+
+                                                            $engmallstr = max($engmaxmallstr);
+                                                            echo $engmallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $totalminmallstr =  substr($totalminall,1);
+                                                            $totalminmallstr = explode(',',$totalminmallstr);
+
+                                                            $totalmallstr = min($totalminmallstr);
+                                                            echo $totalmallstr;
+                                                        ?>
+                                                    </th>
+                                                    <th class="center">
+                                                        <?php
+                                                            echo sprintf("%.2f",$totalavgall/$i);
+
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $totalpassnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$totalpassrate/$i).'%'?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $totalexcellnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$totalexcellrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $totalflootnum;?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$totalflootrank/$i).'%';?></th>
+                                                    <th></th>
+                                                    <th class="center"><?php echo $totalfirstnum?></th>
+                                                    <th class="center"><?php echo sprintf("%.2f",$totalfirstrank/$i).'%';?></th>
+                                                    <th></th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="center">极差</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th class="center">平均分</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($total_avg,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg);
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">及格率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($total_pass,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">优秀率</th>
+                                                    <th>
+                                                        <?php
+                                                            $chi_avg = substr($total_excell,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">后{$res.bake}%人率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($total_floot,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                    <th class="center">前{$res.front}%率</th>
+                                                    <th class="center">
+                                                        <?php
+                                                            $chi_avg = substr($total_first,'1');
+                                                            $chi_avg = explode(',',$chi_avg);
+
+                                                            echo max($chi_avg)-min($chi_avg).'%';
+                                                        ?>
+                                                    </th>
+                                                    <th></th>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+                                    </div><!-- /.table-responsive -->
+                                </div><!-- /span -->
+                            </div><!-- /row -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+
+</block>
+
+
+

@@ -1,0 +1,237 @@
+[ 2017-03-10T17:02:24+08:00 ] ::1 /index.php/Comment/getGrowinfos
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001450s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002229s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_studentinfo` [ RunTime:0.0016s ]
+SQL: SELECT b.stu_name,a.info,a.uname,a.toexam_name,a.state FROM feiyue_grow_studentinfo as a,feiyue_stuentinfo as b WHERE ( a.userid = b.rec_id and a.pid =1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_details` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `feiyue_grow_details` WHERE ( pid =1 ) LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001426s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001625s ]
+
+[ 2017-03-10T17:02:26+08:00 ] ::1 /index.php/Grow/record.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0014s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0032s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0029s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0026s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0018s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 45 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 45 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0014s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0016s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_group` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `feiyue_grow_group` WHERE `ocode` = 330183001  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2ab537126eda2154b496326467c0d380.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2ab537126eda2154b496326467c0d380.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026121s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026173s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000178s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000668s ]
+
+[ 2017-03-10T17:02:29+08:00 ] ::1 /index.php/Comment/getGrowinfos
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000412s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000722s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_studentinfo` [ RunTime:0.0014s ]
+SQL: SELECT b.stu_name,a.info,a.uname,a.toexam_name,a.state FROM feiyue_grow_studentinfo as a,feiyue_stuentinfo as b WHERE ( a.userid = b.rec_id and a.pid =2 )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_details` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `feiyue_grow_details` WHERE ( pid =2 ) LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000586s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000717s ]
+
+[ 2017-03-10T17:02:32+08:00 ] ::1 /index.php/Comment/getGrowinfos
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001201s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_studentinfo` [ RunTime:0.0013s ]
+SQL: SELECT b.stu_name,a.info,a.uname,a.toexam_name,a.state FROM feiyue_grow_studentinfo as a,feiyue_stuentinfo as b WHERE ( a.userid = b.rec_id and a.pid =1 )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_details` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_grow_details` WHERE ( pid =1 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000461s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000508s ]
+
+[ 2017-03-10T17:02:50+08:00 ] ::1 /index.php/Grow/record.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0015s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0015s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0026s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0180s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0017s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0007s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0008s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0030s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0007s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0011s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 45 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 45 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0020s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0033s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_group` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `feiyue_grow_group` WHERE `ocode` = 330183001  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000173s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2ab537126eda2154b496326467c0d380.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2ab537126eda2154b496326467c0d380.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036263s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036396s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000280s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001349s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001461s ]
+
+[ 2017-03-10T17:02:52+08:00 ] ::1 /index.php/Comment/getGrowinfos
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000747s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003925s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_studentinfo` [ RunTime:0.0025s ]
+SQL: SELECT b.stu_name,a.info,a.uname,a.toexam_name,a.state FROM feiyue_grow_studentinfo as a,feiyue_stuentinfo as b WHERE ( a.userid = b.rec_id and a.pid =2 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_details` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `feiyue_grow_details` WHERE ( pid =2 ) LIMIT 1   [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000610s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000663s ]
+
+[ 2017-03-10T17:02:54+08:00 ] ::1 /index.php/Comment/getGrowinfos
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000618s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_studentinfo` [ RunTime:0.0044s ]
+SQL: SELECT b.stu_name,a.info,a.uname,a.toexam_name,a.state FROM feiyue_grow_studentinfo as a,feiyue_stuentinfo as b WHERE ( a.userid = b.rec_id and a.pid =1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_details` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `feiyue_grow_details` WHERE ( pid =1 ) LIMIT 1   [ RunTime:0.0013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000949s ]
+
+[ 2017-03-10T17:02:58+08:00 ] ::1 /index.php/Grow/record.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0033s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0018s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0019s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139') AND `type` = 1 AND `status` = 1  [ RunTime:0.0017s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0016s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0020s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0008s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0007s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 45 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 45 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0012s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0011s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_group` [ RunTime:0.0028s ]
+SQL: SELECT * FROM `feiyue_grow_group` WHERE `ocode` = 330183001  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2ab537126eda2154b496326467c0d380.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2ab537126eda2154b496326467c0d380.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027282s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027389s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000332s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.018408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.020490s ]
+
+[ 2017-03-10T17:03:00+08:00 ] ::1 /index.php/Comment/getGrowinfos
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001425s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002190s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_studentinfo` [ RunTime:0.0024s ]
+SQL: SELECT b.stu_name,a.info,a.uname,a.toexam_name,a.state FROM feiyue_grow_studentinfo as a,feiyue_stuentinfo as b WHERE ( a.userid = b.rec_id and a.pid =1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `feiyue_grow_details` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `feiyue_grow_details` WHERE ( pid =1 ) LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000522s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
+

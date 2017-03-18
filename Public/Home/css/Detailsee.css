@@ -1,0 +1,24 @@
+.mu_browser{background:#fff;padding:0 20px 20px}
+.mu_browser_h{position:relative;padding:0;_zoom:1}
+.mu_browser_h h5{padding:15px 0;color:#666}
+.mu_browser_h h5 a{padding:5px 10px;margin-right:10px;border:1px solid #fff;}
+.mu_browser_h h5 a.c{border:1px solid #ccc}
+.mu_browser_list_wrap{position:relative;overflow:hidden;height:214px;}
+.mu_browser_list{position:absolute;width:6800px}
+.mu_browser_list li{float:left;width:160px;padding-right:22px;}
+.mu_browser_img_a{display:block;width:134px;height:134px;border:1px solid #ececec;overflow:hidden}
+.mu_browser_t{display:block;width:136px;height:32px;font:700 12px/32px helvetica,tahoma,arial,sans-serif;color:#666;overflow:hidden}
+.mu_browser_p{font:400 18px/1 'Microsoft YaHei',sans-serif}
+.mu_browser_x{line-height:28px}
+.mu_tip_green{display:inline-block;padding:1px 4px;background:#7fc800 url("../images/ubzlo_4x128.png") 0 -114px repeat-x;border:1px solid #66a600;color:#fff;font:400 12px/1 helvetica,tahoma,arial,sans-serif;cursor:default;border-radius:2px;margin-left: 10px;}
+.mu_browser_h_wrap{position:absolute;right:10px;top:-25px;margin-top:-6px;}
+.mu_browser_curwrap li{float:left;margin:4px 3px 0 0}
+.mu_browser_curwrap li a{display:block;width:12px;height:12px;background:url("../images/kqzf240x360.png") -221px -305px no-repeat}
+.mu_browser_curwrap li a.c{background:url("../images/kqzf240x360.png") -221px -280px no-repeat}
+.mu_browser_h_wrap .key_words{color:#e2e2e2}
+.mu_browser_h_wrap .key_words a{padding:0 5px}
+.mu_browser_h_wrap .key_words a.h,.mu_browser_h_wrap .key_words a:hover{color:#fc3c75}
+.mu_browser .singleline{overflow:hidden;white-space:nowrap;word-break:break-all;text-overflow:ellipsis}
+.mu_browser .mu_red{color:#ff4f7c}
+.mu_browser .mu_lightgray{color:#999}
+.mu_browser a.mu_hoverline:hover{text-decoration:underline}

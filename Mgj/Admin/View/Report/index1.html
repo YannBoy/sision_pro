@@ -1,0 +1,46 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">报表</a>
+                </li>
+
+                <li>
+                    <a href="#">教师报表</a>
+                </li>
+            </ul><!-- .breadcrumb -->
+
+
+        </div>
+
+        <div class="reprot_main">
+
+            <div class="reprot_kemu">
+                请选择查看成绩类别:
+                <select class="form-control" name="course_bh">
+                    <volist name="obj" id="vo">
+                        <option value="{$vo.course_bh}">{$vo.course_name}</option>
+
+                    </volist>
+                </select>
+            </div>
+            <div class="reprot_area">
+                可选择查看的学校: <br/>
+                <volist name="data" id="vo">
+                    <input type="button" class="btn btn-info btn-xs" id="{$vo.class_bh}" name="reprot_btn1" value="{$vo.class_name}" style="margin-right:5px;margin-top:5px;"/>
+                </volist>
+
+            </div>
+        </div>
+        <div id="container1" style="min-width:400px;width:900px;height:400px;margin:0 auto"></div>
+    </div>
+</block>
+
+

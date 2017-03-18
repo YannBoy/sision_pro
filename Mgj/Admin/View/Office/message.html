@@ -1,0 +1,123 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">OA管理</a>
+                </li>
+                <li class="active">短信管理</li>
+            </ul><!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search" action="{:U('Admin/Office/message')}" method="get">
+                    <span>
+                        <label>
+                            <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
+                                <option value="5" <if condition="$num eq 5">selected</if>>5</option>
+                                <option value="10" <if condition="$num eq 10">selected</if>>10</option>
+                                <option value="20" <if condition="$num eq 20">selected</if>>20</option>
+                                <option value="30" <if condition="$num eq 30">selected</if>>30</option>
+                            </select>
+                        </label>
+                    </span>
+                    <span class="input-icon">
+                        <input type="text" placeholder="短信内容" name="keyword" class="nav-search-input" id="nav-search-input" autocomplete="off" value="{$keyword}"/>
+                        <input type="submit" class="btn btn-primary btn-xs" value="搜索" style="border-radius:3px; height:28px; margin-top:-4px; padding-right:24px;">
+                        <i class="icon-search nav-search-icon"></i>
+                    </span>
+                </form>
+            </div><!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    OA管理
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        短信管理
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <form action="__CONTROLLER__/delete" method="post">
+                                    <table id="sample-table-1" class="table table-hover"  style="text-align:center;">
+                                        <thead>
+                                        <tr>
+                                            <th class="center col-lg-5">内容</th>
+                                            <th class="center">创建时间</th>
+                                            <th class="center">发布日期</th>
+                                            <th class="center">接收人</th>
+                                            <th class="center">署名</th>
+                                            
+                                        </tr>
+                                        </thead>
+
+                                        <volist name="data" id="data">
+                                            <tr>
+                                                <td data-toggle="modal"  class="get_notice_id">{$data.content}</td>
+                                                <td class="center">{$data.regtime}</td>
+                                                <td class="center">{$data.sendtime}</td>
+                                                <td class="center">{$data.name}</td>
+                                                <td class="center">{$data.send_name}</td>
+                                                
+                                            </tr>
+                                        </volist>
+                                        <tr>
+                                            <td colspan="5" id="pages"><div class="row"><div class="col-md-5"></div>{$page}</td>
+                                        </tr>
+
+                                    </table>
+                                    <a href="{:U('Office/do_message')}"><input type="button" class="btn btn-primary btn-xs"  value="创建短信" ></a>
+                                </form>
+                            </div><!-- /.table-responsive -->
+                        </div><!-- /span -->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <input type="hidden" class="public" value='__PUBLIC__'/>
+    <input type="hidden" id="url" value="<?php echo $_SERVER['HTTP_HOST'] ?>"/>
+
+</block>

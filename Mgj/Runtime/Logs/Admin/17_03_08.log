@@ -1,0 +1,1628 @@
+[ 2017-03-08T14:56:51+08:00 ] ::1 /index.php/Comment/imgReportdetails
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001107s ]
+NOTIC: [2] Missing argument 5 for Admin\Model\ApiModel::imgRepInfo(), called in /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php on line 2318 and defined /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 815 行.
+NOTIC: [8] Undefined variable: classname /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 825 行.
+SQL: SHOW COLUMNS FROM `feiyue_school_call` [ RunTime:0.0017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_school_call` WHERE `pid` = 132 LIMIT 1   [ RunTime:0.0157s ]
+SQL: SELECT `total` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY total desc LIMIT 940,1   [ RunTime:0.0176s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `total` >= '473' GROUP BY classname ORDER BY classname  [ RunTime:0.0179s ]
+SQL: SELECT `total` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY total desc LIMIT 940,1   [ RunTime:0.0164s ]
+SQL: SELECT `total` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY total desc LIMIT 2507,1   [ RunTime:0.0164s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `total` < '473' AND `total` >= '381'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0193s ]
+SQL: SELECT `total` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY total desc LIMIT 2507,1   [ RunTime:0.0182s ]
+SQL: SELECT `total` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY total desc LIMIT 4387,1   [ RunTime:0.0178s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `total` < '381' AND `total` >= '281'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0189s ]
+SQL: SELECT `total` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY total desc LIMIT 4387,1   [ RunTime:0.0187s ]
+SQL: SELECT `total` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY total desc LIMIT 5954,1   [ RunTime:0.0222s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `total` < '281' AND `total` >= '173'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0214s ]
+SQL: SELECT `total` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY total desc LIMIT 5954,1   [ RunTime:0.0190s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `total` < '173' GROUP BY classname ORDER BY classname  [ RunTime:0.0183s ]
+NOTIC: [8] Undefined index: info /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: A /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: B /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [2] Missing argument 5 for Admin\Model\ApiModel::imgRepInfo(), called in /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php on line 2319 and defined /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 815 行.
+NOTIC: [8] Undefined variable: classname /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 825 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_school_call` WHERE `pid` = 132 LIMIT 1   [ RunTime:0.0180s ]
+SQL: SELECT `chi` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY chi desc LIMIT 940,1   [ RunTime:0.0195s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `chi` >= '92' GROUP BY classname ORDER BY classname  [ RunTime:0.0276s ]
+SQL: SELECT `chi` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY chi desc LIMIT 940,1   [ RunTime:0.0212s ]
+SQL: SELECT `chi` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY chi desc LIMIT 2507,1   [ RunTime:0.0216s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `chi` < '92' AND `chi` >= '83'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0208s ]
+SQL: SELECT `chi` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY chi desc LIMIT 2507,1   [ RunTime:0.0189s ]
+SQL: SELECT `chi` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY chi desc LIMIT 4387,1   [ RunTime:0.0192s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `chi` < '83' AND `chi` >= '71'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0184s ]
+SQL: SELECT `chi` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY chi desc LIMIT 4387,1   [ RunTime:0.0180s ]
+SQL: SELECT `chi` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY chi desc LIMIT 5954,1   [ RunTime:0.0191s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `chi` < '71' AND `chi` >= '50'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0182s ]
+SQL: SELECT `chi` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY chi desc LIMIT 5954,1   [ RunTime:0.0189s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `chi` < '50' GROUP BY classname ORDER BY classname  [ RunTime:0.0187s ]
+NOTIC: [8] Undefined index: info /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: A /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: B /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [2] Missing argument 5 for Admin\Model\ApiModel::imgRepInfo(), called in /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php on line 2320 and defined /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 815 行.
+NOTIC: [8] Undefined variable: classname /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 825 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_school_call` WHERE `pid` = 132 LIMIT 1   [ RunTime:0.0165s ]
+SQL: SELECT `math` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY math desc LIMIT 940,1   [ RunTime:0.0163s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `math` >= '86' GROUP BY classname ORDER BY classname  [ RunTime:0.0166s ]
+SQL: SELECT `math` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY math desc LIMIT 940,1   [ RunTime:0.0161s ]
+SQL: SELECT `math` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY math desc LIMIT 2507,1   [ RunTime:0.0173s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `math` < '86' AND `math` >= '63'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0165s ]
+SQL: SELECT `math` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY math desc LIMIT 2507,1   [ RunTime:0.0156s ]
+SQL: SELECT `math` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY math desc LIMIT 4387,1   [ RunTime:0.0168s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `math` < '63' AND `math` >= '37'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0176s ]
+SQL: SELECT `math` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY math desc LIMIT 4387,1   [ RunTime:0.0170s ]
+SQL: SELECT `math` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY math desc LIMIT 5954,1   [ RunTime:0.0185s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `math` < '37' AND `math` >= '13'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0182s ]
+SQL: SELECT `math` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY math desc LIMIT 5954,1   [ RunTime:0.0197s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `math` < '13' GROUP BY classname ORDER BY classname  [ RunTime:0.0183s ]
+NOTIC: [8] Undefined index: info /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: A /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: B /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [2] Missing argument 5 for Admin\Model\ApiModel::imgRepInfo(), called in /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php on line 2321 and defined /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 815 行.
+NOTIC: [8] Undefined variable: classname /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 825 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_school_call` WHERE `pid` = 132 LIMIT 1   [ RunTime:0.0165s ]
+SQL: SELECT `eng` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY eng desc LIMIT 940,1   [ RunTime:0.0163s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `eng` >= '100' GROUP BY classname ORDER BY classname  [ RunTime:0.0169s ]
+SQL: SELECT `eng` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY eng desc LIMIT 940,1   [ RunTime:0.0172s ]
+SQL: SELECT `eng` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY eng desc LIMIT 2507,1   [ RunTime:0.0168s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `eng` < '100' AND `eng` >= '81'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0175s ]
+SQL: SELECT `eng` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY eng desc LIMIT 2507,1   [ RunTime:0.0158s ]
+SQL: SELECT `eng` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY eng desc LIMIT 4387,1   [ RunTime:0.0167s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `eng` < '81' AND `eng` >= '54'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0171s ]
+SQL: SELECT `eng` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY eng desc LIMIT 4387,1   [ RunTime:0.0161s ]
+SQL: SELECT `eng` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY eng desc LIMIT 5954,1   [ RunTime:0.0159s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `eng` < '54' AND `eng` >= '27'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0173s ]
+SQL: SELECT `eng` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY eng desc LIMIT 5954,1   [ RunTime:0.0170s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `eng` < '27' GROUP BY classname ORDER BY classname  [ RunTime:0.0167s ]
+NOTIC: [8] Undefined index: info /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: A /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: B /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [2] Missing argument 5 for Admin\Model\ApiModel::imgRepInfo(), called in /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php on line 2322 and defined /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 815 行.
+NOTIC: [8] Undefined variable: classname /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 825 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_school_call` WHERE `pid` = 132 LIMIT 1   [ RunTime:0.0146s ]
+SQL: SELECT `sec` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY sec desc LIMIT 940,1   [ RunTime:0.0160s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `sec` >= '132' GROUP BY classname ORDER BY classname  [ RunTime:0.0169s ]
+SQL: SELECT `sec` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY sec desc LIMIT 940,1   [ RunTime:0.0158s ]
+SQL: SELECT `sec` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY sec desc LIMIT 2507,1   [ RunTime:0.0164s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `sec` < '132' AND `sec` >= '101'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0171s ]
+SQL: SELECT `sec` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY sec desc LIMIT 2507,1   [ RunTime:0.0175s ]
+SQL: SELECT `sec` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY sec desc LIMIT 4387,1   [ RunTime:0.0173s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `sec` < '101' AND `sec` >= '68'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0180s ]
+SQL: SELECT `sec` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY sec desc LIMIT 4387,1   [ RunTime:0.0231s ]
+SQL: SELECT `sec` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY sec desc LIMIT 5954,1   [ RunTime:0.0209s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `sec` < '68' AND `sec` >= '36'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0233s ]
+SQL: SELECT `sec` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY sec desc LIMIT 5954,1   [ RunTime:0.0170s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `sec` < '36' GROUP BY classname ORDER BY classname  [ RunTime:0.0177s ]
+NOTIC: [8] Undefined index: info /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: A /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: B /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [2] Missing argument 5 for Admin\Model\ApiModel::imgRepInfo(), called in /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php on line 2323 and defined /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 815 行.
+NOTIC: [8] Undefined variable: classname /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 825 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_school_call` WHERE `pid` = 132 LIMIT 1   [ RunTime:0.0160s ]
+SQL: SELECT `soc` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY soc desc LIMIT 940,1   [ RunTime:0.0172s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `soc` >= '72' GROUP BY classname ORDER BY classname  [ RunTime:0.0184s ]
+SQL: SELECT `soc` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY soc desc LIMIT 940,1   [ RunTime:0.0171s ]
+SQL: SELECT `soc` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY soc desc LIMIT 2507,1   [ RunTime:0.0158s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `soc` < '72' AND `soc` >= '59'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0158s ]
+SQL: SELECT `soc` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY soc desc LIMIT 2507,1   [ RunTime:0.0151s ]
+SQL: SELECT `soc` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY soc desc LIMIT 4387,1   [ RunTime:0.0152s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `soc` < '59' AND `soc` >= '45'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0158s ]
+SQL: SELECT `soc` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY soc desc LIMIT 4387,1   [ RunTime:0.0152s ]
+SQL: SELECT `soc` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY soc desc LIMIT 5954,1   [ RunTime:0.0151s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND ( `soc` < '45' AND `soc` >= '24'  ) GROUP BY classname ORDER BY classname  [ RunTime:0.0153s ]
+SQL: SELECT `soc` FROM `feiyue_school_call` WHERE `pid` = 132 ORDER BY soc desc LIMIT 5954,1   [ RunTime:0.0150s ]
+SQL: SELECT count(id) as count,`classname` FROM `feiyue_school_call` WHERE `pid` = 132 AND `schoolname` = '富春中学' AND `soc` < '24' GROUP BY classname ORDER BY classname  [ RunTime:0.0151s ]
+NOTIC: [8] Undefined index: info /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: A /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: B /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 880 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: C /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: D /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Undefined index: E /Users/apple/Desktop/pro/Mgj/Admin/Model/ApiModel.class.php 第 884 行.
+NOTIC: [8] Use of undefined constant A - assumed 'A' /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php 第 2324 行.
+NOTIC: [8] Use of undefined constant B - assumed 'B' /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php 第 2324 行.
+NOTIC: [8] Use of undefined constant C - assumed 'C' /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php 第 2324 行.
+NOTIC: [8] Use of undefined constant D - assumed 'D' /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php 第 2324 行.
+NOTIC: [8] Use of undefined constant E - assumed 'E' /Users/apple/Desktop/pro/Mgj/Admin/Controller/CommentController.class.php 第 2324 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000499s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2017-03-08T14:57:23+08:00 ] ::1 /index.php/Comment/call.html
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0021s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0013s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0015s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_rep_examlist` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_rep_examlist` WHERE `data` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_rep_examlist` WHERE `data` = 1 ORDER BY examtime desc LIMIT 0,20   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0011s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000085s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+NOTIC: [8] Undefined variable: nav_show /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 54 行.
+NOTIC: [8] Undefined variable: color /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 56 行.
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 97 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 302 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 303 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+NOTIC: [8] Use of undefined constant state - assumed 'state' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/2b87fd46598ff75e8a745447505556a0.php 第 304 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031791s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031845s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000155s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000198s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000915s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001005s ]
+
+[ 2017-03-08T14:57:28+08:00 ] ::1 /index.php/Comment/index.html
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0022s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0012s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0011s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_classaccessinfo` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `feiyue_classaccessinfo` WHERE `userid` = 64 AND `class_bh` LIKE '330183001%' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_classinfo` [ RunTime:0.0012s ]
+SQL: SELECT `class_bh`,`class_name` FROM `feiyue_classinfo` WHERE ( area_bh =330183 and ocode = 001 )  [ RunTime:0.0006s ]
+SQL: SELECT `class_bh` FROM `feiyue_classaccessinfo` WHERE ( userid = 64 and length(class_bh) = 9 )  [ RunTime:0.0004s ]
+SQL: SELECT `class_bh` FROM `feiyue_classaccessinfo` WHERE ( userid = 64 and class_bh like '331003014_____' )  [ RunTime:0.0004s ]
+SQL: SELECT `class_bh` FROM `feiyue_classaccessinfo` WHERE ( userid = 64 and class_bh like '330183001_____' )  [ RunTime:0.0004s ]
+SQL: SELECT `class_bh` FROM `feiyue_classaccessinfo` WHERE ( userid = 64 and length(class_bh) = 14 )  [ RunTime:0.0004s ]
+SQL: SELECT `rec_id`,`class_name`,`class_bh` FROM `feiyue_classaccessinfo` WHERE `class_bh` IN ('33100300216001','33100300215001','33100300216003','33100300116004','331003014','330183001') AND `userid` = 64  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_stuentinfo` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_stuentinfo` WHERE `AREAOCODE` = '330183' AND `OCODE` = '001' LIMIT 1   [ RunTime:0.0025s ]
+SQL: SELECT * FROM `feiyue_stuentinfo` WHERE `AREAOCODE` = '330183' AND `OCODE` = '001' ORDER BY STU_BANJI,convert(STU_NAME using gb2312) ASC LIMIT 0,50   [ RunTime:0.0041s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000115s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000180s ]
+NOTIC: [8] Undefined variable: nav_show /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 54 行.
+NOTIC: [8] Undefined variable: color /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 56 行.
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 97 行.
+NOTIC: [8] Undefined variable: usernav /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 188 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031782s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031842s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000164s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000209s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000736s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000847s ]
+
+[ 2017-03-08T14:57:32+08:00 ] ::1 /index.php/School/index.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0021s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0013s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0010s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0010s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0011s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0012s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: where /Users/apple/Desktop/pro/Mgj/Admin/Controller/SchoolController.class.php 第 17 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_shoollist` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: where /Users/apple/Desktop/pro/Mgj/Admin/Controller/SchoolController.class.php 第 23 行.
+SQL: SELECT * FROM `feiyue_shoollist` LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_area` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_area` WHERE ( area_bh like '__0000' )  [ RunTime:0.0018s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000091s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000156s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/67bfcc6a7742a2c5771600658efaeb94.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/67bfcc6a7742a2c5771600658efaeb94.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026298s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026354s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000161s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000203s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001266s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001405s ]
+
+[ 2017-03-08T14:57:35+08:00 ] ::1 /index.php/Group/index.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0019s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0022s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0011s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0012s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0013s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0011s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group` [ RunTime:0.0013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_user_auth_group` WHERE `isdelete` = 0 AND `ocode` = '330183001' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_user_auth_group` WHERE `isdelete` = 0 AND `ocode` = '330183001' ORDER BY id desc LIMIT 0,5   [ RunTime:0.0004s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000078s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/f3193cbd0da9f160e942a798ea12b836.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/f3193cbd0da9f160e942a798ea12b836.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020402s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000175s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000966s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001307s ]
+
+[ 2017-03-08T14:57:39+08:00 ] ::1 /index.php/Info/index.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0014s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0011s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0012s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0012s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0012s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0012s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_web_news` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_web_news` WHERE `ocode` = '330183001' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `id`,`title`,`oper`,`ordernum`,`add_time`,`allnum`,`uptime`,`state` FROM `feiyue_web_news` WHERE ( ocode = 330183001 and state = 0 ) ORDER BY id desc LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_const` [ RunTime:0.0033s ]
+SQL: SELECT `id`,`const_name` FROM `feiyue_const` WHERE ( ocode = 330183001 and const_table = 'web_news' )  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: const_get /Users/apple/Desktop/pro/Mgj/Admin/Controller/InfoController.class.php 第 45 行.
+SQL: SELECT `id`,`const_name` FROM `feiyue_const` WHERE ( ocode =330183001 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000094s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000157s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/a5c94ec0eaa1c3d52ddd8767c1a39dd9.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/a5c94ec0eaa1c3d52ddd8767c1a39dd9.php 第 97 行.
+NOTIC: [8] Undefined index: const_id /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/a5c94ec0eaa1c3d52ddd8767c1a39dd9.php 第 243 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033066s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000752s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000879s ]
+
+[ 2017-03-08T14:57:40+08:00 ] ::1 /index.php/Info/good_user.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0022s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0012s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0012s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0015s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0011s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0012s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_web_mien` [ RunTime:0.0031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_web_mien` WHERE `ocode` = '330183001' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `id`,`title`,`pic_url`,`oper`,`ordernum`,`regtime`,`allnum`,`uptime`,`imgtime`,`username`,`state` FROM `feiyue_web_mien` WHERE ( ocode = 330183001 and state = 0 ) LIMIT 0,5   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/15331be6c895b0acd8a62f3dc6d5d28e.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/15331be6c895b0acd8a62f3dc6d5d28e.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032827s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032941s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000128s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000938s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001056s ]
+
+[ 2017-03-08T14:57:42+08:00 ] ::1 /index.php/Info/school_img.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0012s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0015s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0010s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0010s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0013s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0011s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_web_pic` [ RunTime:0.0022s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_web_pic` WHERE `ocode` = '330183001' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_web_pic` WHERE `ocode` = '330183001' LIMIT 0,5   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000090s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/0f0220fb765ea9ff8ead340468dccd2c.php 第 101 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024213s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024274s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000204s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000319s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000628s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2017-03-08T14:57:44+08:00 ] ::1 /index.php/Info/school_nav.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0022s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0012s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0011s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0012s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0011s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0013s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_const` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `feiyue_const` WHERE `ocode` = '330183001' AND `pid` = '0' AND `const_table` = 'web_news' ORDER BY order_num  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000089s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ab02cae20cf82420af446ce49bf22ef4.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ab02cae20cf82420af446ce49bf22ef4.php 第 97 行.
+NOTIC: [8] Undefined variable: page /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ab02cae20cf82420af446ce49bf22ef4.php 第 280 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.033440s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033494s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000149s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000192s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001215s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001344s ]
+
+[ 2017-03-08T14:57:48+08:00 ] ::1 /index.php/Office/school_group.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0010s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0011s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0016s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0011s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0011s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0013s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0011s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_schoolgroup` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `feiyue_schoolgroup` WHERE ( pid = 0 and ocode = 330183001 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000080s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [8] Undefined variable: page /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 290 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029531s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029589s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000195s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000790s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000902s ]
+
+[ 2017-03-08T14:57:52+08:00 ] ::1 /index.php/Center/center.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0016s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0011s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0012s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0012s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0012s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0013s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0018s ]
+SQL: SELECT a.*,b.sex,b.rtime FROM feiyue_user a LEFT JOIN feiyue_user_detail b ON a.id = userid  WHERE ( a.id = 64 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000141s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/abe23613f571ae4f197418bdb33d94cb.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/abe23613f571ae4f197418bdb33d94cb.php 第 97 行.
+NOTIC: [8] Undefined variable: user /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/abe23613f571ae4f197418bdb33d94cb.php 第 266 行.
+NOTIC: [8] Undefined variable: user /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/abe23613f571ae4f197418bdb33d94cb.php 第 291 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.036340s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036387s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001098s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001184s ]
+
+[ 2017-03-08T14:57:58+08:00 ] ::1 /index.php/Comment/index.html
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0023s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0014s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0012s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_classaccessinfo` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_classaccessinfo` WHERE `userid` = 64 AND `class_bh` LIKE '330183001%' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_classinfo` [ RunTime:0.0013s ]
+SQL: SELECT `class_bh`,`class_name` FROM `feiyue_classinfo` WHERE ( area_bh =330183 and ocode = 001 )  [ RunTime:0.0006s ]
+SQL: SELECT `class_bh` FROM `feiyue_classaccessinfo` WHERE ( userid = 64 and length(class_bh) = 9 )  [ RunTime:0.0004s ]
+SQL: SELECT `class_bh` FROM `feiyue_classaccessinfo` WHERE ( userid = 64 and class_bh like '331003014_____' )  [ RunTime:0.0003s ]
+SQL: SELECT `class_bh` FROM `feiyue_classaccessinfo` WHERE ( userid = 64 and class_bh like '330183001_____' )  [ RunTime:0.0004s ]
+SQL: SELECT `class_bh` FROM `feiyue_classaccessinfo` WHERE ( userid = 64 and length(class_bh) = 14 )  [ RunTime:0.0003s ]
+SQL: SELECT `rec_id`,`class_name`,`class_bh` FROM `feiyue_classaccessinfo` WHERE `class_bh` IN ('33100300216001','33100300215001','33100300216003','33100300116004','331003014','330183001') AND `userid` = 64  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_stuentinfo` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_stuentinfo` WHERE `AREAOCODE` = '330183' AND `OCODE` = '001' LIMIT 1   [ RunTime:0.0022s ]
+SQL: SELECT * FROM `feiyue_stuentinfo` WHERE `AREAOCODE` = '330183' AND `OCODE` = '001' ORDER BY STU_BANJI,convert(STU_NAME using gb2312) ASC LIMIT 0,50   [ RunTime:0.0044s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14001' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `class_name` FROM `feiyue_classinfo` WHERE `class_bh` = '14002' AND `ocode` = '001' AND `area_bh` = '330183' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000144s ]
+NOTIC: [8] Undefined variable: nav_show /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 54 行.
+NOTIC: [8] Undefined variable: color /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 56 行.
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 97 行.
+NOTIC: [8] Undefined variable: usernav /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/7ddd3202de0fc3979ce54b3cc627d777.php 第 188 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.037434s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037494s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000197s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001331s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001453s ]
+
+[ 2017-03-08T14:58:04+08:00 ] ::1 /index.php/School/index.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0022s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0012s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0011s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0012s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0011s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0012s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: where /Users/apple/Desktop/pro/Mgj/Admin/Controller/SchoolController.class.php 第 17 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_shoollist` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: where /Users/apple/Desktop/pro/Mgj/Admin/Controller/SchoolController.class.php 第 23 行.
+SQL: SELECT * FROM `feiyue_shoollist` LIMIT 0,10   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_area` [ RunTime:0.0016s ]
+SQL: SELECT * FROM `feiyue_area` WHERE ( area_bh like '__0000' )  [ RunTime:0.0018s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000144s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000217s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/67bfcc6a7742a2c5771600658efaeb94.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/67bfcc6a7742a2c5771600658efaeb94.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028702s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028760s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000141s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000182s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000819s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001096s ]
+
+[ 2017-03-08T14:58:12+08:00 ] ::1 /index.php/Office/school_group.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0024s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0016s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0012s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0011s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0012s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0013s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_schoolgroup` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_schoolgroup` WHERE ( pid = 0 and ocode = 330183001 )  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000079s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [8] Undefined variable: page /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 290 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027326s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027381s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000196s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001237s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001364s ]
+
+[ 2017-03-08T14:58:15+08:00 ] ::1 /index.php/Center/friend.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0021s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0017s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0015s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0011s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0014s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0012s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0014s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_school_my_group` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `feiyue_school_my_group` WHERE ( uid = 64 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000073s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 101 行.
+NOTIC: [8] Undefined variable: page /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/ba11f0026b01d26bc8acf4d90e62affd.php 第 290 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026762s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026815s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000814s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000964s ]
+
+[ 2017-03-08T14:58:21+08:00 ] ::1 /index.php/Visitor/leavel.html
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0023s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0012s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0012s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0012s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0013s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_visitstudentevent` [ RunTime:0.0014s ]
+SQL: SELECT * FROM `feiyue_visitstudentevent` ORDER BY rec_id desc  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000077s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000133s ]
+NOTIC: [8] Undefined variable: nav_show /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 54 行.
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 97 行.
+NOTIC: [8] Undefined variable: num /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 252 行.
+NOTIC: [8] Undefined variable: num /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 253 行.
+NOTIC: [8] Undefined variable: num /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 254 行.
+NOTIC: [8] Undefined variable: num /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 255 行.
+NOTIC: [8] Undefined variable: keyword /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 260 行.
+NOTIC: [8] Undefined variable: page /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/9561f0917669baa8a37932546a8a1631.php 第 321 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026537s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026590s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000157s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000901s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001005s ]
+
+[ 2017-03-08T14:58:28+08:00 ] ::1 /index.php/Office/school_group.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0022s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0017s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0014s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0010s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0011s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0012s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0012s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_schoolgroup` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_schoolgroup` WHERE ( pid = 0 and ocode = 330183001 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000096s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'nav_name' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [2] Illegal string offset 'src' /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 101 行.
+NOTIC: [8] Undefined variable: page /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/76624668a9a4cba54057a70285705d9f.php 第 290 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000157s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001139s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001240s ]
+
+[ 2017-03-08T15:02:04+08:00 ] ::1 /index.php/Group/index.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0023s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0011s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0013s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0013s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0010s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0016s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0012s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0012s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group` [ RunTime:0.0014s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `feiyue_user_auth_group` WHERE `isdelete` = 0 AND `ocode` = '330183001' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `feiyue_user_auth_group` WHERE `isdelete` = 0 AND `ocode` = '330183001' ORDER BY id desc LIMIT 0,5   [ RunTime:0.0005s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000163s ]
+NOTIC: [8] Undefined variable: data /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/f3193cbd0da9f160e942a798ea12b836.php 第 97 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/f3193cbd0da9f160e942a798ea12b836.php 第 97 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021610s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021663s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001373s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001462s ]
+
+[ 2017-03-08T15:02:13+08:00 ] ::1 /index.php/Group/edit/id/28.html
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group_access` [ RunTime:0.0026s ]
+SQL: SELECT `uid`,`group_id`,`title`,`rules` FROM feiyue_user_auth_group_access a INNER JOIN feiyue_user_auth_group g on a.group_id=g.id and a.ocode = g.ocode  WHERE ( a.uid='64' and g.status='1' and g.ocode = '330183001' )  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0012s ]
+SQL: SELECT `condition`,`name` FROM `feiyue_user_auth_rule` WHERE `id` IN ('1','2','3','4','5','6','7','8','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','122','123','124','125','126','127','128','129','130','131','132','133','134','135') AND `type` = 1 AND `status` = 1  [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `feiyue_oa_background` [ RunTime:0.0021s ]
+SQL: SELECT * FROM `feiyue_oa_background` WHERE ( uid =64 ) LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `feiyue_user` [ RunTime:0.0022s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav_display` [ RunTime:0.0010s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_nav` [ RunTime:0.0014s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `feiyue_shoollist` [ RunTime:0.0016s ]
+SQL: SELECT `ocode_name` FROM `feiyue_shoollist` WHERE ( area_bh =330183 and ocode =001 ) LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_detail` [ RunTime:0.0018s ]
+SQL: SELECT `nav` FROM `feiyue_user_detail` WHERE `userid` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `feiyue_nav` WHERE `id` IN ('','31','33','36')  [ RunTime:0.0004s ]
+SQL: SELECT `nav_id` FROM `feiyue_nav_display` WHERE ( school_id = 330183001 ) ORDER BY nav_id  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 1 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 1 )  [ RunTime:0.0003s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 2 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 2 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 3 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 3 )  [ RunTime:0.0006s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 4 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 4 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 5 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 5 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 6 ) LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 6 )  [ RunTime:0.0004s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 18 ) LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 18 )  [ RunTime:0.0019s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 22 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 22 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 29 ) LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 29 )  [ RunTime:0.0005s ]
+SQL: SELECT `nav_name` FROM `feiyue_nav` WHERE ( id = 37 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `nav_name`,`src` FROM `feiyue_nav` WHERE ( pid = 37 )  [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_group` [ RunTime:0.0011s ]
+SQL: SHOW COLUMNS FROM `feiyue_user_auth_rule` [ RunTime:0.0012s ]
+SQL: SELECT * FROM `feiyue_user_auth_group` WHERE `id` = 28 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `feiyue_user_auth_rule`  [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000248s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000528s ]
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+NOTIC: [2] Invalid argument supplied for foreach() /Users/apple/Desktop/pro/Mgj/Runtime/Cache/Admin/c1335764b0981979ec2f953bf5d90452.php 第 100 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.048704s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048777s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000189s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000230s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000728s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000829s ]
+

@@ -1,0 +1,208 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+                <li>
+                    <a href="#">成绩报表</a>
+                </li>
+                <li class="active">成绩分析</li>
+            </ul><!-- .breadcrumb -->
+        </div>
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    成绩报表
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        成绩分析
+                    </small>
+                </h1>
+
+            </div><!-- /.page-header -->
+            <a href="{:U('subinfo',array('id'=>$_GET['id']))}"><button class="btn btn-info btn-xs pull-right getSubInfo" style="margin-top:8px;margin-left: 250px;">学科详情</button></a>
+            <!--<button type="button" class="pull-right btn-danger btn-xs tool" style="margin-top:8px;margin-left: 250px;">测量工具</button>-->
+
+            <div class="row" name="remove_tool">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <div class="tool_border" style="border-top:1px solid black;width:1000px;position: absolute;display: none;cursor: pointer;z-index: 1000000;"></div>
+                                        <div class="rep_first">
+                                            <div style="padding-bottom:10px;border:1px solid #999;border-bottom:0px;width:820px">
+                                                <h2 class="center">{$Exam.name}</h2>
+                                                <div class="rep-header" style="border-top:1px solid #999;padding-top:10px">
+                                                    <p>考试时间: {$Exam.examtime}</p>
+                                                    <p>参考学校:
+                                                        <volist name="info" id="schname">
+                                                            {$schname.schoolname}、
+                                                        </volist>
+                                                    </p>
+                                                   
+                                                </div>
+                                            </div>
+                                            <div id="container" style="width:820px;height:390px;border:1px solid #999;padding:10px"></div>
+                                            <div style="padding-bottom:20px;border:1px solid #999;width:820px">
+                                                <h3 class="center">数据报告</h3>
+                                                <table class="table-bordered rep-tabel">
+                                                    <tr>
+                                                        <th class="center" style="width:160px;">学校</th>
+                                                        <th class="center">参考人数</th>
+                                                        <th class="center">A/标准分</th>
+                                                        <th class="center">B/标准分</th>
+                                                        <th class="center">C/标准分</th>
+                                                        <th class="center">D/标准分</th>
+                                                        <th class="center">E/标准分</th>
+                                                        <th class="center">综合指数</th>
+                                                    </tr>
+                                                    <tbody>
+                                                    <volist name="info" id="info">
+                                                        <tr>
+                                                            <td class="center">{$info.schoolname}</td>
+                                                            <td class="center">{$info.schNum}</td>
+                                                            <td class="center">{$info.A}%</td>
+                                                            <td class="center">{$info.B}%</td>
+                                                            <td class="center">{$info.C}%</td>
+                                                            <td class="center">{$info.D}%</td>
+                                                            <td class="center">{$info.E}%</td>
+                                                            <td class="center">{$info.composite}</td>
+                                                        </tr>
+                                                    </volist>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+                                        </div>
+                                    </div><!-- /.table-responsive -->
+                                </div><!-- /span -->
+                            </div><!-- /row -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <input type="hidden" class="schName" value="<?php echo $_GET['ocode']?>">
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/highcharts.js"></script>
+    <script src="__PUBLIC__/Admin/js/highcharts_exporting.js"></script>
+    <!--<script src="__PUBLIC__/Admin/assets/js/report.js"></script>-->
+    <script>
+        var url = $('#oa_url').val();
+        $(document).ready(function () {
+            var course_bh = 'total';
+//            var ocode = $('.schName').val();
+            var id = "<?php echo $_GET['id']?>";
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/imgReport",
+                type: 'POST',
+                data: {id:id,sub:course_bh},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#container').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: '图文信息'
+                            },
+                            xAxis: {
+                                categories: data.info.schoolname
+                            },
+                            yAxis: {
+                                min: 0,
+                                title: {
+                                    text: ''
+                                },
+                                ceiling:400,
+                                plotLines: [{
+                                    color: 'red',           //线的颜色，定义为红色
+                                    dashStyle: 'solid',     //默认值，这里定义为实线
+                                    value: 85,               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+                                    width: 1                //标示线的宽度，2px
+                                },
+                                    {
+                                        color: 'green',           //线的颜色，定义为红色
+                                        dashStyle: 'solid',     //默认值，这里定义为实线
+                                        value: 15,               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+                                        width: 1              //标示线的宽度，2px
+                                    }
+                                ]
+                            },
+
+                            tooltip: {
+                                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                                shared: true
+                            },
+                            plotOptions: {
+                                column: {
+                                    stacking: 'percent',
+                                    pointWidth:28,
+                                    dataLabels: {
+                                        enabled: true,
+                                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                                        style: {
+                                            textShadow: '0 0 3px black'
+                                        }
+                                    }
+                                },
+                                series: {
+                                    allowPointSelect: false,//点击变色
+                                    cursor: 'pointer',
+                                    events: {
+                                        click: function(e) {
+                                            //var class_name = e.point.category;
+                                            //window.open('http://'+url+'/index.php/Report/ocode_rep/id/'+id+'/ocode/'+class_name);
+                                            //这里的url要后面的data里给出
+                                            // location.href='/';
+                                        },
+                                        legendItemClick: function() {
+                                            return false;
+                                        }
+                                    }
+                                }
+                            },
+                            series: [{
+                                name: 'A',
+                                color: '#CC0000 ',
+                                data: data.info.info.A
+                            }, {
+                                name: 'B',
+                                color: '#EE7700',
+                                data: data.info.info.B
+                            }, {
+                                name: 'C',
+                                color: '#DDAA00',
+                                data: data.info.info.C
+                            },{
+                                name: 'D',
+                                color: '#88AA00',
+                                data: data.info.info.D
+                            },{
+                                name: 'E',
+                                color: '#00AA00',
+                                data: data.info.info.E
+                            }]
+                        });
+                    }
+                }
+            })
+        });
+    </script>
+</block>
+
+
+

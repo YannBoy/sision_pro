@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杭州市富阳区新登镇中学</title>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/index.css">
+</head>
+<body>
+<div class="main">
+    <div style="margin:0 auto;width:1029px;height:144px;position: relative;left:0.1%;">
+        <embed src="__PUBLIC__/Home/image/top1.swf" width="1029" height="144"></embed>
+    </div>
+    <div class="main-container box-shadow">
+        <div class="main-navbar">
+            <ul>
+                <a href="{:U('Index/index')}"><li class="left">首页</li></a>
+                <li><img src="__PUBLIC__/Home/image/1.png" alt=""></li>
+                <volist name="navlist" id="navlist">
+                    <a href="{:U('Index/listnav',array('id'=>$navlist['id']))}"><li>{$navlist.const_name}</li></a>
+                    <li><img src="__PUBLIC__/Home/image/1.png" alt=""></li>
+                </volist>
+                <!-- <li style="float:right;padding-right:10px;">{$date}</li> -->
+            </ul>
+        </div>
+        <div class="main-mark">
+            <div class="mark-left fl">
+                <img src="__PUBLIC__/Home/image/2.png" alt="">
+            </div>
+            <div class="mark-right fr">
+                <img src="__PUBLIC__/Home/image/3.png" alt="">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-cont">
+            <div class="main-cont-left border fl">
+                <div class="main-cont-left-top">
+                    <div class="main-cont-left-top-sch">
+                        <div class="top-sch-bk font-col fl">{$h5.const_name}</div>
+                    </div>
+                    <div class="main-cont-left-top-chara">
+                        <volist name="data" id="data">
+                        <div class="top-chara-writes font"><img src="__PUBLIC__/Home/image/icon4.png" alt="">
+                            <a href="{:U('Index/content',array('id'=>$data['id'],'type'=>$data['type']))}">
+                            <?php
+                                echo  mb_substr($data['title'],0,30);
+                            ?>
+                                </a>
+                        </div>
+                        <hr style="height:1px;border:none;border-top:1px solid #dbe5ed;" />
+                        </volist>
+                    </div>
+                </div>
+                <div class="main-cont-left-bottom">
+                    <img src="__PUBLIC__/Home/image/9.png" alt="">
+                </div>
+            </div>
+            <div class="main-cont-right border-top fl">
+                <div class="main-cont-right-naver border-bottom">
+                    <div class="right-nav-news font">
+                        <img src="__PUBLIC__/Home/image/18.png" alt="">  首页  <i class="iconfont">&#xe603;</i>  {$h5.const_name}
+                    </div>
+                    <div class="right-nav-dyns">
+                        <div class="right-nav-dyns-sch">
+                            <div class="right-nav-dyns-bk fl">{$h5.const_name}</div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="main-cont-right-cont shadow">
+                    <volist name="data_info" id="data_info">
+                    <div class="right-cont-write font">
+                        <a href="{:U('Index/content',array('id'=>$data_info['id'],'type'=>$data_info['type']))}">
+                        ·
+                        <?php
+                                echo  mb_substr($data_info['title'],0,69);
+                            ?>
+                        </a>
+                        <p class="fr">{$data_info.regtime}</p></div>
+                    <div style="border-top:1px dashed #cccccc;height: 1px;overflow:hidden"></div>
+                    </volist>
+
+                </div>
+                <div class="mian-cont-right-page fonts">
+                    <!--共{$count}条记录，每页15条，当前第1/1页&nbsp;-->
+                    <!--<a href="#">第一页</a> |-->
+                    <!--<a href="#">上一页</a> |-->
+                    <!--<a href="#">下一页</a> |-->
+                    <!--<a href="#">最末页</a>&nbsp;转到第 <input type="text"> 页&nbsp;-->
+                    <!--<button>跳转</button>-->
+                    {$page}
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-footer margin">
+            <div class="main-footer-import font" style="width:450px">
+                <p>版权所有：杭州市富阳区新登镇中学   &nbsp;建议使用IE9.0 分辨率 1024*768以上访问本网站</p>
+                <p>浙ICP备09007076号      &nbsp;网络信息中心联系电话： 0571-89987637</p>
+                <p>&nbsp;技术支持：杭州思讯</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<extend name="Common:index"/>
+<block name="main">
+    <script src='__PUBLIC__/Admin/assets/js/My97DatePicker/4.72/WdatePicker.js'></script>
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">校园访客</a>
+                </li>
+                <li class="active">添加访客记录</li>
+            </ul><!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+					<span class="input-icon">
+						<input type="text" placeholder="Search ..." name="username" class="nav-search-input" id="nav-search-input" autocomplete="off" />
+						<input type="submit" class="btn btn-primary btn-xs" value="搜索" style="border-radius:3px; height:28px; margin-top:-4px; padding-right:24px;">
+						<i class="icon-search nav-search-icon"></i>
+					</span>
+                </form>
+            </div><!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    校园访客
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        添加访客记录
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <div style="width: 500px;margin: 0 auto">
+                                <form action="{:U('Visitor/create_leavel')}" method="post">
+                                    <div class="form-group-sm">
+                                        <label for="vs_ocodename">学校名称</label>
+                                        <input type="text" style="width: 80%" class="form-control" id="vs_ocodename" name="vs_ocodename" placeholder="">
+                                    </div>
+                                    <div class="form-group-sm">
+                                        <label for="vs_username">姓名</label>
+                                        <input type="text" style="width: 80%" class="form-control" id="vs_username"  name="vs_username" placeholder="">
+                                    </div>
+                                    <div class="form-group-sm">
+                                        <label for="vs_classname">所属</label>
+                                        <input type="text" style="width: 80%" class="form-control" id="vs_classname" name="vs_classname" placeholder="">
+                                    </div>
+                                    <div class="form-group-sm">
+                                        <label for="vs_tel">电话</label>
+                                        <input type="text" style="width: 80%" class="form-control" id="vs_tel" name="vs_tel" placeholder="">
+                                    </div>
+                                    <div class="form-group-sm">
+                                        <label for="pass_type">通过类型</label>
+                                        <input type="text" style="width: 80%" class="form-control" id="pass_type" placeholder="">
+                                    </div>
+
+                                    <div class="form-group-sm">
+                                        <label for="begintime">开始时间</label>
+                                        <input type="text" style="width: 80%" class="form-control" id="begintime" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" name="begintime" placeholder="">
+
+                                    </div>
+                                    <div class="form-group-sm">
+                                        <label for="endtime">结束时间</label>
+                                        <input type="text" style="width: 80%" class="form-control" id="endtime"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" name="endtime" placeholder="">
+                                    </div>
+                                    <div class="form-group-sm">
+                                        <label for="event_context">事件内容</label><br>
+
+                                        <textarea name="event_context" id="event_context" cols="54" rows="5"></textarea>
+                                    </div>
+                                    <br>
+                                    <button class="btn btn-app btn-xs ">提交</button>
+                                </form>
+
+                                </div>
+                            </div><!-- /.table-responsive -->
+                        </div><!-- /span -->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+</block>

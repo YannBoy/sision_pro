@@ -1,0 +1,305 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">成绩报表</a>
+                </li>
+                <li class="active">成绩分析</li>
+            </ul><!-- .breadcrumb -->
+
+
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    成绩报表
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        成绩分析
+                    </small>
+                </h1>
+
+            </div><!-- /.page-header -->
+            <div  style="width:420px;margin: 0 auto">
+                        <input type="hidden" class="ocode" value="<?php echo $_GET['ocode']?>">
+                        <input type="hidden" class="exam_id" value="<?php echo $_GET['id']?>">
+
+                </div>
+
+            </div>
+            <button type="button" class="pull-right btn-danger btn-xs tool" style="margin-top:8px;margin-right: 20px;">测量工具</button>
+
+            <div class="row" name="remove_tool">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <div class="tool_border" style="border-top:1px solid black;width:1000px;position: absolute;display: none;cursor: pointer;z-index: 1000000;"></div>
+                                        <div class="rep_first">
+                                            <div id="rep_info" style="min-width:1000px;height:420px;"></div>
+                                            <button class="btn btn-info btn-xs pull-right rep_all_info" style="margin-right:50px;display:none">分析</button>
+                                        </div>
+                                        <!--<div class="rep_cha" style='display: none;'>-->
+                                        <!--<div id="rep_chose_cha" style="min-width:1000px;height:420px;"></div>-->
+                                        <!--<button class="btn btn-info btn-xs pull-right rep_cha_info" style="margin-right:50px;">分析</button>-->
+                                        <!--</div>-->
+
+                                        <div class="rep_lel" style='display: none;'>
+                                            <div id="report_chose" style="min-width:1000px;height:420px"></div>
+                                            <button class="btn btn-inverse btn-xs pull-right rep_info_btn" style="margin-right:50px;">返回</button>
+
+                                        </div>
+                                        <!--<div class="rep_lel_cha" style='display: none;'>-->
+                                        <!--<div id="report_chose_cha" style="min-width:1000px;height:420px"></div>-->
+                                        <!--<button class="btn btn-inverse btn-xs pull-right rep_info_btn" style="margin-right:50px;">返回</button>-->
+                                        <!--</div>-->
+
+                                        <div class="table-responsive reo_table_all" style="width:1000px;margin:0 auto;margin-top:30px;display:none">
+                                            <table class="table">
+                                                <tr class="active rep_face">
+                                                    <th>#</th>
+                                                </tr>
+
+                                                <tr class="danger rep_face_a">
+                                                    <th>A</th>
+
+                                                </tr>
+                                                <tr class="rep_face_b">
+                                                    <th>B</th>
+
+                                                </tr>
+                                                <tr class="rep_face_c">
+                                                    <th>C</th>
+
+                                                </tr>
+                                                <tr class="rep_face_d">
+                                                    <th>D</th>
+
+                                                </tr>
+                                                <tr class="success rep_face_e">
+                                                    <th>E</th>
+
+                                                </tr>
+                                                <tbody class="rep_tbody">
+                                                <tr class="rep_face_exam">
+
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        <input type="hidden" value="{$exam_con.exam_name}(总分)" class="exam_title">
+                                        <input type="hidden" value="<?php echo $_GET['id']?>" class="rep_list_id">
+                                    </div><!-- /.table-responsive -->
+                                </div><!-- /span -->
+                            </div><!-- /row -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/highcharts.js"></script>
+    <script src="__PUBLIC__/Admin/js/highcharts-3d.js"></script>
+    <script src="__PUBLIC__/Admin/js/highcharts_exporting.js"></script>
+    <script src="__PUBLIC__/Admin/assets/js/report.js"></script>
+    <script>
+        $('#rep_info').highcharts({
+            chart: {
+                type: 'column',
+                options3d: {
+                    enabled: true,
+                    alpha: 15,
+                    beta: 0,
+                    depth: 30
+                }
+            },
+
+            title: {
+                text: '132'
+            },
+            credits: {
+                enabled: false
+            },
+            xAxis: {
+                categories: []
+
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '成绩分析所占比例'
+                },
+                plotLines: [{
+                    color: 'red',           //线的颜色，定义为红色
+                    dashStyle: 'solid',     //默认值，这里定义为实线
+                    value: 85,               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+                    width: 1                //标示线的宽度，2px
+                },
+                    {
+                        color: 'green',           //线的颜色，定义为红色
+                        dashStyle: 'solid',     //默认值，这里定义为实线
+                        value: 15,               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+                        width: 1              //标示线的宽度，2px
+                    }
+                ]
+            },
+            // tooltip: {
+            //     pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+            //     shared: true
+            // },
+            plotOptions: {
+                column: {
+                    stacking: 'percent',
+                    pointWidth:30
+
+                },
+                series: {
+                    allowPointSelect: false,//点击变色
+                    cursor: 'pointer',
+                    events: {
+                        click: function(e) {
+                            var class_name = e.point.category;
+                            window.open('http://'+url+'/index.php/Report/report_info/id/'+exam_id+'/ocode/'+ocode+'/class_name/'+class_name);
+                            //这里的url要后面的data里给出
+
+                        },
+                        legendItemClick: function() {
+                            return false;
+                        }
+                    }
+                }
+
+            },
+            series: [{
+                name: 'A',
+                data: [1],
+                color: '#CC0000 ',
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    //color: '#FFFFFF',
+                    align: 'left',
+                    //format: '{point.y:.1f}', // one decimal
+                    y: 5, // 10 pixels down from the top
+                    style: {
+                        fontSize: '7px',
+                        fontFamily: 'Verdana, sans-serif'
+                    },
+                }
+
+            }, {
+                name: 'B',
+                data: [1],
+                color: '#EE7700',
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'left',
+                    //format: '{point.y:.1f}', // one decimal
+                    y: 5, // 10 pixels down from the top
+                    style: {
+                        fontSize: '7px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }, {
+                name: 'C',
+                data: [1],
+                color: '#DDAA00',
+                dataLabels: {
+                    enabled: false,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'left',
+                    //format: '{point.y:.1f}', // one decimal
+                    y: 5, // 10 pixels down from the top
+                    style: {
+                        fontSize: '7px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },{
+                name: 'D',
+                data: [1],
+                color: '#88AA00',
+                dataLabels: {
+                    enabled: false,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'left',
+                    //format: '{point.y:.1f}', // one decimal
+                    y: 5, // 10 pixels down from the top
+                    style: {
+                        fontSize: '7px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },{
+                name: 'E',
+                data: [1],
+                color: '#00AA00',
+                dataLabels: {
+                    enabled: false,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'left',
+                    //format: '{point.y:.1f}', // one decimal
+                    y: 5, // 10 pixels down from the top
+                    style: {
+                        fontSize: '7px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            }
+            ],
+            exporting: {
+                enabled: true
+            }
+
+
+        });
+    </script>
+</block>
+
+
+

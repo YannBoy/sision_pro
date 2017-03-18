@@ -1,0 +1,807 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <script src='__PUBLIC__/Admin/assets/js/My97DatePicker/4.72/WdatePicker.js'></script>
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">报表统计</a>
+                </li>
+            </ul><!-- .breadcrumb -->
+            <div class="nav-search" id="nav-search">
+                <form action="" method="get">
+                <label>
+                    <select name="state" aria-controls="dataTables-example" class="form-control input-sm">
+                        <option value="null"  <?php if(!$type){echo 'selected';}?> >全部</option>
+                        <option value="0" <?php if($type === 0){echo 'selected';}?>>单校</option>
+                        <option value="1" <if condition="$type eq 1">selected</if>>联考</option>
+
+                    </select>
+                </label>
+            <span class="input-icon">
+                <input type="text" placeholder="考试名称" name="name" class="nav-search-input" id="nav-search-input" autocomplete="off" value="{$name}"/>
+                <input type="text" placeholder="创建人" name="username" class="nav-search-input"  autocomplete="off" value="{$usernmae}"/>
+                <input type="submit" class="btn btn-primary btn-xs" value="搜索" style="border-radius:3px; height:28px; margin-top:-4px; padding-right:24px;">
+
+            </span>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    报表统计
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        考试列表
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <form action="" method="post">
+                                            <table id="sample-table-1" class="table table-striped table-bordered table-hover" style="text-align:center;">
+                                                <thead>
+                                                <tr>
+                                                    <th class="center col-md-3">考试名称</th>
+                                                    <th class="center col-md-1">考试时间</th>
+                                                    <th class="center col-md-1">创建人</th>
+                                                    <th class="center col-md-2">创建时间</th>
+                                                    <th class="center col-md-2">基础数据</th>
+                                                    <th class="center col-md-2">小题数据</th>
+                                                    <th class="center col-md-1">操作</th>
+                                                </thead>
+                                                <tbody>
+                                                <volist name="exam" id="vo">
+                                                    <tr>
+                                                        <th class="">{$vo.name}
+                                                            <if condition="$vo.state eq 0">
+                                                                <span style="color:green">(单校)</span>
+                                                                <if condition="$vo.pid eq 0">
+
+                                                                    <else/>
+                                                                    <i>[附属数据]</i>
+                                                                </if>
+                                                                <else/>
+                                                                <span style="color:deepskyblue">(联考)</span>
+                                                            </if>
+                                                        </th>
+                                                        <th class="center">{$vo.examtime}</th>
+                                                        <th class="center">{$vo.username}</th>
+                                                        <th class="center">{$vo.regtime}</th>
+                                                        <th class="center">
+                                                            <if condition="$vo.data eq 0">
+                                                                <span  class="{$vo.id}" name="updatefile" abc="{$vo.name}"><i style="color:red">未上传文件</i>
+                                                                    <i class="icon-file-text-alt bigger-120" title="上传文件"></i>
+                                                                </span>
+                                                                <else/>
+                                                                <span  class="{$vo.id}"><i style="color:green">已上传文件</i>
+                                                                    <if condition="$vo.pid eq 0">
+                                                                    <i class="icon-trash bigger-120 delProInfo" style="cursor: pointer" title="清除数据" abc="{$vo.id}"></i>
+                                                                        <else/>
+
+                                                                    </if>
+                                                                </span>
+                                                            </if>
+                                                        </th>
+                                                        <th class="center">
+                                                            <button type="button" class="btn btn-info btn-xs updatesub" abc="{$vo.name}" id="{$vo.id}">上传知识点</button>
+                                                            <button type="button" class="btn btn-warning btn-xs know_abjustment" id="{$vo.id}">调整</button>
+                                                        </th>
+
+                                                        <th>
+                                                            <i class="icon-edit bigger-120 setParameter" title="参数设置" style="cursor: pointer;" id="{$vo.id}"></i> &nbsp;
+                                                            <if condition="$vo.pid eq 0">
+                                                                <i class="icon-trash bigger-120 delParameter" name="{$vo.id}" title="删除及清楚数据" style="cursor: pointer;"></i>&nbsp;
+                                                                <else/>
+                                                                <i class="icon-trash bigger-120 delexamlist" name="{$vo.id}" title="删除" style="cursor: pointer;"></i>&nbsp;
+                                                            </if>
+
+                                                            <if condition="$vo.state eq 1">
+                                                                <if condition="$vo.share eq 0">
+                                                                    <i class="icon-share bigger-120 setShare" abc="{$vo.id}" style="cursor: pointer;color:red" title="尚未分配权限"></i>&nbsp;
+                                                                    <else/>
+                                                                    <i class="icon-share bigger-120 setShare" abc="{$vo.id}" style="cursor: pointer;color:green" title="已分配权限"></i>&nbsp;
+                                                                </if>
+                                                                <else/>
+                                                                <i>&nbsp;</i>
+                                                            </if>
+                                                        </th>
+                                                    </tr>
+                                                </volist>
+                                                <tr>
+                                                    <td colspan="10" id="pages"><div class="row"><div class="col-md-5"></div>{$page}</td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </form>
+                                    </div><!-- /.table-responsive -->
+                                    <button class="btn btn-info btn-xs uploadExcel">创建报表</button>
+                                </div><!-- /span -->
+                            </div><!-- /row -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+
+    <div class="modal fade" id="uploadModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">创建报表</h4>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td class="col-md-5" style="text-align: right">考试名称:</td>
+                            <td><input type="text" class="examname" placeholder="输入考试名称"></td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-5" style="text-align: right">考试类别:</td>
+                            <td>
+                                <input type="radio" checked="checked" name="state" value="0"> 单校  &nbsp;
+                                <input type="radio" name="state" value="1"> 联考
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-5" style="text-align: right">考试时间:</td>
+                            <td>
+                                <input  type="text" style="width:120px" class="form-control input-sm exam_time" onClick="WdatePicker()" value="<?php echo date('Y-m-d')?>"/>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary btn-xs examinster">确定</button>
+            </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" id="parameter">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title pname_titel"></h4>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <input type="hidden" class="pid">
+                        <tr>
+                            <td>考试名称:</td>
+                            <td><input type="text" class="pname"></td>
+                        </tr>
+                        <tr>
+                            <td>考试时间:</td>
+                            <td>
+                                <input  type="text" style="width:120px" class="form-control input-sm ptime" onClick="WdatePicker()"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>语文:</td>
+                            <td>
+                                <input type="text" class="pchi">
+                            </td>
+                            <td>数学:</td>
+                            <td>
+                                <input type="text" class="pmath">
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>英语:</td>
+                            <td>
+                                <input type="text" class="peng">
+                            </td>
+                            <td>科学:</td>
+                            <td>
+                                <input type="text" class="psec">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>总分:</td>
+                            <td>
+                                <input type="text" class="ptotal">
+                            </td>
+                            <td>其他:</td>
+                            <td>
+                                <input type="text">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>优秀率:</td>
+                            <td>
+                                <input type="text" class="pgreate" style="width:40px">%
+                            </td>
+                            <td>及格率:</td>
+                            <td>
+                                <input type="text" class="ppass" style="width:40px">%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>前n率:</td>
+                            <td>
+                                <input type="text" class="pfront" style="width:40px">%
+                            </td>
+                            <td>后n率:</td>
+                            <td>
+                                <input type="text" class="pbake" style="width:40px">%
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>前n人:</td>
+                            <td>
+                                <input type="text" class="pfrontnum" style="width:50px">
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-xs saveParameter">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" id="updatefileModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" class="uploadid">
+                    <div style="padding-left:30px"><span id="bupload"></span></div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <div class="modal fade" id="updatefileSub">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="padding-left:30px;padding-bottom:20px"><span id="buploadsub"></span></div>
+                    <div class="know-modal">
+                        <ul></ul>
+                    </div>
+
+                    <input type="hidden" class="uploadidsub">
+
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" id="choseSharesch">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <input type="hidden" class="shareid">
+                    <div class="share-school">
+                        <ul>
+                        <!--<li class="cho">小南海初中</li>-->
+                        <!--<li class="cho">塔石初级中学</li>-->
+                        <!--<li class="cho">模环初中</li>-->
+                        <!--<li class="no">一号中学</li>-->
+                        <!--<li class="no">二号中学</li>-->
+                        <!--<li class="no">三号测试中学</li>-->
+                        <!--<li class="no">四号号测试位中学</li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-xs addmanyexam">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <input type="hidden" value="{$ocode_name}" class="school_name">
+    <div class="modal fade" id="knowModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">知识点划分</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="know-sub">
+                        <ul>
+                        </ul>
+                    </div>
+                    <div class="know-body">
+                        <button type="button" class="btn btn-info pull-right btn-xs know_tipadd">+增加一行</button>
+                        <div style="width:400px;margin-top:20px">
+
+                            <table class="table table-striped" id="konw-modal-table">
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" value="" class="know_ids">
+                    <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-xs knowsave">保存</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <script>
+        var url = $('#oa_url').val();
+        $('.examinster').click(function () {
+            var name = $('.examname').val();
+            if(name.length == 0){
+                alert('考试名称不能为空');
+                return false;
+            }
+            var state = $('input[name=state]:checked').val();
+            var exam_time = $('.exam_time').val();
+            var schoolname = $('.school_name').val();
+            $.ajax({
+                url:"http://"+url+"/index.php/Report/examcreate",
+                type:'POST',
+                data:{state:state,exam_time:exam_time,name:name,schoolname:schoolname},
+                dataType:'json',
+                success: function(data){
+                    if(data[0].success == true){
+                        window.location.reload();
+                    }
+                }
+            });
+        });
+        $('.setParameter').click(function () {
+            $('#parameter').modal('show');
+            var id  = $(this).attr('id');
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/getParamter",
+                type:'POST',
+                data:{id:id},
+                dataType:'json',
+                success: function(data){
+                    if(data[0].success == true){
+                        $('.pname_titel').html(data[0].data.name+"参数设置");
+                        $('.pname').val(data[0].data.name);
+                        $('.ptime').val(data[0].data.examtime);
+                        $('.pchi').val(data[0].data.chi);
+                        $('.peng').val(data[0].data.eng);
+                        $('.psec').val(data[0].data.sec);
+                        $('.pmath').val(data[0].data.math);
+                        $('.ptotal').val(data[0].data.total);
+                        $('.pgreate').val(data[0].data.greate);
+                        $('.ppass').val(data[0].data.pass);
+                        $('.pfront').val(data[0].data.front);
+                        $('.pbake').val(data[0].data.bake);
+                        $('.pfrontnum').val(data[0].data.frontnum);
+                        $('.pid').val(data[0].data.id);
+                    }
+                }
+            })
+        });
+        $('.saveParameter').click(function () {
+            var name = $('.pname').val();
+            var examtime = $('.ptime').val();
+            var chi = $('.pchi').val();
+            var eng = $('.peng').val();
+            var sec = $('.psec').val();
+            var math = $('.pmath').val();
+            var total = $('.ptotal').val();
+            var greate = $('.pgreate').val();
+            var pass =  $('.ppass').val();
+            var front = $('.pfront').val();
+            var bake = $('.pbake').val();
+            var frontnum = $('.pfrontnum').val();
+            var id = $('.pid').val();
+            $.ajax({
+                url:"http://"+url+"/index.php/Report/saveParameter",
+                type:'POST',
+                data:{name:name,examtime:examtime,chi:chi,eng:eng,math:math,sec:sec,total:total,greate:greate,pass:pass,front:front,bake:bake,frontnum:frontnum,id:id},
+                dataType:'json',
+                success: function(data){
+                    if(data[0].success == true){
+                        window.location.reload();
+                    }
+                }
+            })
+        });
+        $('.delParameter').click(function () {
+            var id = $(this).attr('name');
+            $.ajax({
+                url:"http://"+url+"/index.php/Report/delParameter",
+                type:'POST',
+                data:{id:id},
+                dataType:'json',
+                success: function(data){
+                    if(data[0].success == true){
+                        window.location.reload();
+                    }
+                }
+            })
+        });
+        $('span[name=updatefile]').click(function () {
+            $('#updatefileModel').modal('show');
+            $('#updatefileModel .modal-title').html($(this).attr('abc'));
+            $('.uploadid').val($(this).attr('class'));
+        });
+        $('.updatesub').click(function () {
+            $('.know-modal ul').html('');
+            $('#updatefileSub').modal('show');
+            $('#updatefileSub .modal-title').html($(this).attr('abc'));
+            $('.uploadidsub').val($(this).attr('id'));
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/getknowinfo",
+                type:'POST',
+                data:{id:$(this).attr('id')},
+                dataType:'json',
+                success: function(data){
+                    $(data.info).each(function () {
+                        if(this.type == 0){
+                            var li = "<li class='no' id="+this.key+">"+this.subname+"</li>"
+                        }else{
+                            var li = "<li class='cho' id="+this.key+">"+this.subname+"</li>"
+                        }
+                        $('.know-modal ul').append(li);
+                    })
+                }
+            })
+        });
+        $(document).on('click','.know-modal ul .no',function () {
+            $($('.know-modal ul').children()).each(function () {
+                if($(this).attr('class') != 'cho')
+                {
+                    $(this).attr('class','no');
+                }
+            });
+            $(this).attr('class','click');
+        });
+
+        $(function () {
+            $('#buploadsub').uploadify({
+                uploader: "http://"+url+"/index.php/Comment/upcallsub",           // 服务器处理地址
+                swf: '__PUBLIC__/Admin/assets/js/uploadify/uploadify.swf',
+                buttonText: "选择文件",                  //按钮文字
+                height: 34,                             //按钮高度
+                width: 82,                              //按钮宽度
+                fileTypeExts: "*.*",           //允许的文件类型
+                fileTypeDesc: "请选择图片文件",           //文件说明
+                multi: false,
+                method:'post',
+                onUploadSuccess: function (file, data, response) {   //一个文件上传成功后的响应事件处理
+//                    window.location.reload();
+                  //  window.location.reload();
+                },
+                onUploadStart: function (file) {
+                    $("#buploadsub").uploadify("settings", "formData", { 'pid': $('.uploadidsub').val(),'key':$('.click').attr('id')});
+                }
+            });
+        });
+
+
+        $(function () {
+            $('#bupload').uploadify({
+                uploader: "http://"+url+"/index.php/Comment/upcall",           // 服务器处理地址
+                swf: '__PUBLIC__/Admin/assets/js/uploadify/uploadify.swf',
+                buttonText: "选择文件",                  //按钮文字
+                height: 34,                             //按钮高度
+                width: 82,                              //按钮宽度
+                fileTypeExts: "*.*",           //允许的文件类型
+                fileTypeDesc: "请选择图片文件",           //文件说明
+                multi: false,
+                method:'post',
+               // formData: { "imgType": "normal","id": $('.uploadid').val()}, //提交给服务器端的参数
+                onUploadSuccess: function (file, data, response) {   //一个文件上传成功后的响应事件处理
+//                    window.location.reload();
+                    if(data != 0){
+                        if(confirm('是否创建对应的单校文件?'))
+                        {
+                            $.ajax({
+                                url:"http://"+url+"/index.php/Comment/createAttach",
+                                type:'POST',
+                                data:{pid:data},
+                                dataType:'json',
+                                success: function(data){
+                                    if(data[0].success == true)
+                                    {
+                                        window.location.reload();
+                                    }
+                                    else{
+                                        alert(data[0].msg);
+                                        window.location.reload();
+                                    }
+                                }
+                            })
+                        }
+                        else
+                        {
+                            window.location.reload();
+                        }
+                    }else
+                    {
+                        window.location.reload();
+                    }
+
+                },
+                onUploadStart: function (file) {
+                    $("#bupload").uploadify("settings", "formData", { 'pid': $('.uploadid').val() });
+                }
+            });
+        });
+        $('.delProInfo').click(function () {
+            var id = $(this).attr('abc');
+            $.ajax({
+                url:"http://"+url+"/index.php/Report/delProInfo",
+                type:'POST',
+                data:{id:id},
+                dataType:'json',
+                success: function(data){
+                    if(data[0].success == true){
+                        window.location.reload();
+                    }
+                }
+            })
+        });
+
+        $('.setShare').click(function () {
+            var id  = $(this).attr('abc');
+            $('.share-school ul').html('');
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/getParamtershare",
+                type:'POST',
+                data:{id:id},
+                dataType:'json',
+                success: function(data){
+                    if(data.success == true){
+                        $('#choseSharesch').modal('show');
+                        $('#choseSharesch .modal-title').html(data.data.name+"权限分配");
+                        $('.shareid').val(id);
+                        $(data.have).each(function () {
+                            if(this.share == 0){
+                                var li = "<li class='no' >"+this.schoolname+"</li>"
+                            }else{
+                                var li = "<li class='cho'>"+this.schoolname+"</li>"
+                            }
+                            $('.share-school ul').append(li);
+                        })
+                    }else{
+                        alert(data.msg)
+                    }
+                }
+            });
+        })
+
+        $(document).on('click','.share-school ul .cho',function () {
+            $(this).attr('class','no');
+        });
+        $(document).on('click','.share-school ul .no',function () {
+            $(this).attr('class','cho');
+        });
+
+        $('.addmanyexam').click(function () {
+            var id  = $('.shareid').val();
+            var sch = '';
+            $('.share-school ul .cho').each(function () {
+                sch  = $(this).html()+','+sch;
+            });
+            if(sch.length == 0){
+                alert('请选择能查看的学校');
+                return false;
+            }
+            $.ajax({
+                url:"http://"+url+"/index.php/Report/setmanyexam",
+                type:'POST',
+                data:{id:id,sch:sch},
+                dataType:'json',
+                success: function(data){
+                    if(data.info == "没有权限")
+                    {
+                        alert("没有权限");
+                        return false;
+                    }
+                    if(data[0].success == true){
+                        window.location.reload();
+                    }else{
+                        alert(data[0].msg)
+                    }
+                }
+            })
+        });
+
+        $('.delexamlist').click(function () {
+            var id = $(this).attr('name');
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/delexamlist",
+                type:'POST',
+                data:{id:id},
+                dataType:'json',
+                success: function(data){
+                    if(data[0].success == true){
+                        window.location.reload();
+                    }else {
+                        alert('网络繁忙');
+                    }
+                }
+            })
+        })
+    </script>
+    <script>
+        $('.know_abjustment').click(function () {
+            $('#knowModel').modal('show');
+            var id = $(this).attr('id');
+            $('.know-sub ul').html('');
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/getknow",
+                type:'POST',
+                data:{id:id},
+                dataType:'json',
+                success: function(data){
+                    if(data.success == true){
+                        $('.know_ids').val(data.ids);
+                        $(data.info.subname).each(function () {
+                            var li = "<li class="+this.type+" id="+this.key+">"+this.val+"</li>";
+                            $('.know-sub ul').append(li);
+                        });
+                        if(data.info.knowdivide.length > 0)
+                        {
+                            $('#konw-modal-table').html('');
+                            $(data.info.knowdivide).each(function () {
+                                var tr = "<tr><td class='know-td'><input type='text' name='know-q' value="+this.know_name+"> </td> <td><input type='text' name='know-a' value="+this.know_keys+"> </td>" +
+                                        "<td><button type='button' class='btn btn-warning btn-xs know-del'>删除</button></td></tr>";
+                                $('#konw-modal-table').append(tr);
+                            })
+                        }else{
+                            var tr = "<tr><td class='know-td'><input type='text' name='know-q' placeholder='知识点'> </td> <td><input type='text' name='know-a' placeholder='(例如:1,3,4,6)'> </td>" +
+                                    "<td><button type='button' class='btn btn-warning btn-xs know-del'>删除</button></td></tr>";
+                            $('#konw-modal-table').html(tr);
+                        }
+                    }
+                }
+            })
+        });
+        $('.know_tipadd').click(function () {
+            var tr = "<tr><td class='know-td'><input type='text' name='know-q' placeholder='知识点'> </td> <td><input type='text' name='know-a' placeholder='(例如:1,3,4,6)'> </td>" +
+                    "<td><button type='button' class='btn btn-warning btn-xs know-del'>删除</button></td></tr>";
+            $('#konw-modal-table').append(tr);
+        });
+        $(document).on('click','.know-del',function () {
+            $(this).parent().parent().remove();
+        });
+        $('.knowsave').click(function () {
+            $('input[name=know-q]').css('border','2px solid green');
+            $('input[name=know-a]').css('border','2px solid green');
+            var id  = $('.know_ids').val();
+            var name = '';
+            var keys = '';
+            var error = 0;
+            var keysVer = /^[0-9,]+$/;
+            var sub = $('.know-sub .cho').attr('id');
+            $('input[name=know-q]').each(function () {
+                if($(this).val().length >0){
+                    name += $(this).val()+'|';
+                }else{
+                    $(this).css('border','2px solid red');
+
+                }
+
+            });
+            $('input[name=know-a]').each(function () {
+                if($(this).val().length >0  && keysVer.test($(this).val())){
+                    keys += $(this).val()+'|';
+                }else{
+                    $(this).css('border','2px solid red');
+                }
+            });
+            if(name.length == 0 || keys.length == 0){
+                alert('格式有误');
+                return ;
+            }
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/setNewKnow",
+                type:'POST',
+                data:{id:id,name:name,keys:keys,sub:sub},
+                dataType:'json',
+                success: function(data){
+                    if(data[0].success == true)
+                    {
+                        alert('保存成功');
+                    }else{
+                        alert(data[0].msg);
+                    }
+                }
+            })
+        });
+        $(document).on('click','.def',function () {
+            $('.know-sub ul li').attr('class','def');
+            $(this).attr('class','cho');
+            var id = $('.know_ids').val();
+            var sub = $('.know-sub .cho').attr('id');
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/getknow",
+                type:'POST',
+                data:{id:id,sub:sub},
+                dataType:'json',
+                success: function(data){
+                    if(data.success == true){
+
+                        if(data.info.knowdivide.length > 0)
+                        {
+                            $('#konw-modal-table').html('');
+                            $(data.info.knowdivide).each(function () {
+                                var tr = "<tr><td class='know-td'><input type='text' name='know-q' value="+this.know_name+"> </td> <td><input type='text' name='know-a' value="+this.know_keys+"> </td>" +
+                                        "<td><button type='button' class='btn btn-warning btn-xs know-del'>删除</button></td></tr>";
+                                $('#konw-modal-table').append(tr);
+                            })
+                        }else{
+                            var tr = "<tr><td class='know-td'><input type='text' name='know-q' placeholder='知识点'> </td> <td><input type='text' name='know-a' placeholder='(例如:1,3,4,6)'> </td>" +
+                                    "<td><button type='button' class='btn btn-warning btn-xs know-del'>删除</button></td></tr>";
+                            $('#konw-modal-table').html(tr);
+                        }
+                    }
+                }
+            })
+        })
+    </script>
+
+
+</block>
+
+
+
+

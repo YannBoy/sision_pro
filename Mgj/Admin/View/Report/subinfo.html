@@ -1,0 +1,1230 @@
+<extend name="Common:index"/>
+<block name="main">
+    <!--<script src="https://img.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>-->
+    <script src='__PUBLIC__/Admin/js/jquery-1.8.3.min.js'></script>
+    <!--<script src="https://img.hcharts.cn/highcharts/highcharts.js"></script>-->
+    <script src="__PUBLIC__/Admin/assets/js/123.js"></script>
+    <script src="https://img.hcharts.cn/highcharts/highcharts-more.js"></script>
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+                <li>
+                    <a href="#">成绩报表</a>
+                </li>
+                <li class="active">成绩分析</li>
+            </ul><!-- .breadcrumb -->
+        </div>
+        <div class="page-content" >
+            <div class="page-header" style="margin:0px">
+                <h1>
+                    成绩报表
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        成绩分析
+                    </small>
+                    <button type="button" class="btn btn-warning btn-xs pull-right" id="print">导出</button>
+                </h1>
+
+            </div><!-- /.page-header -->
+
+            <a href="{:U('ocode_rep',array('id'=>$_GET['id']))}"><button class="btn btn-info btn-xs pull-right getSubInfo" style="margin-top:8px;margin-left: 250px;">返回</button></a>
+            <!--<button type="button" class="pull-right btn-danger btn-xs tool" style="margin-top:8px;margin-left: 250px;">测量工具</button>-->
+            <div style="width:770px;margin: 0 auto;height:40px;margin-bottom:10px;" class="sub-ul">
+                <ul>
+                    <volist name="subname" id="subname">
+                        <a href="{:U('subinfo',array('id'=>$_GET['id'],'subject'=>$subname['key']))}"><li class="sub-no {$subname.key}">{$subname.name}</li></a>
+                    </volist>
+
+                </ul>
+
+            </div>
+
+            <!--startprint-->
+            <div class="row" name="remove_tool">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <div class="tool_border" style="border-top:1px solid black;width:700px;position: absolute;display: none;cursor: pointer;z-index: 1000000;"></div>
+                                        <div class="rep_first">
+                                            <div style="padding-bottom:10px;border:1px solid #999;border-bottom:0px;width:700px">
+                                                <h2 class="center">{$Exam.name}</h2>
+                                                <div class="rep-header" style="border-top:1px solid #999;padding-top:10px">
+                                                    <p>考试时间: {$Exam.examtime}</p>
+                                                    <p>监测科目: {$chsub}</p>
+                                                    <p>监测学校:
+                                                        <volist name="info" id="schname">
+                                                            <?php if($schname['schoolname'] != '总体情况'){?>
+                                                            <?php echo $schname['schoolname'].'、' ?>
+                                                            <?php }?>
+                                                        </volist>
+                                                    </p>
+                                                    <p>①.</p>
+                                                    <p>{$chsub}综合指数≥3.0的学校（按照指数从大到小排列）：<span class="classgood"></span></p>
+                                                    <p>{$chsub}总分综合指数<3.0的学校（按照指数从大到小排列）：<span class="classlow"></span></p>
+                                                    <p>②.</p>
+                                                    <p>{$chsub}A率≥15%的学校（按照指数从大到小排列）：<span class="aclassgood"></span></p>
+                                                    <p>{$chsub}A率<15%的学校（按照指数从大到小排列）：<span class="aclasslow"></span></p>
+                                                    <p>③.</p>
+                                                    <p>{$chsub}后30%≤30%的学校（按照指数从小到大排列 :<span class="bclassgood"></span></p>
+                                                    <p>{$chsub}后30%>30%的学校（按照指数从小到大排列）：<span class="bclasslow"></span></p>
+                                                    <p>④.</p>
+                                                    <p>{$chsub}标准分平均分≥500的学校（按照指数从大到小排列 :<span class="allclassgood"></span></p>
+                                                    <p>{$chsub}总分标准分平均分<500的学校（按照指数从大到小排列）：<span class="allclasslow"></span></p>
+
+                                                </div>
+                                            </div>
+
+                                            <div id="compolite" style="width:700px;height:390px;border:1px solid #999;padding:20px"></div>
+                                            <div id="stand" style="width:700px;height:390px;border:1px solid #999;padding:20px"></div>
+                                            <div id="container" style="width:700px;height:390px;border:1px solid #999;padding:20px"></div>
+                                            <div id="someall" style="width:700px;height:520px;border:1px solid #999;padding:20px"></div>
+                                            <div id="someall2" style="width:700px;height:520px;border:1px solid #999;padding:20px"></div>
+                                            <div id="someall1" style="width:700px;height:520px;border:1px solid #999;padding:20px"></div>
+                                            <div style="padding-bottom:20px;border:1px solid #999;width:700px">
+                                                <h3 class="center">数据报告</h3>
+                                                <table class="table-bordered rep-tabel">
+                                                    <tr>
+                                                        <th class="center" style="width:160px;">学校</th>
+                                                        <th class="center">参考人数</th>
+                                                        <th class="center">A</th>
+                                                        <th class="center">B</th>
+                                                        <th class="center">C</th>
+                                                        <th class="center">D</th>
+                                                        <th class="center">E</th>
+                                                        <th class="center">综合指数</th>
+                                                    </tr>
+                                                    <tbody>
+                                                    <volist name="info" id="info">
+                                                        <tr>
+                                                            <td class="center">{$info.schoolname}</td>
+                                                            <td class="center">{$info.schNum}</td>
+                                                            <td class="center">{$info.A}%</td>
+                                                            <td class="center">{$info.B}%</td>
+                                                            <td class="center">{$info.C}%</td>
+                                                            <td class="center">{$info.D}%</td>
+                                                            <td class="center">{$info.E}%</td>
+                                                            <td class="center">{$info.composite}</td>
+                                                        </tr>
+                                                    </volist>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <?php
+                                                $sub = $_GET['subject'] ? $_GET['subject'] : 'total';
+
+                                                if($sub != 'total'){
+                                            ?>
+                                            <div id="jian" style="width:700px;height:390px;border:1px solid #999;padding:20px"></div>
+                                            <div id="zhon" style="width:700px;height:390px;border:1px solid #999;padding:20px"></div>
+                                            <div id="nan" style="width:700px;height:390px;border:1px solid #999;padding:20px"></div>
+                                            <div id="nan1" style="width:700px;height:390px;border:1px solid #999;padding:20px"></div>
+                                            <div id="nan2" style="width:700px;height:390px;border:1px solid #999;padding:20px"></div>
+                                            <div style="border:1px solid #999;width:700px;padding-bottom:20px">
+                                                <h3 class="center">知识点</h3>
+                                                <table class="table-bordered rep-tabel" >
+                                                    <volist name="know" id="know">
+                                                        <tr>
+                                                            <td class="center">
+                                                                <input type="checkbox" name="know_choclick" class="{$know.know_keys}" title="{$know.know_name}" abc="news{$i}">
+                                                            </td>
+                                                            <td class="center">{$i}</td>
+                                                            <td class="center">{$know.know_name}</td>
+                                                            <td style="padding-left:10px">{$know.know_keys}</td>
+                                                        </tr>
+                                                    </volist>
+                                                </table>
+                                            </div>
+                                            <?php }?>
+                                            <div style="width:700px;padding-bottom:20px;" class="fracmodal">
+                                            </div>
+                                        </div>
+                                    </div><!-- /.table-responsive -->
+                                </div><!-- /span -->
+                            </div><!-- /row -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <!--endprint-->
+
+    <input type="hidden" class="schName" value="<?php echo $_GET['ocode']?>">
+
+    <!--<script src="__PUBLIC__/Admin/assets/js/report.js"></script>-->
+    <script>
+        var url = $('#oa_url').val();
+        $(document).ready(function () {
+            var course_bh = "<?php echo $_GET['subject']?>";
+            if(!course_bh)
+            {
+                course_bh = 'total';
+            }
+            $("."+course_bh).removeAttr('class');
+            var id = "<?php echo $_GET['id']?>";
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/get_knowclickss",
+                type:'POST',
+                data:{know_id:id,sub:course_bh,tips:'sim1'},
+                dataType:'json',
+                success: function(data){
+                    $('#jian').highcharts({
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: '难度系数 0.8 ~ 1'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category'
+
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: ''
+                            },
+                            plotLines: [{ // mark the weekend
+                                color: 'red',
+                                width: 2,
+                                value: data.testnews[0],
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            }]
+
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''
+                        },
+
+                        series: [{
+                            name: '11',
+                            data: data.infos,
+                            dataLabels: {
+                                enabled: true,
+                                rotation:0,
+                                color: '#FFFFFF',
+                                align: 'center',
+                                format: '{point.y:.3f}', // one decimal
+                                y: 0, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '8px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                },
+                                maxPointWidth: -1
+                            }
+                        }]
+                    });
+                    $('#jian').append("<div style='padding-left:260px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;全区</div>");
+
+                }
+            });
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/get_knowclickss",
+                type:'POST',
+                data:{know_id:id,sub:course_bh,tips:'sim2'},
+                dataType:'json',
+                success: function(data){
+                    if(data.testnews[1]==0)
+                    {
+                        $('#zhon').hide();
+                    }
+                    $('#zhon').highcharts({
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: '难度系数 0.6 ~ 0.8'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category'
+
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: ''
+                            },
+                            plotLines: [{ // mark the weekend
+                                color: 'green',
+                                width: 2,
+                                value: data.tips,
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            },{ // mark the weekend
+                                color: 'red',
+                                width: 2,
+                                value: data.testnews[1],
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            }]
+
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''
+                        },
+
+                        series: [{
+                            name: '11',
+                            data: data.infos,
+                            dataLabels: {
+                                enabled: true,
+                                rotation:0,
+                                color: '#FFFFFF',
+                                align: 'center',
+                                format: '{point.y:.3f}', // one decimal
+                                y: 0, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '8px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                },
+                                maxPointWidth: -1
+                            }
+                        }]
+                    });
+                    $('#zhon').append("<div style='padding-left:260px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;全区</div>");
+
+                }
+            });
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/get_knowclickss",
+                type:'POST',
+                data:{know_id:id,sub:course_bh,tips:'sim4'},
+                dataType:'json',
+                success: function(data){
+                    if(data.testnews[3] == 0){
+                        $('#nan1').hide();
+                    }
+                    $('#nan1').highcharts({
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: '难度系数 0.2 ~ 0.4'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category'
+
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: ''
+                            },
+                            plotLines: [{ // mark the weekend
+                                color: 'green',
+                                width: 2,
+                                value: data.tips,
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            },{ // mark the weekend
+                                color: 'red',
+                                width: 2,
+                                value: data.testnews[3],
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            }]
+
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''
+                        },
+
+                        series: [{
+                            name: '11',
+                            data: data.infos,
+                            dataLabels: {
+                                enabled: true,
+                                rotation:0,
+                                color:'#ffffff',
+                                align: 'center',
+                                format: '{point.y:.3f}', // one decimal
+                                y: 0, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '8px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                },
+                                maxPointWidth: -1
+                            }
+                        }]
+                    });
+                    $('#nan1').append("<div style='padding-left:260px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;全区</div>");
+
+                }
+            });
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/get_knowclickss",
+                type:'POST',
+                data:{know_id:id,sub:course_bh,tips:'sim5'},
+                dataType:'json',
+                success: function(data){
+                    if(data.testnews[4] == 0){
+                        $('#nan2').hide();
+                    }
+                    $('#nan2').highcharts({
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: '难度系数 0 ~ 0.2'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category'
+
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: ''
+                            },
+                            plotLines: [{ // mark the weekend
+                                color: 'green',
+                                width: 2,
+                                value: data.tips,
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            },{ // mark the weekend
+                                color: 'red',
+                                width: 2,
+                                value: data.testnews[4],
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            }]
+
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''
+                        },
+
+                        series: [{
+                            name: '11',
+                            data: data.infos,
+                            dataLabels: {
+                                enabled: true,
+                                rotation:0,
+                                color:'#ffffff',
+                                align: 'center',
+                                format: '{point.y:.3f}', // one decimal
+                                y: 0, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '8px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                },
+                                maxPointWidth: -1
+                            }
+                        }]
+                    });
+                    $('#nan2').append("<div style='padding-left:260px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;全区</div>");
+
+                }
+            });
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/get_knowclickss",
+                type:'POST',
+                data:{know_id:id,sub:course_bh,tips:'sim3'},
+                dataType:'json',
+                success: function(data){
+                    $('#nan').highcharts({
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: '难度系数 0.4 ~ 0.6'
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category'
+
+                        },
+                        yAxis: {
+                            min: 0,
+                            title: {
+                                text: ''
+                            },
+                            plotLines: [{ // mark the weekend
+                                color: 'green',
+                                width: 2,
+                                value: data.tips,
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            },{ // mark the weekend
+                                color: 'red',
+                                width: 2,
+                                value: data.testnews[2],
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-40                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                }
+                            }]
+
+                        },
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: ''
+                        },
+
+                        series: [{
+                            name: '11',
+                            data: data.infos,
+                            dataLabels: {
+                                enabled: true,
+                                rotation:0,
+                                color: '#FFFFFF',
+                                align: 'center',
+                                format: '{point.y:.3f}', // one decimal
+                                y: 0, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '8px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                },
+                                maxPointWidth: -1
+                            }
+                        }]
+                    });
+                    $('#nan').append("<div style='padding-left:260px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;全区</div>");
+
+                }
+            });
+
+
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/imgReport",
+                type: 'POST',
+                data: {id:id,sub:course_bh},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#container').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: data.title+'各段堆积图'
+                            },
+                            xAxis: {
+                                categories: data.info.schoolname
+                            },
+                            yAxis: {
+                                min: 0,
+                                title: {
+                                    text: ''
+                                },
+                                ceiling:400,
+                                plotLines: [{
+                                    color: 'red',           //线的颜色，定义为红色
+                                    dashStyle: 'solid',     //默认值，这里定义为实线
+                                    value: 85,               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+                                    width: 1 ,               //标示线的宽度，2px
+                                    label:{
+                                        text:'',     //标签的内容
+                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                        x:-40  ,                       //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                        y:4
+                                    }
+                                },
+                                    {
+                                        color: 'green',           //线的颜色，定义为红色
+                                        dashStyle: 'solid',     //默认值，这里定义为实线
+                                        value: 30,               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+                                        width: 1   ,           //标示线的宽度，2px
+                                        label:{
+                                            text:'',     //标签的内容
+                                            align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                            x:-40  ,                       //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                            y:4
+                                        }
+                                    }
+                                ]
+                            },
+
+                            tooltip: {
+                                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.percentage:.0f}%)<br/>',
+                                shared: true
+                            },
+                            plotOptions: {
+                                column: {
+                                    stacking: 'percent',
+                                    pointWidth:25,
+                                    dataLabels: {
+                                        enabled: true,
+                                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                                        style: {
+                                            textShadow: '0 0 2px black'
+                                        }
+                                    }
+                                },
+                                series: {
+                                    allowPointSelect: false,//点击变色
+                                    cursor: 'pointer',
+                                    events: {
+                                        click: function(e) {
+                                            var class_name = e.point.category;
+                                            window.open('http://'+url+'/index.php/Report/class_rep/id/'+id+'/ocode/'+class_name);
+                                        },
+                                        legendItemClick: function() {
+                                            return false;
+                                        }
+                                    }
+                                }
+                            },
+                            series: [{
+                                name: 'A (15%)',
+                                color: '#CC0000 ',
+                                data: data.info.info.A,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            }, {
+                                name: 'B (25%)',
+                                color: '#EE7700',
+                                data: data.info.info.B,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            }, {
+                                name: 'C (30%)',
+                                color: '#DDAA00',
+                                data: data.info.info.C,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            },{
+                                name: 'D (25%)',
+                                color: '#88AA00',
+                                data: data.info.info.D,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            },{
+                                name: 'E (5%)',
+                                color: '#00AA00',
+                                data: data.info.info.E,
+                                dataLabels: {
+                                    style: {
+                                        fontSize: '9px'
+                                    }
+                                }
+                            }]
+                        });
+                        $('#container').append("<div style='padding-left:240px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;85%</div>");
+                        $('#container').append("<div style='padding-left:80px;float:left'><p style='height: 10px;width:25px;border-bottom:2px solid green;float: left'></p>&nbsp;30%</div>");
+
+                    }
+                }
+            });
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/composliteAll",
+                type: 'POST',
+                data: {id:id,subject:course_bh},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#compolite').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: '各校'+data.title+'综合指数柱状图'
+                            },
+                            subtitle: {
+                                text: ''
+                            },
+                            xAxis: {
+                                type: 'category'
+
+                            },
+                            yAxis: {
+                                min: 0,
+                                title: {
+                                    text: ''
+                                },
+                                plotLines: [{ // mark the weekend
+                                    color: 'red',
+                                    width: 2,
+                                    value: 3,
+                                    dashStyle: 'solid',
+                                    label:{
+                                        text:'',     //标签的内容
+                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                        x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                    }
+                                },{ // mark the weekend
+                                    color: 'red',
+                                    width: 1,
+                                    value: 2.5,
+                                    dashStyle: 'solid',
+                                    label:{
+                                        text:'',     //标签的内容
+                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                        x:10                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                    }
+                                }]
+
+                            },
+                            legend: {
+                                enabled: false
+                            },
+                            tooltip: {
+                                pointFormat: ''
+                            },
+                            series: [{
+                                name: '11',
+                                data: data.infos,
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.3f}', // one decimal
+                                    y: 0, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '7px'
+                                    }
+                                }
+                            }]
+                        });
+                        $('.classgood').html(data.good);
+                        $('.classlow').html(data.low);
+                        $('#compolite').append("<div style='padding-left:260px'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;综合指数标准线</div>");
+
+                    }
+                }
+            });
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/standardScore",
+                type: 'POST',
+                data: {id:id,subject:course_bh},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success == true) {
+                        $('#stand').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: data.title+'平均分的标准分'
+                            },
+                            subtitle: {
+                                text: ''
+                            },
+                            xAxis: {
+                                type: 'category'
+
+                            },
+                            yAxis: {
+                                min: 0,
+                                title: {
+                                    text: ''
+                                },
+                                plotLines: [{ // mark the weekend
+                                    color: 'red',
+                                    width: 2,
+                                    value: 500,
+                                    dashStyle: 'solid',
+                                    label:{
+                                        text:'',     //标签的内容
+                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                        x:-40,                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                        y:10
+                                    }
+                                }]
+
+                            },
+                            legend: {
+                                enabled: false
+                            },
+                            tooltip: {
+                                pointFormat: ''
+                            },
+                            series: [{
+                                name: '11',
+                                data: data.infos,
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:-90,
+                                    color: '#FFFFFF',
+                                    align: 'right',
+                                    format: '{point.y:.1f}', // one decimal
+                                    y: 10, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '10px',
+                                        fontFamily: 'Verdana, sans-serif'
+                                    }
+                                }
+                            }]
+                        });
+                        $('.allclassgood').html(data.good);
+                        $('.allclasslow').html(data.low);
+                        $('#stand').append("<div style='padding-left:260px'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;平均分标准分</div>");
+
+                    }
+                }
+            });
+            $.ajax({
+                url: "http://" + url + "/index.php/Comment/getsomeinfo",
+                type: 'POST',
+                data: {id:id,subject:course_bh},
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data.success == true) {
+//                        $('#someall').highcharts({
+//                            chart: {
+//                                type: 'column'
+//                            },
+//                            title: {
+//                                text: '各校前15%及后30%学生比率柱状图'
+//                            },
+//                            xAxis: {
+//                                categories: data.schoolname
+//                            },
+//                            yAxis: {
+//                                ceiling:400,
+//                                title: {
+//                                    text: ''
+//                                },
+//                                plotLines: [{
+//                                    color: 'red',           //线的颜色，定义为红色
+//                                    dashStyle: 'solid',     //默认值，这里定义为实线
+//                                    value: data.infos.A[0],               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+//                                    width: 1,                //标示线的宽度，A2px
+//                                    label:{
+//                                        text:'',     //标签的内容
+//                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+//                                        x:-40  ,                       //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+//                                        y:4
+//                                    }
+//                                },
+//                                    {
+//                                        color: 'green',           //线的颜色，定义为红色
+//                                        dashStyle: 'solid',     //默认值，这里定义为实线
+//                                        value: data.infos.E[0],               //定义在那个值上显示标示线，这里是在x轴上刻度为3的值处垂直化一条线
+//                                        width: 1 ,                //标示线的宽度，2px
+//                                        label:{
+//                                            text:'',     //标签的内容
+//                                            align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+//                                            x:-40  ,                       //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+//                                            y:4
+//                                        }            //标示线的宽度，2px
+//                                    }
+//                                ]
+//                            },
+//                            credits: {
+//                                enabled: false
+//                            },
+//                            series: [{
+//                                name: '前15%',
+//                                data: data.infos['A'],
+//                                color:'red',
+//                                dataLabels: {
+//                                    enabled: true,
+//                                    rotation:-90,
+//                                    color: '#FFFFFF',
+//                                    align: 'right',
+//                                    format: '{point.y:.0f}', // one decimal
+//                                    y: 10, // 10 pixels down from the top
+//                                    style: {
+//                                        fontSize: '9px',
+//                                        fontFamily: 'Verdana, sans-serif'
+//                                    }
+//                                }
+//                            }, {
+//                                name: '后30%',
+//                                data: data.infos['E'],
+//                                dataLabels: {
+//                                    enabled: true,
+//                                    rotation:-90,
+//                                    color: '#FFFFFF',
+//                                    align: 'center',
+//                                    format: '{point.y:.2f}', // one decimal
+//                                    y: 8, // 10 pixels down from the top
+//                                    style: {
+//                                        fontSize: '9px'
+//                                    }
+//                                }
+//                            }]
+//                        });
+                        $('#someall').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: '各校前15%学生比率柱状图'
+                            },
+                            subtitle: {
+                                text: ''
+                            },
+                            xAxis: {
+                                type: 'category'
+
+                            },
+                            yAxis: {
+                                min: 0,
+                                title: {
+                                    text: ''
+                                },
+                                plotLines: [{ // mark the weekend
+                                    color: 'red',
+                                    width: 2,
+                                    value: data.arearate.A,
+                                    dashStyle: 'solid',
+                                    label:{
+                                        text:'',     //标签的内容
+                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                        x:-40,                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                        y:10
+                                    }
+                                }]
+
+                            },
+                            legend: {
+                                enabled: false
+                            },
+                            tooltip: {
+                                pointFormat: ''
+                            },
+                            series: [{
+                                name: '11',
+                                data: data.infos['A'],
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.1f}', // one decimal
+                                    y: 0, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '8px',
+                                        fontFamily: 'Verdana, sans-serif'
+                                    }
+                                }
+                            }]
+                        });
+                        $('#someall2').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: '各校前40%学生比率柱状图'
+                            },
+                            subtitle: {
+                                text: ''
+                            },
+                            xAxis: {
+                                type: 'category'
+
+                            },
+                            yAxis: {
+                                min:10,
+                                title: {
+                                    text: ''
+                                },
+                                plotLines: [{ // mark the weekend
+                                    color: 'red',
+                                    width: 2,
+                                    value: data.arearate.B,
+                                    dashStyle: 'solid',
+                                    label:{
+                                        text:'',     //标签的内容
+                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                        x:-40,                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                        y:10
+                                    }
+                                }]
+
+                            },
+                            legend: {
+                                enabled: false
+                            },
+                            tooltip: {
+                                pointFormat: ''
+                            },
+                            series: [{
+                                name: '11',
+                                data: data.infos['B'],
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.1f}', // one decimal
+                                    y: 0, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '8px',
+                                        fontFamily: 'Verdana, sans-serif'
+                                    }
+                                }
+                            }]
+                        });
+                        $('#someall1').highcharts({
+                            chart: {
+                                type: 'column'
+                            },
+                            title: {
+                                text: '各校后30%学生比率柱状图'
+                            },
+                            subtitle: {
+                                text: ''
+                            },
+                            xAxis: {
+                                type: 'category'
+
+                            },
+                            yAxis: {
+                                max: -20,
+                                min:-100,
+                                title: {
+                                    text: ''
+                                },
+                                plotLines: [{ // mark the weekend
+                                    color: 'red',
+                                    width: 2,
+                                    value: -data.arearate.E,
+                                    dashStyle: 'solid',
+                                    label:{
+                                        text:'',     //标签的内容
+                                        align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                        x:-40,                         //标签相对于被定位的位置水平偏移的像素，重新定位，水平居左10px
+                                        y:10
+                                    }
+                                }]
+
+                            },
+                            legend: {
+                                enabled: false
+                            },
+                            tooltip: {
+                                pointFormat: ''
+                            },
+                            series: [{
+                                name: '11',
+                                data: data.infos['E'],
+                                dataLabels: {
+                                    enabled: true,
+                                    rotation:0,
+                                    color: '#FFFFFF',
+                                    align: 'center',
+                                    format: '{point.y:.1f}', // one decimal
+                                    y: 0, // 10 pixels down from the top
+                                    style: {
+                                        fontSize: '8px',
+                                        fontFamily: 'Verdana, sans-serif'
+                                    }
+                                }
+                            }]
+                        });
+
+                        $('#someall').append("<div style='padding-left:260px;'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;前15%全区平均水平</div>");
+                        $('#someall1').append("<div style='padding-left:260px;'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;后30%全区平均水平</div>");
+                        $('#someall2').append("<div style='padding-left:260px;'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;前30%全区平均水平</div>");
+
+                        $('.aclassgood').html(data.good);
+                        $('.aclasslow').html(data.low);
+                        $('.bclassgood').html(data.bgood);
+                        $('.bclasslow').html(data.blow);
+                    }
+                }
+            })
+
+        });
+        $('input[name=know_choclick]').click(function () {
+            $('input[name=know_choclick]').removeAttr('checked');
+            $(this).attr('checked','checked');
+            var title = $(this).attr('title');
+            var know_id = "<?php echo $_GET['id']?>";
+            var sub = "<?php echo $_GET['subject']?>" ? "<?php echo $_GET['subject']?>" : 'chi';
+            var subval = $(this).attr('class');
+            var vals = $(this).attr('abc');
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/get_knowclick",
+                type:'POST',
+                data:{know_id:know_id,sub:sub,subval:subval},
+                dataType:'json',
+                success: function(data){
+                    var div =  "<div id="+vals+" style='width:700px;height:390px;border:1px solid #999;padding:20px'></div>";
+
+                    var tr = '';
+                    for(var j=0;j<data.arr_name.length;j++) {
+                        tr += "<th width='42px' style='border:1px solid #999;text-align:center'>"+data.arr_name[j]+"</th>";
+                    };
+                    $('.fracmodal').append(div);
+                    $('.fracmodal').append("<table><tr><th width='50px' style='border:1px solid #999;text-align:center'></th>"+tr+"</tr>");
+
+                    for (var i=0;i<data.title.length;i++)
+                    {
+                        var ps = '';
+                        var psval = '';
+                        ps = "<th width='50px' style='border:1px solid #999;text-align:center'>"+data.title[i]+"</th>";
+                        for(var j=0;j<data.arr_name.length;j++)
+                        {
+                            psval += "<th width='42px' style='border:1px solid #999;text-align:center'>"+data.arr_info[j][i]+"</th>";
+                        }
+                        $('.fracmodal').append("<table><tr>"+ps+psval+"</table></tr>");
+                    }
+                    $("#"+vals).highcharts({
+                        chart: {
+                            type: 'column'
+                        },
+                        title: {
+                            text: title
+                        },
+                        subtitle: {
+                            text: ''
+                        },
+                        xAxis: {
+                            type: 'category',
+                            labels: {
+                                rotation: -45,
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        },
+                        yAxis:{
+                            title: {
+                                text: ''
+                            },
+                            plotLines: [{ // mark the weekend
+                                color: 'red',
+                                width: 1,
+                                value: data.tips,
+                                dashStyle: 'solid',
+                                label:{
+                                    text:'',     //标签的内容
+                                    align:'left',                //标签的水平位置，水平居左,默认是水平居中center
+                                    x:-50,
+                                    y:3
+                                }
+                            }]
+                        },
+
+                        legend: {
+                            enabled: false
+                        },
+                        tooltip: {
+                            pointFormat: 'Population in 2008: <b>{point.y:.1f} millions</b>'
+                        },
+                        series: [{
+                            name: 'Population',
+                            data: data.infos,
+                            dataLabels: {
+                                enabled: true,
+                                rotation: -90,
+                                color: '#FFFFFF',
+                                align: 'right',
+                                format: '{point.y:.1f}', // one decimal
+                                y: 10, // 10 pixels down from the top
+                                style: {
+                                    fontSize: '13px',
+                                    fontFamily: 'Verdana, sans-serif'
+                                }
+                            }
+                        }]
+                    });
+                    $("#"+vals).append("<div style='padding-left:280px'><p style='height: 10px;width:25px;border-bottom:2px solid red;float: left'></p>&nbsp;水平线</div>");
+
+                }
+            })
+        });
+        $("#print").click(function () {
+            bdhtml=window.document.body.innerHTML;
+            sprnstr="<!--startprint-->";
+            eprnstr="<!--endprint-->";
+            prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);
+            prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));
+            window.document.body.innerHTML=prnhtml;
+            window.print();
+        })
+
+    </script>
+</block>
+
+
+

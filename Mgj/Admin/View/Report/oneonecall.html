@@ -1,0 +1,260 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">报表统计</a>
+                </li>
+            </ul><!-- .breadcrumb -->
+            <div class="nav-search" id="nav-search">
+                <form action="" method="get">
+                    <label>
+                        <select name="state" aria-controls="dataTables-example" class="form-control input-sm state">
+                            <option value="0" selected>远程</option>
+                            <option value="1" <if condition="$api eq 1">selected</if>>本地</option>
+                        </select>
+                    </label>
+                    <span class="input-icon">
+                <input type="text" name="name" placeholder="考试名称"  class="nav-search-input proname" id="nav-search-input" autocomplete="off"/>
+                <span class="prosearch">
+
+                    <if condition="$setpro eq 1">
+                        <input type="submit" class="btn btn-primary btn-xs"  value="搜索" >
+
+                        <else/>
+                        <input type="button" class="btn btn-primary btn-xs prosearchb"  value="搜索" >
+                    </if>
+                </span>
+
+                <i class="icon-search nav-search-icon"></i>
+            </span>
+                </form>
+            </div>
+
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    报表统计
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        考试列表
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <form action="" method="post">
+                                            <table id="sample-table-1" class="table table-striped table-bordered table-hover" style="text-align:center;">
+                                                <thead>
+                                                <tr>
+                                                    <th class="center">考试名称</th>
+                                                    <th class="center">创建人</th>
+                                                    <th class="center">考试时间</th>
+                                                    <th class="center">创建时间</th>
+                                                    <th class="center">操作</th>
+                                                </thead>
+                                                <tbody>
+                                                <volist name="exam" id="vo">
+                                                    <tr>
+                                                        <th class="">{$vo.name}
+                                                            <if condition="$vo.state eq 0">
+                                                                <span style="color:green">(单校)</span>
+                                                                <else/>
+                                                                <span style="color:deepskyblue">(联考)</span>
+                                                            </if>
+                                                        </th>
+                                                        <th class="center">{$vo.username}</th>
+                                                        <th class="center">{$vo.examtime}</th>
+                                                        <th class="center">{$vo.regtime}</th>
+                                                        <th class="center">
+                                                            <if condition="$vo.pid eq 0">
+                                                                <a href="{:U('Api/localexcel',array('id'=>$vo[id],'state'=>$vo[state],'name'=>$vo[name],'schoolname'=>$vo[schoolname]))}">下载excel</a> &nbsp;
+
+                                                                <a href="{:U('Report/call_info',array('id'=>$vo[id],'state'=>$vo[state],'schoolname'=>$vo[schoolname]))}" >查看</a>
+                                                                <else/>
+                                                                <a href="{:U('Api/localexcel',array('id'=>$vo[pid],'state'=>$vo[state],'name'=>$vo[name],'schoolname'=>$vo[schoolname]))}">下载excel</a> &nbsp;
+
+                                                                <a href="{:U('Report/call_info',array('id'=>$vo[pid],'state'=>$vo[state],'schoolname'=>$vo[schoolname]))}" >查看</a>
+                                                            </if>
+
+                                                        </th>
+                                                    </tr>
+                                                </volist>
+
+                                                </tbody>
+                                                <tr>
+                                                    <td colspan="10" id="pages"><div class="row"><div class="col-md-5"></div>{$page}</td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </div><!-- /.table-responsive -->
+                                    <ul class="pages">
+                                    </ul>
+                                </div><!-- /span -->
+                            </div><!-- /row -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <input type="hidden" value="{$state}" class="apistate">
+    <script>
+        var url = $('#oa_url').val();
+        $(document).ready(function () {
+            if($('.state').val() == 1 ){
+                return false;
+            }
+            var state = $('.apistate').val();
+            var schoolname = $('.rep_schname').html();
+            $('.pages').html('');
+            $('.table-responsive table tbody').html('');
+            $.ajax({
+                url:"http://"+url+"/index.php/Api/getManyExam",
+                type:'POST',
+                data:{schoolname:schoolname,state:state},
+                dataType:'json',
+                success: function(data){
+                    $(data.data).each(function () {
+                        if(this.state == 0){
+                            var state = '单校';
+                        }else{
+                            var state = '联考';
+                        }
+                        tr = "<tr><th class=''>"+this.name+" <span style='color:lightseagreen'>("+state+")</span></th> <th class='center'>"+this.username+
+                                "</th><th class='center'>"+this.examtime+"</th> <th class='center'>"+this.regtime+"</th>" +
+                                "<th class='center'><a href='http://localhost:8080/index.php/Api/exportexcel?id="+this.pid+"&state="+this.state+"&name="+this.name+"&schoolname="+this.schoolname+"'>下载excel</a>&nbsp;&nbsp;<a href='javascript:;' class='getApiinfo' abc="+this.pid+" name="+this.schoolname+">查看</a>" +
+                                "</th></tr>";
+                        $('.table-responsive table').append(tr);
+                    });
+                    for(var i =1;i<=data.p;i++)
+                    {
+                        var li = "<li>"+i+"</li>";
+                        $('.pages').append(li);
+                    }
+                }
+            })
+        });
+        $(document).on('click','.pages li',function () {
+            $('.pages li').css('border','1px solid lightgoldenrodyellow');
+            $(this).css('border','2px solid #c09853');
+            var p = $(this).html();
+            var schoolname = $('.rep_schname').html();
+            $('.table-responsive table tbody').html('');
+            $.ajax({
+                url:"http://"+url+"/index.php/Api/getManyExam?p="+p,
+                type:'POST',
+                data:{schoolname:schoolname},
+                dataType:'json',
+                success: function(data){
+                    $(data.data).each(function () {
+                        tr = "<tr><th class=''>"+this.name+" <span style='color:green'>(联考)</span></th> <th class='center'>"+this.username+
+                                "</th><th class='center'>"+this.examtime+"</th> <th class='center'>"+this.regtime+"</th>" +
+                                "<th class='center'><a href='http://localhost:8080/index.php/Api/exportexcel?id="+this.pid+"&state="+this.state+"&name="+this.name+"&schoolname="+this.schoolname+"'>下载excel</a>&nbsp;&nbsp;<a href='http://"+url+"/index.php/Api/getSchinfo?id="+this.id+"&state="+this.state+"'>查看</a>" +
+                                "</th></tr>";
+                        $('.table-responsive table').append(tr);
+                    });
+
+                }
+            })
+        });
+        $(document).on('click','.prosearchb',function () {
+            var state = $('.state').val();
+            if($('.state').val() == 1){
+                return false;
+            }
+            var schoolname = $('.rep_schname').html();
+            $('.pages').html('');
+            $('.table-responsive table tbody').html('');
+            $.ajax({
+                url:"http://"+url+"/index.php/Api/getManyExam",
+                type:'POST',
+                data:{schoolname:schoolname,name:$('.proname').val()},
+                dataType:'json',
+                success: function(data){
+                    $(data.data).each(function () {
+                        if(this.state == 0){
+                            var state = '单校';
+                        }else{
+                            var state = '联考';
+                        }
+                        tr = "<tr><th>"+this.name+" <span style='color:green'>("+state+")</span></th> <th class='center'>"+this.username+
+                                "</th><th class='center'>"+this.examtime+"</th> <th class='center'>"+this.regtime+"</th>" +
+                                "<th class='center'><a href='http://localhost:8080/index.php/Api/exportexcel?id="+this.pid+"&state="+this.state+"&name="+this.name+"&schoolname="+this.schoolname+"'>下载excel</a>&nbsp;&nbsp;<a href='javascript:;' class='getApiinfo' abc="+this.pid+" name="+this.schoolname+">查看</a>" +
+                                "</th></tr>";
+                        $('.table-responsive table').append(tr);
+                    });
+                    for(var i =1;i<=data.p;i++)
+                    {
+                        var li = "<li>"+i+"</li>";
+                        $('.pages').append(li);
+                    }
+                }
+            })
+        });
+
+        $('.state').change(function () {
+            if($(this).val() == 0)
+            {
+                button = "<input type='button' class='btn btn-primary btn-xs prosearchb'  value='搜索' >";
+            }
+            else
+            {
+                button = "<input type='submit' class='btn btn-primary btn-xs setpro' value='搜索' >";
+            }
+            $('.prosearch').html(button)
+        });
+
+        $(document).on('click','.getApiinfo',function () {
+            var id = $(this).attr('abc');
+            var name = $(this).attr('name');
+            window.location.href="http://"+url+"/index.php/Api/manyExamInfo?id="+id+"&state=0&schoolname="+name+"";
+        });
+    </script>
+</block>
+
+
+
+

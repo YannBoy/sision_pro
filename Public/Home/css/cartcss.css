@@ -1,0 +1,39 @@
+/*-----------------------------------------------------------*/
+.total_price {
+    color: #ff4f7c;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Microsoft YaHei',sans-serif;
+}
+.total_num {
+    line-height: 46px;
+}
+
+.cart-name-font{
+    display: block;
+    line-height: 20px;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.single-price{
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.font-15{
+    font-size: 40px;
+}
+
+.price{
+    color: #f13e3a;
+    font-size: 16px!important;
+}
+
+.cutNum, .addNum{
+    cursor: pointer;
+    font-size: 6px;
+}

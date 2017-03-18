@@ -1,0 +1,113 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">个人中心</a>
+                </li>
+                <li class="active">通讯录</li>
+            </ul><!-- .breadcrumb -->
+
+
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    个人中心
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        通讯录
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="table-responsive">
+
+                                    <table id="sample-table-1" class="table table-striped table-bordered table-hover" style="text-align:center;">
+                                        <thead>
+                                        <tr>
+                                            <th class="center">ID</th>
+                                            <th class="center">用户组名称</th>
+                                            <!-- <th class="center" class="hidden-480">权限</th> -->
+                                            <th class="center" class="hidden-480">操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <volist name="data" id="data">
+                                        <tr>
+                                            <td>{$i}</td>
+                                            <td class="center">{$data.name}</td>
+                                            <td class="">
+                                                <a href="{:U('Public/friend_peo',array('id'=>$data['id']))}"><button type="button" class="btn btn-info btn-xs find_group" name="{$data.id}" >查看成员</button></a>
+                                                <button type="button" class="btn btn-warning btn-xs del_group" name="{$data.id}">删除</button>
+                                            </td>
+                                        </tr>
+                                        </volist>
+                                        <tr>
+                                            <td colspan="5" id="pages"><div class="row"><div class="col-md-5"></div>{$page}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bs-example-modal-sm">添加分组</button>
+                            </div><!-- /.table-responsive -->
+                        </div><!-- /span -->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" >
+            <div class="modal-content" style="height:250px">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加分组</h4>
+                </div>
+                <div style="padding-top: 20px;margin:0 auto;width:350px;">
+                    <h5>分组名称:</h5>
+                    <input type="text" class="form-control name" style="width:300px">
+                </div>
+                <button class="btn btn-primary btn-sm pull-right add_group" style="margin-right: 20px;margin-top:30px;">确定</button>
+            </div>
+        </div>
+    </div>
+</block>

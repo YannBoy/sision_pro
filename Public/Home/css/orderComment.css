@@ -1,0 +1,443 @@
+.imgTop{
+    height: 302px;
+    width: 302px;
+}
+
+/* 评分css */
+.comment_show .rating{
+    width:80px;
+    height:16px;
+    margin:0 0 20px 0;
+    padding:0;
+    list-style:none;
+    clear:both;
+    position:relative;
+    background: url("../images/star-matrix.gif") no-repeat 0 0;
+}
+
+.comment_show ul.rating li {
+    cursor: pointer;
+    float:left;
+    text-indent:-999em;
+}
+.comment_show ul.rating li a {
+    position:absolute;
+    left:0;
+    top:0;
+    width:16px;
+    height:16px;
+    text-decoration:none;
+    z-index: 200;
+}
+.comment_show ul.rating li.one a {left:0}
+.comment_show ul.rating li.two a {left:16px;}
+.comment_show ul.rating li.three a {left:32px;}
+.comment_show ul.rating li.four a {left:48px;}
+.comment_show ul.rating li.five a {left:64px;}
+.comment_show ul.rating li a:hover {
+    z-index:2;
+    width:80px;
+    height:16px;
+    overflow:hidden;
+    left:0;
+    background: url("../images/star-matrix.gif") no-repeat 0 0
+}
+.comment_show ul.rating li.one a:hover {background-position:0 -96px;}
+.comment_show ul.rating li.two a:hover {background-position:0 -112px;}
+.comment_show ul.rating li.three a:hover {background-position:0 -128px}
+.comment_show ul.rating li.four a:hover {background-position:0 -144px}
+.comment_show ul.rating li.five a:hover {background-position:0 -160px}
+
+
+.clearfix:after {
+    clear: both;
+    content: " ";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.pd12 {
+    padding: 12px;
+}
+.focus {
+    border: 1px solid #e0e0e0;
+}
+.clearfix {
+    display: block;
+}
+.property {
+    float: right;
+    text-align: left;
+    width: 360px;
+}
+.property h1 {
+    border-bottom: 1px solid #dedede;
+    color: gray;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 7px;
+    padding-bottom: 10px;
+}
+
+.property p {
+    line-height: 20px;
+    margin-top: 9px;
+}
+.property p .price {
+    color: #eb6100;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-right: 40px;
+}
+
+.property p .scores em {
+    background: url("../images/scores_bg.gif") no-repeat rgba(0, 0, 0, 0);
+    background-size: 180px 20px;
+    color: #fff;
+    display: inline-block;
+}
+.property p .fav {
+    background: url("../images/icon_fav.gif") no-repeat scroll left center rgba(0, 0, 0, 0);
+    padding-left: 25px;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+.property .summary {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #dedede -moz-use-text-color;
+    border-image: none;
+    border-style: solid none;
+    border-width: 1px medium;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+.clearfix {
+    display: block;
+}
+.property .summary ul li {
+    border: 1px solid #ccc;
+    display: block;
+    float: left;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 8px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 20px;
+}
+.specinfotext {
+    color: #333;
+    cursor: pointer;
+    float: left;
+    text-align: center;
+}
+.property .summary ul li img {
+    font-size: 0;
+    vertical-align: top;
+}
+.mg20b {
+    margin-bottom: 20px;
+}
+input.field_num {
+    margin: 0 10px;
+    padding: 2px 3px;
+    width: 40px;
+}
+.field, input.field_num {
+    border: 1px solid #ccc;
+    height: 14px;
+    line-height: 16px;
+    padding: 7px 5px;
+}
+
+.property .linkPan {
+    position: relative;
+}
+.property .listBtns li {
+    float: left;
+    width: 125px;
+}
+
+.imageViewerFrame {
+    float: left;
+    width: 306px;
+}
+
+.imageViewerFrame .imgTop {
+    height: 302px;
+    width: 302px;
+}
+.imageViewerFrame .imgTop a {
+    border: 1px solid #cfcfcf;
+    cursor: crosshair;
+    display: block;
+    height: 300px;
+    width: 300px;
+}
+.MagicZoomBigImageCont {
+    border: 1px solid #ccc;
+}
+.MagicZoomLoading {
+    background: none repeat scroll 0 0 #fff;
+    border-color: #ccc;
+    border-right: 1px solid #ccc;
+    border-style: solid;
+    border-width: 1px;
+    color: #444;
+    display: none;
+    opacity: 0.8;
+    padding: 3px !important;
+    text-align: center;
+}
+.imageViewerFrame .imgList {
+    text-align: left;
+}
+.imageViewerFrame .imgList span {
+    display: block;
+    float: left;
+    height: 22px;
+    margin-top: 25px;
+    text-indent: -9999px;
+    width: 24px;
+}
+.imgList .l_none {
+    background-position: left -25px;
+}
+
+.imageViewerFrame .listPan {
+    float: left;
+    margin-left: 8px;
+    overflow: hidden;
+    width: 245px;
+}
+.imageViewerFrame .itmesList li {
+    float: left;
+    height: 56px;
+    margin-right: 5px;
+    padding-top: 12px;
+    text-align: center;
+    width: 56px;
+}
+
+.imageViewerFrame .imgList span {
+    display: block;
+    float: left;
+    height: 22px;
+    margin-top: 25px;
+    text-indent: -9999px;
+    width: 24px;
+}
+.imgList .r_none {
+    background-position: -24px -25px;
+}
+.imageViewerFrame .share {
+    background: url("../images/share_bg.gif") no-repeat scroll left top rgba(0, 0, 0, 0);
+    height: 32px;
+    line-height: 32px;
+    margin-top: 15px;
+    padding: 0 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+.imageViewerFrame .share a {
+    margin-right: 10px;
+}
+
+.imageViewerFrame .share img {
+    vertical-align: text-bottom;
+}
+
+.itemDetail {
+    margin-top: 40px;
+    text-align: left;
+}
+.itemDetail .list_tab {
+    border-bottom: 2px solid #ff8500;
+}
+
+.itemDetail .list_tab div {
+    float: left;
+    text-align: center;
+    width: 115px;
+}
+.mg20b {
+    margin-bottom: 20px;
+}
+
+.itemDetail .list_tab div a {
+    background-color: #ff8500;
+     color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: bolder;
+    margin-bottom: 2px;
+    padding: 9px 0;
+}
+.tab_attributes {
+    margin-bottom: 15px;
+}
+.tab_attributes td .text_right {
+    border-right: medium none;
+    font-weight: bolder;
+    text-align: right;
+    width: 10%;
+}
+.tab_attributes td {
+    background-color: #f5f5f5;
+    padding: 5px;
+}
+.mg30b {
+    margin-bottom: 30px;
+}
+#content_1 p {
+    line-height: 20px;
+    margin-bottom: 5px;
+    text-indent: 2em;
+}
+.pd12 {
+    padding: 12px;
+}
+.head_ttlm {
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 10px;
+    position: relative;
+}
+.head_ttlm .ttlm {
+    color: #f76f10;
+    font-size: 14px;
+    font-weight: bolder;
+}
+.tags {
+    line-height: 22px;
+    padding-top: 15px;
+}
+.tag_input li {
+    float: left;
+}
+
+
+.itemDetail {
+    text-align: left;
+}
+
+.blank20 {
+    clear: both;
+    height: 20px;
+    visibility: hidden;
+
+}
+.head_ttlm .right {
+    position: absolute;
+    right: 5px;
+}
+.commetlogin .left {
+    font-size:12px;
+
+}
+
+.imageViewerFrame .itmesList li {
+    float: left;
+    height: 56px;
+    margin-right: 5px;
+    padding-top: 12px;
+    text-align: center;
+    width: 56px;
+}
+
+.comment_show .list_comment p em {
+    display: block;
+    float: right;
+    margin-top: 5px;
+}
+.comment_show .list_comment p {
+    line-height: 24px;
+}
+.imgList .roll_l, .imgList .roll_r, .imgList .l_none, .imgList .r_none {
+    background: url("../images/goods_icons.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+.imgList .r_none {
+    background-position: -24px -25px;
+}
+.imgList .l_none {
+    background-position: left -25px;
+}
+.pd12 {
+    padding: 12px;
+}
+.focus {
+    border: 1px solid #e0e0e0;
+}
+.t_l {
+    text-align: left;
+}
+.pd12 {
+    padding: 12px;
+}
+.tab_comt th {
+    padding: 14px 5px;
+
+}
+.field, input.field_num {
+    border: 1px solid #ccc;
+    height: 14px;
+    line-height: 16px;
+    padding: 7px 5px;
+}
+.tab_comt .list_rank li {
+    display: inline;
+    margin-right: 8px;
+}
+label {
+    cursor: pointer;
+}
+#main .area .rightCloumns {
+  height: auto;
+}
+.span9 {
+  width: 700px;
+}
+#main .area_r {
+  border: 1px solid #ccc;
+  margin: 4px 6px 10px 0px;
+  padding: 0px 8px;
+  height: auto;
+}
+.tab_comt th {
+  padding: 14px 5px;
+}
+.comment_show .rating {
+  width: 80px;
+  height: 16px;
+  margin: 0 0 20px 0;
+  padding: 0;
+  list-style: none;
+  clear: both;
+  position: relative;
+  background: url("../images/star-matrix.gif") no-repeat 0 0;
+}
+.comment_show ul.rating li {
+  cursor: pointer;
+  float: left;
+  text-indent: -999em;
+}
+
+.comment_show .nostar {background-position:0 0}
+.comment_show .onestar {background-position:0 -16px}
+.comment_show .twostar {background-position:0 -32px}
+.comment_show .threestar {background-position:0 -48px}
+.comment_show .fourstar {background-position:0 -64px}
+.comment_show .fivestar {background-position:0 -80px}
+
+table .span5 {
+  float: none;
+  width: 364px;
+  margin-left: 0;
+}
+

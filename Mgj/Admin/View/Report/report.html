@@ -1,0 +1,170 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">成绩报表</a>
+                </li>
+                <li class="active">成绩分析</li>
+            </ul><!-- .breadcrumb -->
+
+
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    成绩报表
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        成绩分析
+                    </small>
+                </h1>
+
+            </div><!-- /.page-header -->
+            <div  style="width:420px;margin: 0 auto">
+                <div style="width:40px;float:left;height:30px;line-height: 30px">
+                    班级:
+                </div>
+                <div style="width:100px;float:left">
+
+                    <select class="form-control col-xs-1" name="class">
+                        <option value="001">全部</option>
+                        <volist name="class_info" id="class_info">
+                            <option value="{$class_info.area_bh}{$class_info.ocode}{$class_info.class_bh}">{$class_info.class_name}</option>
+                        </volist>
+                    </select>
+                </div>
+                <div style="width:50px;float:left;height:30px;line-height: 30px">
+                    &nbsp;科目:
+                </div>
+                <div style="width:100px;float:left">
+
+                <select class="form-control col-xs-1" name="course">
+                    <volist name="class_name" id="class_name">
+                        <option value="{$class_name.id}">{$class_name.name}</option>
+                    </volist>
+                    <input type="hidden" class="ocode" value="<?php echo $_GET['ocode']?>">
+                    <input type="hidden" class="exam_id" value="<?php echo $_GET['id']?>">
+
+                </select>
+                </div>
+                <button type="button" style="margin-right: 50px;margin-top:2px" class="btn btn-danger btn-xs pull-right rep_select">查询</button>
+            </div>
+            <button type="button" class="pull-right btn-danger btn-xs tool" style="margin-top:8px;margin-right: 20px;">测量工具</button>
+
+            <div class="row" name="remove_tool">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <!-- PAGE CONTENT BEGINS -->
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div class="table-responsive">
+                                        <div class="tool_border" style="border-top:1px solid black;width:1000px;position: absolute;display: none;cursor: pointer;z-index: 1000000;"></div>
+                                        <div class="rep_first">
+                                            <div id="container" style="min-width:1000px;height:420px;"></div>
+                                            <button class="btn btn-info btn-xs pull-right rep_all_info" style="margin-right:50px;display:none">分析</button>
+                                        </div>
+                                        <!--<div class="rep_cha" style='display: none;'>-->
+                                            <!--<div id="rep_chose_cha" style="min-width:1000px;height:420px;"></div>-->
+                                            <!--<button class="btn btn-info btn-xs pull-right rep_cha_info" style="margin-right:50px;">分析</button>-->
+                                        <!--</div>-->
+
+                                        <div class="rep_lel" style='display: none;'>
+                                            <div id="report_chose" style="min-width:1000px;height:420px"></div>
+                                            <button class="btn btn-inverse btn-xs pull-right rep_info_btn" style="margin-right:50px;">返回</button>
+
+                                        </div>
+                                        <!--<div class="rep_lel_cha" style='display: none;'>-->
+                                            <!--<div id="report_chose_cha" style="min-width:1000px;height:420px"></div>-->
+                                            <!--<button class="btn btn-inverse btn-xs pull-right rep_info_btn" style="margin-right:50px;">返回</button>-->
+                                        <!--</div>-->
+
+                                           <div class="table-responsive reo_table_all" style="width:1000px;margin:0 auto;margin-top:30px;display:none">
+                                               <table class="table">
+                                                   <tr class="active rep_face">
+                                                       <th>#</th>
+                                                   </tr>
+
+                                                   <tr class="danger rep_face_a">
+                                                       <th>A</th>
+
+                                                   </tr>
+                                                   <tr class="rep_face_b">
+                                                       <th>B</th>
+
+                                                   </tr>
+                                                   <tr class="rep_face_c">
+                                                       <th>C</th>
+
+                                                   </tr>
+                                                   <tr class="rep_face_d">
+                                                       <th>D</th>
+
+                                                   </tr>
+                                                   <tr class="success rep_face_e">
+                                                       <th>E</th>
+
+                                                   </tr>
+                                                   <tbody class="rep_tbody">
+                                                   <tr class="rep_face_exam">
+
+                                                   </tr>
+                                                   </tbody>
+                                               </table>
+                                           </div>
+
+                                        <input type="hidden" value="{$exam_con.exam_name}(总分)" class="exam_title">
+                                        <input type="hidden" value="<?php echo $_GET['id']?>" class="rep_list_id">
+                                    </div><!-- /.table-responsive -->
+                                </div><!-- /span -->
+                            </div><!-- /row -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <script type="text/javascript" src="__PUBLIC__/Admin/js/highcharts.js"></script>
+    <script src="__PUBLIC__/Admin/js/highcharts-3d.js"></script>
+    <script src="__PUBLIC__/Admin/js/highcharts_exporting.js"></script>
+    <script src="__PUBLIC__/Admin/assets/js/report.js"></script>
+
+</block>
+
+
+

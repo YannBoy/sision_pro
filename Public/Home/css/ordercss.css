@@ -1,0 +1,73 @@
+.cart_header {
+    margin: 20px auto;
+    overflow: hidden;
+    height: 80px;
+}
+
+.color-red {
+    color: red;
+}
+
+.total_price {
+    color: #ff4f7c;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Microsoft YaHei', sans-serif;
+}
+
+.total_num {
+    line-height: 46px;
+}
+
+.adr-sub {
+    color: #fff;
+    border: 0;
+    background: #FEA611;
+}
+
+.adr-checked {
+    background: url('/Public/Home/images/y_lable.png') no-repeat right bottom;
+    border: 1px solid red;
+}
+
+.caption {
+    cursor: pointer;
+    min-height: 160px
+}
+
+.md-order-head {
+    padding: 50px 0 24px 0;
+    border-bottom: 3px solid #bcbcbc;
+}
+
+.fl {
+    float: left;
+    _display: inline;
+}
+
+.fr {
+    float: right;
+    _display: inline;
+}
+
+.md-order-head .mon-num {
+    color: #f36;
+    font: 700 24px/1 'Microsoft YaHei';
+}
+
+.cr{
+    color: red;
+}
+
+.md-order-head .tit-fw {
+    color: #666;
+    font: 400 12px/24px helvetica;
+}
+
+.effect-fade .dialog-box-container{
+    background: #DD5302;
+}
+
+.effect-fade .dialog-box-container h3{
+    color: white;
+}

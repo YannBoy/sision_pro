@@ -1,0 +1,174 @@
+<extend name="Common:index"/>
+<block name="main">
+    <style>
+        #pages a,#pages span{
+
+            float: left;
+            color: #337AB7;
+            padding: 6px 12px;
+            margin-left: -1px;
+            position: relative;
+            line-height: 1.42857;
+            text-decoration: none;
+            background-color: #FFF;
+            border: 1px solid #DDD;
+        }
+
+        #pages span{
+            color: #fff;
+            z-index: 2;
+            cursor:pointer;
+            border-color: #337ab7;
+            background-color: #337ab7;
+        }
+    </style>
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+                <li>
+                    <a href="#">校园访客</a>
+                </li>
+                <li class="active">重点人员</li>
+            </ul><!-- .breadcrumb -->
+
+        </div>
+
+        <div class="page-content" style="margin-left:20px;width:1000px;">
+            <div class="page-header">
+                <h1>
+                    校园访客
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        重点人员
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="col-xs-12">
+                                <div class="" id="nav-search" style="margin-bottom: 10px">
+                                    <form class="form-search" action="{:U('Visitor/importantpeo')}" method="get">
+                                        <input type="text" placeholder="学校名称" name="vs_ocodename" class="nav-search-input"  autocomplete="off" value="{$cond.vs_ocodename}"/>
+                                        <input type="text" placeholder="姓名" name="vs_username" class="nav-search-input"  autocomplete="off" value="{$cond.vs_username}"/>
+                                        开始时间:
+                                        <input type="text"  class="nav-search-input" id="begintime" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" name="starttime" placeholder="" value="{$cond.starttime}">
+                                        结束时间:
+                                        <input type="text"  class="nav-search-input" id="endtime" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" name="endtime" placeholder="" value="{$cond.endtime}">
+                                        <input type="submit" class="btn btn-primary btn-xs" value="搜索" style="border-radius:3px; height:28px; margin-top:-4px;">
+                                    </form>
+                                </div><!-- #nav-search -->
+                            <div class="table-responsive">
+                                <form action="" method="post">
+                                    <table id="sample-table-1" class="table table-striped table-bordered table-hover" style="text-align:center;">
+                                        <thead>
+                                        <tr>
+                                            <th class="center">记录号</th>
+                                            <th class="center">机构编号</th>
+                                            <th class="center">证件号</th>
+                                            <th class="center">姓名</th>
+                                            <th class="center">电话</th>
+                                            <th class="center">事件</th>
+                                            <th class="center">发生时间</th>
+                                            <th class="center">类型</th>
+                                            <th class="center">状态</th>
+                                            <th class="center">登记时间</th>
+                                            <th class="center">操作</th>
+                                        </thead>
+                                        <tbody>
+                                        <volist id="info" name="info">
+                                            <tr>
+                                                <td class="center">{$info.rec_id}</td>
+                                                <td class="center">{$info.hosid}</td>
+                                                <td class="center">{$info.cardid}</td>
+                                                <td class="center">{$info.sususername}</td>
+                                                <td class="center">{$info.sususertel}</td>
+                                                <td class="">{$info.susevent}</td>
+                                                <td class="center">{$info.sustime}</td>
+                                                <td class="center">{$info.sustype}</td>
+                                                <td class="center">{$info.susstate}</td>
+                                                <td class="center">{$info.regtime}</td>
+                                                <td class="center"><button type="button" class="btn btn-warning btn-xs delete_visitor" ab="visitorssususer" rec_id="{$info.rec_id}">删除</button></td>
+                                            </tr>
+                                        </volist>
+                                        <tr>
+                                            <td colspan="12" id="pages"><div class="row"><div class="col-md-13"></div>{$page}</td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <button type="button" class="btn btn-info btn-sm addimport">添加</button>
+                                <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">添加地区</button>-->
+                                <input type="hidden" id="url" value="<?php echo $_SERVER['HTTP_HOST'] ?>"/>
+                            </div><!-- /.table-responsive -->
+                        </div><!-- /span -->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="addGrowmodel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <form action="addimportantpeo" method="post">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">添加重点人员</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="cardid">证件号:</label>
+                            <input type="text" name="CardId" class="form-control" id="cardid" placeholder="">
+                            <label for="sususername">姓名:</label>
+                            <input type="text" name="SuSuserName" class="form-control" id="sususername" placeholder="">
+                            <label for="SuSuserTel">电话:</label>
+                            <input type="text" name="SuSuserTel" class="form-control" id="sususertel" placeholder="">
+                            <label for="SuSEvent">事件:</label>
+                            <input type="text" name="SuSEvent" class="form-control" id="susevent" placeholder="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary btn-xs">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var url = "<?php echo $_SERVER['HTTP_HOST'] ?>";
+        $('.delete_visitor').click(function () {
+            var table = $(this).attr('ab');
+            var rec_id = $(this).attr('rec_id');
+            $.ajax({
+                url:"http://"+url+"/index.php/Visitor/delete",
+                type:'POST',
+                data:{rec_id:rec_id,table:table},
+                dataType:'json',
+                success: function(data){
+                    if(data.success == true){
+                        window.location.reload();
+                    }else{
+                        alert('网络繁忙');
+                    }
+                }
+            })
+        });
+        $('.addimport').click(function () {
+            $('#addGrowmodel').modal('show');
+        })
+
+    </script>
+</block>
+

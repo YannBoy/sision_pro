@@ -1,0 +1,192 @@
+/*清空外边距*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+/*整体的div*/
+.dl{
+	width: 900px;
+	margin: 0px auto;
+	font-size: 12px;
+}
+
+/*logo显示*/
+.dl_logo{
+	width: 900px;
+	height: 57px;
+	margin-top: 25px;
+}
+
+/*修改密码主体*/
+.dl_main{
+	width: 838px;
+	/*height: 480px;*/
+	padding: 20px 30px;
+	margin: 30px auto;
+	border: 1px solid #dcdcdc;
+}
+
+/*进度条*/
+.step_box li span{
+	width:60px;
+	color:#ff5683;
+	display:block;
+	padding-top:35px;
+	text-align:center;
+	background-position:22px 0;
+	background:url("../images/ew_150x110.png") no-repeat;
+}
+
+.step_box{
+	background:url("../images/sew_15x4.png") left 13px repeat-x;
+	width:798px;
+	overflow:hidden;
+	margin:20px 0 60px;
+}
+
+.step_box ul{
+	margin-right:-300px;
+}
+
+.step_box li{
+	background-color:#fff;
+	float:left;
+	display:inline;
+	margin-right:300px;
+}
+
+.step_box li.no2 span{
+	color:#999;
+	background-position:-38px 0;
+}
+
+.step_box li.no3 span{
+	color:#999;
+	background-position:-98px 0;
+}
+
+.clearfix:after{
+	clear:both;
+}
+
+.clearfix{
+	zoom:1;
+}
+
+/*输入框*/
+
+.formbox ul{
+	color: #999;
+	width: 638px;
+	height: 185px;
+	margin-left: 150px;
+	/*border: 1px solid red;*/
+	list-style: none;
+}
+
+.delu_box{
+	margin-bottom: 20px;
+}
+
+.label_title{
+	width: 100px;
+  	text-align: right;
+  	float: left;
+  	display: inline;
+  	font-size: 14px;
+  	color: #666;
+  	line-height: 36px;
+}
+
+#tel_box{
+	width: 250px;
+	height: 36px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+/*验证码*/
+.code_box{
+	width: 150px;
+	height: 36px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.get_tel_code a{
+    outline: none;
+    text-decoration: none;
+}
+
+.get_tel_code{
+	color: black;
+    width: 282px;
+    height: 36px;
+    display: block;
+    line-height: 36px;
+    text-align: center;
+    margin-left:70px;
+    background: url("../images/ew_282x300.png");
+}
+
+
+/*单击下一步*/
+.btn_check {
+	color: #fff;
+	width: 122px;
+  	line-height: 36px;
+  	font-size: 14px;
+  	cursor: pointer;
+  	margin-left: 100px;
+  	text-align: center;
+  	border-radius: 5px;
+  	background: #ff4066;
+  	display: inline-block;
+  	border: 1px solid white;
+}
+
+.btn_check:hover{
+	color: white;
+	text-decoration: none;
+}
+
+.verify_foot {
+  border-top: 1px dashed #dcdcdc;
+  width: 720px;
+  margin: 0 auto;
+  padding: 22px 0 0 30px;
+  margin-top: 70px;
+}
+
+/*尾部*/
+.footer{
+	margin-left: 170px;
+}
+
+/*请输入正确手机号*/
+.error_tip{
+	background: url("../images/ew_16x16.png") 12px center no-repeat #fffff8;
+    border: 1px solid #ffd797;
+    height: 30px;
+    line-height: 30px;
+    color: #ff5783;
+    width: 240px;
+    padding-left: 40px;
+    margin-bottom: 9px;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+
+.right_box {
+  background: url("../images/ew_25x25.png") left center no-repeat;
+  padding-left: 33px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 700;
+}
+
+.mb30 {
+  margin-bottom: 10px!important;
+}

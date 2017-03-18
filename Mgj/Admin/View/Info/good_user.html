@@ -1,0 +1,227 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">名师优秀学员</a>
+                </li>
+                <li class="active">名单列表</li>
+            </ul><!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search" action="good_user" method="get">
+                    <span>
+                        <label>
+                            <select name="state" aria-controls="dataTables-example" class="form-control input-sm">
+                                <option value="0" <if condition="$state eq 0">selected</if>>未审核</option>
+                                <option value="1" <if condition="$state eq 1">selected</if>>已通过</option>
+                                <option value="9" <if condition="$state eq 9">selected</if>>未通过</option>
+                            </select>
+                        </label>
+                    </span>
+                    <span class="input-icon">
+                        <input type="text" placeholder="Search ..." name="title" class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                        <input type="submit" class="btn btn-primary btn-xs" value="搜索" style="border-radius:3px; height:28px; margin-top:-4px; padding-right:24px;">
+                        <i class="icon-search nav-search-icon"></i>
+                    </span>
+                </form>
+            </div><!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    名师优秀学员
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        名单列表
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+
+                                <table id="sample-table-1" class="table table-striped table-bordered table-hover" style="text-align:center;">
+                                    <thead>
+                                    <tr>
+                                        <th class="center col-lg-1">姓名</th>
+                                        <th class="center col-lg-1">照片</th>
+                                        <th class="center col-lg-1">发布人</th>
+                                        <th class="center col-lg-1">发布时间</th>
+                                        <th class="center col-lg-1">修改时间</th>
+                                        <th class="center col-lg-1">访问量</th>
+                                        <th class="center col-lg-1">排序等级</th>
+                                        <th class="center col-lg-1">审核状态</th>
+                                        <th class="center col-lg-4">操作</th>
+                                    </thead>
+                                    <tbody>
+                                    <volist name="school_mien" id="vo">
+                                        <tr>
+                                            <td class="center">{$vo.username}</td>
+                                            <td class="center">
+                                                <?php
+                                                    if ($vo['pic_url']){
+                                                ?>
+                                                <img src="__PUBLIC__/Uploads/img/{$vo.imgtime}/{$vo.pic_url}" alt="" width="100px" height="120px"/>
+                                                <form action="{:U('Comment/fileUpload')}" method="post" enctype="multipart/form-data">
+                                                    <input type="file" name="img" />
+                                                    <input type="hidden" name="id" value="{$vo.id}"/>
+                                                    <input type="submit" value="替换" />
+                                                    <button type="button" name="school_gooduser_del" id="{$vo.id}">删除</button>
+                                                </form>
+
+                                                <?php
+                                                    }else {
+                                                ?>
+                                                <form action="{:U('Comment/fileUpload')}" method="post" enctype="multipart/form-data">
+                                                    <input type="file" name="img" id="file" />
+                                                    <input type="hidden" name="id" value="{$vo.id}"/>
+                                                    <input type="submit" value="上传" />
+                                                </form>
+                                                <?php
+                                                    }
+                                                ?>
+
+                                            </td>
+                                            <td class="center">{$vo.oper}</td>
+                                            <td class="center">{$vo.regtime}</td>
+                                            <td class="center">
+                                                <?php
+                                            if($vo['uptime'] == ''){
+                                                echo '尚未修改';
+                                            } else {
+                                                echo $vo['uptime'];
+                                            }
+                                            ?>
+                                            </td>
+                                            <td class="center">{$vo.allnum}</td>
+                                            <td class="center">{$vo.ordernum}</td>
+                                            <td class="center">
+                                                <if condition="$vo.state eq 0 "> 未审核
+                                                    <elseif condition="$vo.state eq 1"/>已通过
+                                                    <else /> 未通过
+                                                </if>
+                                            </td>
+                                            <td class="center">
+                                                <if condition="$vo.state eq 0 ">
+                                                    <button type="button" class="btn btn-info btn-xs exam_people" name="{$vo.id}" id="1">通过</button>
+                                                    <button type="button" class="btn btn-info btn-xs exam_people" name="{$vo.id}" id="9">不通过</button>
+                                                </if>
+                                                <button type="button" name="get_miencontent_info" class="btn btn-default btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg" id="{$vo.id}">个人描述</button>
+                                                <a href="{:U('Info/web_mienedit_view',array('id'=>$vo['id']))}"><button type="button"  class="btn btn-info btn-xs" id="{$vo.id}">修改</button></a>
+                                                <button type="button" name="school_mien_del" class="btn btn-warning btn-xs" id="{$vo.id}">删除</button>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                    <tr>
+                                        <td colspan="10" id="pages"><div class="row"><div class="col-md-5"></div>{$page}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            <input type="hidden" id="url" value="<?php echo $_SERVER['HTTP_HOST'] ?>"/>
+                            <a href="{:U('Info/good_user_add')}"><button class="btn btn-primary btn-sm">添加人员</button></a>
+                        </div><!-- /span -->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+            <div style="float:right;display:block;position: absolute;left: 45%;top: 150px;display:none" id="lon" >
+                <center><img src="__PUBLIC__/Admin/images/lon.gif" alt="" width="60px" height="60px"  /></center>
+            </div>
+            <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content" id="content_info" style="width:600px;padding:50px">
+
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.page-content -->
+        <script src="__PUBLIC__/Admin/js/jquery-1.8.3.min.js"></script>
+
+    </div>
+    <!-- /.main-content -->
+    <script>
+
+        //审核
+        $('.exam_people').click(function(){
+            var id = $(this).attr('name');
+            var state = $(this).attr('id');
+            var url = $('#url').val();
+            $.ajax({
+                url:"http://"+url+"/index.php/Info/exam_people",
+                type:'POST',
+                data:{id:id,state:state},
+                dataType:'json',
+                success: function(data){
+                    if(data.info == '没有权限'){
+                        alert('没有权限');
+                    }
+                    if (data[0].success = true) {
+                        alert(data[0].msg);
+                        window.location.reload();
+                    }else{
+                        alert(data[0].msg);
+                    }
+                }
+            })
+        });
+        $().ready(function(){
+
+            var nav_name = $('.nav_show').val();
+            if(nav_name == 'Center'){
+                $('ul[name=nav_0]').css('display','block');
+                $('ul[name=nav_0]').css('overflow','hidden');
+
+            }
+            if(nav_name == 'User'){
+                $('ul[name=nav_1]').css('display','block');
+                $('ul[name=nav_1]').css('overflow','hidden');
+
+            }
+            if(nav_name == 'School'){
+                $('ul[name=nav_2]').css('display','block');
+                $('ul[name=nav_2]').css('overflow','hidden');
+            }
+            if(nav_name == 'Rule'){
+                $('ul[name=nav_3]').css('display','block');
+                $('ul[name=nav_3]').css('overflow','hidden');
+            }
+            if(nav_name == 'Group'){
+                $('ul[name=nav_4]').css('display','block');
+                $('ul[name=nav_4]').css('overflow','hidden');
+            }
+            if(nav_name == 'Area'){
+                $('ul[name=nav_5]').css('display','block');
+                $('ul[name=nav_5]').css('overflow','hidden');
+            }
+            if(nav_name == 'Info'){
+                $('ul[name=nav_6]').css('display','block');
+                $('ul[name=nav_6]').css('overflow','hidden');
+            }
+            if(nav_name == 'Office'){
+                $('ul[name=nav_7]').css('display','block');
+                $('ul[name=nav_7]').css('overflow','hidden');
+            }
+
+
+        });
+    </script>
+
+</block>
+
+
+

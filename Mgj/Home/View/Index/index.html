@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杭州市富阳区新登镇中学</title>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/index.css">
+</head>
+<body>
+<div class="main">
+    <div style="margin:0 auto;width:1029px;height:144px;position: relative;left:0.1%;">
+    <embed src="__PUBLIC__/Home/image/top1.swf" width="1029" height="144"></embed>
+    </div>
+    <div class="main-container box-shadow" >
+        <div class="main-navbar">
+            <ul>
+                <a href="{:U('Index/index')}"><li class="left">首页</li></a>
+                <li><img src="__PUBLIC__/Home/image/1.png" alt=""></li>
+                <volist name="nav" id="nav">
+                <a href="{:U('Index/listnav',array('id'=>$nav['id']))}"><li>{$nav.const_name}</li></a>
+                <li><img src="__PUBLIC__/Home/image/1.png" alt=""></li>
+                </volist>
+               <!--  <li style="float:right;padding-right:10px;">{$date}</li> -->
+            </ul>
+        </div>
+        <div class="main-mark">
+            <div class="mark-left fl">
+                <img src="__PUBLIC__/Home/image/2.png" alt="">
+            </div>
+            <div class="mark-right fr">
+                <img src="__PUBLIC__/Home/image/3.png" alt="">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-content border">
+            <div class="content-image border-right fl">
+                <div id="main">
+                    <div class="box">
+                        <div id="images">
+                            <img src="__PUBLIC__/Home/image/5.jpg" style="display:block;">
+                            <img src="__PUBLIC__/Home/image/2.jpg">
+                            <img src="__PUBLIC__/Home/image/3.jpg">
+                            <img src="__PUBLIC__/Home/image/4.jpg">
+                            <img src="__PUBLIC__/Home/image/1.jpg">
+                        </div>
+                        <div id="icon">
+
+                        </div>
+                    </div>
+                    <div id="xia">
+                        <ul>
+                            <li style="background-color:red">1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+            <div class="content-state fr">
+                <div class="content-state-sch border-bottom margin-left">
+                    <div class="sch-bk font-col fl">校园动态</div>
+                    <a href="{:U('Index/listnav',array('id'=>'21'))}"><div class="sch-col font fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                </div>
+                <div class="content-state-chara">
+                    <volist name="school_d" id="school_d">
+                    <div class="chara-write font"><img src="__PUBLIC__/Home/image/12.png" alt=""><a href="{:U('Index/content',array('id'=>$school_d['id']))}">
+                        <?php
+                        if(strlen($school_d['title']) > 100){
+                       
+                        echo  mb_substr($school_d['title'],0,57).'...';
+                        }else{
+                        echo $school_d['title'];
+                        }
+                        ?>
+
+                    </a><p class="fr">{$school_d.add_time}</p></div>
+                    <div style="border-top:1px dashed #999999;height: 1px;overflow:hidden"></div>
+                    </volist>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-notice margin">
+            <div class="notice-left fl">
+                <div class="notice-left-img border margin-bottom">
+                    <a href="{:U('Index/listnav',array('id'=>'1'))}"><img src="__PUBLIC__/Home/image/4.png" alt=""  width="206" height="73"></a>
+                    <a href="{:U('Index/listnav',array('id'=>'10'))}"><img src="__PUBLIC__/Home/image/5.png" alt=""  width="206" height="73"></a>
+                    <a href="{:U('Index/listnav',array('id'=>'8'))}"><img src="__PUBLIC__/Home/image/6.png" alt=""  width="206" height="73"></a>
+                </div>
+                <div class="notice-left-teaching">
+                    <div class="teaching-sch">
+                        <div class="sch-bk font-col fl">德育园地</div>
+                        <a href="{:U('Index/listnav',array('id'=>'3'))}"><div class="sch-col fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                    </div>
+                    <div class="teaching-chara border border-bottom-left-radius border-bottom-right-radius">
+                        <div class="teaching-chara-font">
+                            <volist name="school_10" id="school_10">
+                            <div class="chara-write font"><img src="__PUBLIC__/Home/image/12.png" alt=""><a href="{:U('Index/content',array('id'=>$school_10['id']))}">{$school_10.title} </a><p class="fr">{$school_10.add_time}</p></div>
+                            <div style="border-top:1px dashed #999999;height: 1px;overflow:hidden"></div>
+                            </volist>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="notice-right border margin-left fl">
+                <div class="notice-right-sch">
+                    <div class="star-bk font-col fl">公告公示</div>
+                    <a href="{:U('Index/listnav',array('id'=>'70'))}"><div class="sch-col fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                </div>
+                <div class="notice-right-chara border-top">
+                    <ul>
+                        <volist name="school_14" id="school_14">
+                        <li>·<span><a href="{:U('Index/content',array('id'=>$school_14['id']))}">
+                            <?php
+                                        if(strlen($school_14['title']) > 66){
+                                            echo  mb_substr($school_14['title'],0,42).'...';
+                                        }else{
+                                            echo $school_14['title'];
+                                        }
+                                        ?>
+                        </a></span></li>
+                        </volist>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-picture border margin border-radius">
+            <div id="box">
+                <div id="content">
+                    <div id="imglist1">
+                        <img src="__PUBLIC__/Home/image/icon1.jpg" alt="" class="img-rounded">
+                        <img src="__PUBLIC__/Home/image/icon2.jpg" alt="" class="img-rounded">
+                        <img src="__PUBLIC__/Home/image/icon3.jpg" alt="" class="img-rounded">
+                        <img src="__PUBLIC__/Home/image/icon4.jpg" alt="" class="img-rounded">
+                        <img src="__PUBLIC__/Home/image/icon5.jpg" alt="" class="img-rounded">
+                        <img src="__PUBLIC__/Home/image/icon6.jpg" alt="" class="img-rounded">
+                        <!--<div class="picture fl">-->
+                            <!--<img src="__PUBLIC__/Home/image/icon1.png" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="picture fl">-->
+                            <!--<img src="__PUBLIC__/Home/image/icon2.png" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="picture fl">-->
+                            <!--<img src="__PUBLIC__/Home/image/icon1.png" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="picture fl">-->
+                            <!--<img src="__PUBLIC__/Home/image/icon3.png" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="picture fl">-->
+                            <!--<img src="__PUBLIC__/Home/image/icon3.png" alt="">-->
+                        <!--</div>-->
+                        <!--<div class="picture fl">-->
+                            <!--<img src="__PUBLIC__/Home/image/icon1.png" alt="">-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-garden margin">
+            <div class="garden-left fl">
+                <div class="garden-left-stud margin-bottom">
+                    <div class="teaching-sch">
+                        <div class="sch-bk font-col fl">学生天地</div>
+                        <a href="{:U('Index/listnav',array('id'=>'22'))}"><div class="sch-col fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                    </div>
+                    <div class="stud-chara border border-bottom-left-radius border-bottom-right-radius">
+                        <div class="stud-chara-img margin-top margin-left fl">
+                            <div class="stud-chara-image border">
+                                <img src="__PUBLIC__/Home/image/227.jpg" alt="">
+                            </div>
+                            <div class="stud-chara-write font">
+                                造烛求明，读书求理
+                            </div>
+                        </div>
+                        <div class="stud-chara-font margin-left fl">
+                            <volist name="school_22" id="school_22">
+                            <div class="chara-write font"><a href="{:U('Index/content',array('id'=>$school_22['id']))}"> · 
+                                
+                                <?php
+                                        if(strlen($school_22['title']) > 66){
+                                            echo  mb_substr($school_22['title'],0,66).'...';
+                                        }else{
+                                            echo $school_22['title'];
+                                        }
+                                        ?>
+                                        <p class="fr">{$school_22.add_time}</p>
+                            </a></div>
+                            <div style="border-top:1px dashed #999999;height: 1px;overflow:hidden"></div>
+                            </volist>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="garden-left-teach">
+                    <div class="garden-party fl">
+                        <div class="party-sch">
+                            <div class="sch-bk font-col fl">党建园地</div>
+                            <a href="{:U('Index/listnav',array('id'=>'8'))}"><div class="sch-col fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                        </div>
+                        <div class="party-chara border border-bottom-left-radius border-bottom-right-radius">
+                            <div class="party-chara-font">
+                                <ul>
+                                    <volist name="school_8" id="school_8">
+                                    <li>·<span><a href="{:U('Index/content',array('id'=>$school_8['id']))}">
+                                        <?php
+                                        if(strlen($school_8['title']) > 45){
+                                            echo  mb_substr($school_8['title'],0,45).'...';
+                                        }else{
+                                            echo $school_8['title'];
+                                        }
+                                        ?>
+                                        <p class="fr">{$school_8.add_time}</p>
+                                    </a></span></li>
+                                    </volist>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="garden-section margin-left fl">
+                        <div class="party-sch">
+                            <div class="sch-bk font-col fl">教研园地</div>
+                            <a href="{:U('Index/listnav',array('id'=>'11'))}"><div class="sch-col fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                        </div>
+                        <div class="party-chara border border-bottom-left-radius border-bottom-right-radius">
+                            <div class="party-chara-font">
+                                <ul>
+                                    <volist name="school_11" id="school_11">
+                                    <li>·<span><a href="{:U('Index/content',array('id'=>$school_11['id']))}">
+
+                                        <?php
+                                        if(strlen($school_11['title']) > 45){
+                                            echo  mb_substr($school_11['title'],0,45).'...';
+                                        }else{
+                                            echo $school_11['title'];
+                                        }
+                                        ?>
+                                        <p class="fr">{$school_11.add_time}</p>
+                                    </a></span></li>
+                                    </volist>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="garden-right border margin-left fl">
+                <div class="graden-right-star margin-top">
+                    <div class="graden-right-star-sch">
+                        <div class="star-bk font-col fl">校园之星</div>
+                        <a href="{:U('Index/listnav',array('id'=>'23','type'=>'1'))}"><div class="sch-col fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                    </div>
+                    <div id="box1">
+                        <div id="content1">
+                            <div id="imglist2">
+                                <volist name="school_15" id="school_15">
+                                <div class="star-chara border-top school_1" >
+                                    <div class="star-chara-img border margin-top fl">
+                                        <img src="__PUBLIC__/Uploads/img/{$school_15.imgtime}/{$school_15.pic_url}" alt="" width="72" height="72">
+                                    </div>
+                                    <div class="star-chara-cont fr">
+                                        <div class="star-chara-cont-name font-bold">
+                                            {$school_15.username}
+                                        </div>
+                                        <div class="star-chara-cont-desc font">
+                                            <p>{$school_15.title}...<a href="{:U('Index/content',array('id'=>$school_15['id'],'type'=>'1'))}">[详细]</a></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                </volist>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="graden-right-star margin-top">
+                    <div class="graden-right-star-sch">
+                        <div class="star-bk font-col fl">名师风采</div>
+                        <a href="{:U('Index/listnav',array('id'=>'20','type'=>'1'))}"><div class="sch-col fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                    </div>
+                    <div id="box2">
+                        <div id="content2">
+                            <div id="imglist3">
+                                <volist name="school_16" id="school_16">
+                                    <div class="star-chara border-top school_2">
+                                        <div class="star-chara-img border margin-top fl">
+                                            <img src="__PUBLIC__/Uploads/img/{$school_16.imgtime}/{$school_16.pic_url}" alt="" width="72" height="72">
+                                        </div>
+                                        <div class="star-chara-cont fr">
+                                            <div class="star-chara-cont-name font-bold">
+                                                {$school_16.username}
+                                            </div>
+                                            <div class="star-chara-cont-desc font-weight">
+                                                <p>{$school_16.title}...<a href="{:U('Index/content',array('id'=>$school_16['id'],'type'=>'1'))}">[详细]</a></p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </volist>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="graden-right-home margin-top">
+                    <div class="graden-right-star-sch">
+                        <div class="star-bk font-col fl">教师之家</div>
+                        <a href="{:U('Index/listnav',array('id'=>'4'))}"><div class="sch-col fr">更多<i class="iconfont">&#xe694;</i></div></a>
+                    </div>
+                    <div class="home-chara border-top">
+                        <div class="home-chara-intro font-bold">
+                            谁是我们最重要的人
+                        </div>
+                        <div class="home-chara-center">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-footer margin">
+            <div class="main-footer-import font" style="width:450px">
+                <p>版权所有：杭州市富阳区新登镇中学   &nbsp;建议使用IE9.0 分辨率 1024*768以上访问本网站</p>
+                <p>浙ICP备09007076号      &nbsp;网络信息中心联系电话： 0571-89987637</p>
+                <p>&nbsp;技术支持：杭州思讯</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    //获取
+    var play = document.getElementById('main');
+    var imglist = main.getElementsByTagName('img');
+    var iconlist = main.getElementsByTagName('li');
+
+    //定义循环变量
+    var m = 1;
+
+    var timer = setInterval(run, 3000);
+
+    //函数
+    function run(){
+        if (m > 4) {
+            m = 0;
+        }
+        controlImage(m);
+        controlIcon(m);
+        m ++
+    }
+
+
+    //控制图片
+    function controlImage(n){
+        //其他图片隐藏
+        for (var i = 0 ; i < imglist.length; i ++){
+            imglist[i].style.display = "none";
+        }
+        //当前图片显示
+        imglist[n].style.display = "block";
+    }
+
+    //控制图标
+    function controlIcon(n){
+        //其他图标变灰
+        for (var i = 0; i < iconlist.length; i ++) {
+            iconlist[i].style.backgroundColor = "#000";
+        }
+        //当前图标变红
+        iconlist[n].style.backgroundColor = "red";
+    }
+
+
+    //鼠标滑上去，定时停止
+    play.onmouseover = function(){
+        clearInterval(timer);
+    };
+    play.onmouseout = function(){
+        timer = setInterval(run, 3000);
+    };
+
+    //给所有 控制图标 绑定 mouseover事件
+    for (var i = 0; i < iconlist.length; i ++) {
+        (function(a){
+            iconlist[a].onmouseover = function(){
+                controlImage(a);
+                controlIcon(a);
+                m = a + 1;
+            }
+        })(i);
+    }
+    function addFavorite() {
+        var url = window.location.href;
+        var title = document.title;
+        try {
+            window.external.addFavorite(url, title);
+        }
+        catch (e) {
+            try {
+                window.sidebar.addPanel(title, url, "");
+            }
+            catch (e) {
+                alert("抱歉，您所使用的浏览器无法完成此操作，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+
+    //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //中间图片无缝滚动
+    var box = document.getElementById('box');
+    var imglist1 = document.getElementById('imglist1');
+    imglist1.parentNode.appendChild(imglist1.cloneNode(true));
+
+
+
+    //开始定时
+    setInterval(function(){
+        if( box.scrollLeft >=490 ){
+            box.scrollLeft =0;
+        }
+        box.scrollLeft += 2;
+    },150);
+    // <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    //校园之星无缝滚动
+    var box1 = document.getElementById('box1');
+    var imglist2 = document.getElementById('imglist2');
+    imglist2.parentNode.appendChild(imglist2.cloneNode(true));
+
+    setInterval(function(){
+        if( box1.scrollTop >= 500 ){
+            box1.scrollTop = 0;
+        }
+        box1.scrollTop += 91;
+    },2500);
+
+    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    //名师风采
+    var box2 = document.getElementById('box2');
+    var imglist3 = document.getElementById('imglist3');
+    imglist3.parentNode.appendChild(imglist3.cloneNode(true));
+
+    setInterval(function(){
+        if( box2.scrollTop >= 500 ){
+            box2.scrollTop = 0;
+        }
+        box2.scrollTop += 91;
+    },3500);
+</script>
+</html>

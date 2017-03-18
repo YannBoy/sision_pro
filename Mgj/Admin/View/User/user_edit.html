@@ -1,0 +1,153 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">用户管理</a>
+                </li>
+                <li class="active">用户信息修改</li>
+            </ul><!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+                    <span class="input-icon">
+                        <input type="text" placeholder="Search ..." name="username" class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                        <input type="submit" class="btn btn-primary btn-xs" value="搜索" style="border-radius:3px; height:28px; margin-top:-4px; padding-right:24px;">
+                        <i class="icon-search nav-search-icon"></i>
+                    </span>
+                </form>
+            </div><!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    用户管理
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        用户信息修改
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="table-responsive">
+                                <form action="__CONTROLLER__/user_update" method="post" enctype="multipart/form-data">
+                                    <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                                        <tbody>
+                                        <div style="float:right;display:block;position: absolute;left: 45%;top: 150px;display:none" id="lon" >
+                                            <center><img src="__PUBLIC__/Admin/images/lon.gif" alt="" width="60px" height="60px"  /></center>
+                                        </div>
+                                        <tr>
+                                            <td style="text-align:right;">姓名：</td>
+                                            <td>
+                                                <input type="hidden" name="id" value="{$list.id}" />
+                                                <input type="text" name="relname" value="{$list.relname}"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">手机号：</td>
+                                            <td>
+                                                {$list.username}
+                                            </td>
+                                        </tr>
+                                        <input type="hidden" id="url" value="<?php echo $_SERVER['HTTP_HOST'] ?>"/>
+                                        <tr>
+                                            <td style="text-align:right;">权限区：</td>
+                                            <td>
+                                                目前权限区域:
+                                                <div>
+                                                <volist name="exist" id="vo">
+                                                    <input type="button" value="{$vo.class_name}" class="btn btn-info btn-xs" name="but_quanxian" id="{$vo.rec_id}"/>&nbsp;&nbsp;
+
+                                                </volist>
+                                                </div>
+                                                <br/><br/><br/>
+                                                新添加区域:
+                                                <select name="num1" id="num_id">
+
+                                                    <option value="{$area_name.area1.area_bh}">
+                                                        {$area_name.area1.area_name}
+                                                    </option>
+                                                    <volist name="area" id="vo">
+                                                        <option value="{$vo.area_bh}">{$vo.area_name}</option>
+                                                    </volist>
+                                                </select>
+                                                <select name="num2" id="num_id2">
+                                                    <option value="{$area_name.area2.area_bh}">
+                                                        {$area_name.area2.area_name}
+                                                    </option>
+                                                </select>
+                                                <select name="num3" id="num">
+                                                    <option value="{$area_name.area3.area_bh}">
+                                                        {$area_name.area3.area_name}
+                                                    </option>
+                                                </select>
+                                                <select name="school_num" id="num_id4">
+                                                    <option value="{$school_name.ocode}">
+                                                        {$school_name.ocode_name}
+                                                    </option>
+                                                </select>
+                                                <select name="class_num" id="num_id5">
+                                                    <option value="">-请-选-择-班-级-</option>
+                                                    <volist name="class_name" id="class_name">
+                                                        <option value="{$class_name.class_bh}">{$class_name.class_name}</option>
+                                                    </volist>
+                                                </select>
+                                                <input type="button" id="user_add_quanxian" class="btn btn-success btn-xs" value="添加"/>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;">组名：</td>
+                                            <td><select name="group_id">
+                                                <option value="{$group.id}">
+                                                    <?php
+                                                    if($group['title']){
+                                                        echo $group['title'];
+                                                        } else {
+                                                        echo '普通组';
+                                                        }
+                                                        ?></option>
+                                                <volist name="group_list" id="vo">
+                                                    <option value="{$vo.id}">{$vo.title}</option>
+                                                </volist>
+
+                                            </select></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:right;"><input type="submit" class="btn no-border" value="提交"></td>
+                                            <td>
+                                                <input class="btn no-border" type="reset" value="重置">
+                                                <a href='{:U(group_user)}'><div class="btn no-border">返回上一页</div></a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!-- <input type="hidden" name="id" value="{$user['id']}"> -->
+                                </form>
+                            </div><!-- /.table-responsive -->
+                        </div><!-- /span -->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+        <script src="__PUBLIC__/Admin/js/jquery-1.8.3.min.js"></script>
+
+    </div>
+    <!-- /.main-content -->
+</block>

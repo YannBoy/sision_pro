@@ -1,0 +1,130 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+            .growInfo{
+                float:left;
+                width:250px;
+                height:64px;
+                border-radius:5px;
+                margin-right: 20px;
+                padding:5px;
+                border:3px solid #00b7ee;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="{:U('index')}">成长档案</a>
+                </li>
+                <li class="active">模块详细列表</li>
+            </ul><!-- .breadcrumb -->
+
+
+        </div>
+
+        <div class="page-content">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div style="width:600px;height:200px;margin:0 auto">
+                        <form action="{:U('Comment/setSaveGroup')}" method="post">
+                            <textarea id="" cols="50" rows="6" name="title">{$info.title}</textarea>
+                            &nbsp;
+                            排序等级:
+                            <select name="group" id="">
+                                <option value="">{$info.level}</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <input type="hidden" name="id" value="{$info.id}">
+                            <button type="submit" class="btn btn-primary btn-xs pull-right" style="margin-top:100px">保存</button>
+                        </form>
+                    </div>
+                    <div style="padding: 10px">
+
+                        <table class="table">
+                            <tr>
+                                <th class="center">模块名</th>
+                                <th class="center">操作</th>
+                            </tr>
+                            <volist id="news" name="news">
+                                <tr>
+                                    <td class="center">{$news.val}</td>
+                                    <td class="center">
+                                        <i class="icon-trash bigger-120 delGrowgroup"  name="{$info.id}" style="cursor: pointer"></i>
+                                    </td>
+                                </tr>
+                            </volist>
+                        </table>
+                        <button type='button' class='btn btn-info btn-xs add_grow'>添加模块</button>
+                        <!--<img src="__PUBLIC__/Admin/assets/images/addgroup.png" alt="" class="add_grow" title="添加模块" style="cursor: pointer;float:left">-->
+                    </div>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="addGrowmodel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <form action="{:U('Comment/addGrowDetails')}" method="post">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">添加新列</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="addtitle">列名:</label>
+                            <input type="text" name="val" class="form-control" id="addtitle" placeholder="">
+                            <input type="hidden" name="pid" value="{$info.id}" >
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">关闭</button>
+                        <button type="submit" class="btn btn-primary btn-xs">保存</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        $('.add_grow').click(function () {
+            $('#addGrowmodel').modal('show');
+        });
+    </script>
+</block>

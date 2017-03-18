@@ -1,0 +1,359 @@
+.attention_nav {
+  border-bottom: 1px solid #ddd;
+}
+.nav_container {
+  width: 1200px;
+  margin: 0 auto;
+}
+.attention_logo {
+  float: left;
+  display: block;
+  width: 145px;
+  height: 55px;
+  margin: 8px 40px 8px 0;
+  font-size: 31px;
+  color: #f36;
+}
+.nav_ctrl {
+  float: left;
+  margin: 20px 70px 8px 0;
+}
+a:hover {text-decoration:none;}
+a:link {text-decoration:none;}
+ .nav_ctrl .on a {
+  background: #fff;
+  color: #f36;
+  border-bottom: 1px solid #f36;
+}
+.nav_ctrl li a {
+  display: block;
+  margin: 1px 33px;
+  font-size: 14px;
+  line-height: 25px;
+}
+.nav_ctrl li {
+  float: left;
+  background-repeat: no-repeat;
+  background-position: -98px -214px;
+  position: relative;
+}
+.nav_ctrl .os{
+  background-image: url(../image/fang.png);
+}
+#body_wrap .wrap {
+  padding-top: 30px;
+}
+.attention_list {
+  float: left;
+  width: 273px;
+  height: 600px;
+  margin-right: 25px;
+}
+.result_list {
+  width: 263px;
+  padding: 10px 0 10px 10px;
+  background: #f5f5f5;
+}
+.attention_list .result_list .list {
+  overflow: auto;
+  position: relative;
+}
+.attention_list .result_list .list li .hdimg {
+  margin: 10px;
+  display: block;
+  float: left;
+  border: 1px solid #dfdfdf;
+}
+.attention_list .result_list .list li .hdimg img {
+  width: 65px;
+  height: 65px;
+}
+.attention_list .result_list .list li .detail {
+  float: left;
+  margin: 10px 10px 10px 0;
+}
+.attention_list .result_list .list li .detail h4 {
+  margin-bottom: 10px;
+  width: 100px;
+  overflow: hidden;
+  height: 20px;
+}
+.attention_list .result_list .list li .detail p {
+  color: #999;
+}
+.attention_list .result_list .list li .detail p span {
+  color: #f36;
+}
+.attention_list .result_list .list li .cancel {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #999;
+  display: none;
+}
+
+.wrap {
+  width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.shop_show {
+  float: left;
+  border-left: 2px solid #f4f4f4;
+  min-height: 500px;
+  width: 100%;
+}
+
+.imagewall_wrap {
+  float: left;
+  width: 900px;
+}
+.shop_show .shop_item {
+  margin-left: 22px;
+  position: relative;
+}
+.shop_msg {
+  margin-bottom: 23px;
+  height: 32px;
+}
+
+.shop_msg .shop_name {
+  float: left;
+  font-size: 20px;
+  padding-right: 15px;
+  border-right: 1px dashed #333;
+  color: #333;
+  font-weight: 400;
+}
+.shop_msg span {
+  float: left;
+  margin-left: 15px;
+  font-size: 14px;
+  line-height: 32px;
+}
+.shop_show .shop_item .image_wall {
+  margin-right: -25px;
+}
+.shop_show .shop_item .image_wall .iwf {
+  float: left;
+  position: relative;
+  width: 200px;
+  margin: 0 25px 50px 0;
+}
+.shop_show .shop_item .image_wall .iwf .img {
+  display: block;
+  width: 200px;
+  height: 300px;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+.shop_show .shop_item .image_wall .iwf .title {
+  position: relative;
+  margin-top: 10px;
+  height: 16px;
+  line-height: 16px;
+  padding-left: 5px;
+  overflow: hidden;
+  color: #666;
+  font-size: 14px;
+}
+.shop_show .shop_item .image_wall .iwf .goods_info {
+  margin-top: -15px;
+  padding-left: 5px;
+  height: 16px;
+  line-height: 16px;
+  overflow: hidden;
+}
+.shop_show .shop_item .image_wall .iwf .goods_info .price_info {
+  float: left;
+  color: #f36;
+  font-weight: 400;
+  font-size: 14px;
+}
+.shop_show .shop_item .image_wall .iwf .goods_info .price_info i {
+  font-family: "Microsoft Yahei";
+  font-style: normal;
+  color: #f36;
+}
+.shop_show .shop_item .image_wall .iwf .goods_info .update_date {
+  float: right;
+  color: #999;
+}
+h4 {
+  display: block;
+  -webkit-margin-before: 0.33em;
+  -webkit-margin-after: 1.33em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+}
+.shop_show .icon {
+  position: absolute;
+  left: -33px;
+  top: 12px;
+  width: 15px;
+  height: 15px;
+  background: url(../image/dian.jpg) no-repeat;
+}
+
+.my_like_wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+.my_like_filter {
+  background: #f2f2f2;
+  padding-left: 15px;
+}
+.my_like_filter li {
+  float: left;
+}
+.my_like_filter li a.on {
+  font-weight: 700;
+  color: #fc3c75;
+}
+.my_like_filter li a {
+  padding: 0 25px;
+  height: 47px;
+  line-height: 47px;
+  color: #666;
+}
+.my_like_filter li a.on {
+  font-weight: 700;
+  color: #fc3c75;
+}
+.my_like_filter li a span {
+  font-size: 15px;
+}
+.my_like_content {
+  margin-top: 0;
+  padding: 5px 32px;
+  background: #fff;
+}
+.my_like_content .my_like_sections {
+  margin: 0 -20px 0 0;
+}
+.my_like_content .my_like_sections .my_like_section {
+  display: inline;
+  position: relative;
+  float: left;
+  width: 210px;
+  margin: 20px 16px 20px 0;
+}
+.my_like_content .my_like_sections .my_like_section .img {
+  position: relative;
+  display: block;
+  height: 265px;
+  width: 210px;
+  overflow: hidden;
+  background: #f5f5f5;
+}
+.my_like_content .my_like_sections .my_like_section .img img {
+  width: 100%;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap {
+  padding: 10px 0;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .base_info {
+  line-height: 18px;
+  margin-bottom: 8px;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .base_info .title {
+  float: left;
+  color: #666;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .price_info {
+  float: left;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .price_info .n_p {
+  float: left;
+  margin-right: 5px;
+  color: #fa4e83;
+  font-size: 14px;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .fav_num {
+  float: left;
+  margin: 0;
+  padding-left: 10px;
+  color: #999;
+  cursor: pointer;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .fav_num .faved {
+  display: block;
+  width: 14px;
+  height: 11px;
+  background-image: url(../image/cang.png);
+  background-position: -562px 0;
+  margin-top: 4px;
+  margin-right: 5px;
+  float: left;
+  cursor: pointer;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .fav_num1 {
+  float: left;
+  margin: 0;
+  padding-left: 10px;
+  color: #999;
+  cursor: pointer;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .fav_num1 .faved1 {
+  display: block;
+  width: 14px;
+  height: 11px;
+  background-image: url(../image/cang.png);
+  background-position: -562px 0;
+  margin-top: 4px;
+  margin-right: 5px;
+  float: left;
+  cursor: pointer;
+}
+.my_like_content .my_like_sections .my_like_section .info_wrap .fav_num .faved1 {
+  display: block;
+  width: 14px;
+  height: 11px;
+  background-image: url(../image/cang.png);
+  background-position: -562px 0;
+  margin-top: 4px;
+  margin-right: 5px;
+  float: left;
+  cursor: pointer;
+}
+.section_title {
+  margin-left: -8px;
+  padding-left: 28px;
+  line-height: 18px;
+  font-weight: 400;
+  background: url(../image/dian.png) no-repeat;
+  background-position: 0 -68px;
+}
+
+.section_title b {
+  float: left;
+  height: 20px;
+  line-height: 20px;
+  padding-right: 11px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+  background: url(../image/dian.png) no-repeat;
+  background-position: right -100px;
+}
+
+.section_title span {
+  margin-left: 10px;
+  font-size: 14px;
+
+  color: #7f7f7f;
+}
+.his_wrap {
+  padding: 32px 0 0 23px;
+  background: #fff;
+}
+.his_wrap .his_section {
+  padding-bottom:0px;
+  border-left: 2px solid #f4f4f4;
+}
+.his_wrap .his_section .section_list li .info {
+  padding: 0 10px 10px;
+  line-height: 23px;
+}
+

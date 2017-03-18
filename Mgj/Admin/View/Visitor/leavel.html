@@ -1,0 +1,146 @@
+<extend name="Common:index"/>
+<block name="main">
+    <script src='__PUBLIC__/Admin/assets/js/My97DatePicker/4.72/WdatePicker.js'></script>
+    <style>
+        #pages a,#pages span{
+
+            float: left;
+            color: #337AB7;
+            padding: 6px 12px;
+            margin-left: -1px;
+            position: relative;
+            line-height: 1.42857;
+            text-decoration: none;
+            background-color: #FFF;
+            border: 1px solid #DDD;
+        }
+
+        #pages span{
+            color: #fff;
+            z-index: 2;
+            cursor:pointer;
+            border-color: #337ab7;
+            background-color: #337ab7;
+        }
+    </style>
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+                <li>
+                    <a href="#">校园访客</a>
+                </li>
+                <li class="active">请假管理</li>
+            </ul><!-- .breadcrumb -->
+        </div>
+
+        <div class="page-content" style="margin-left:20px;width:1000px;">
+            <div class="page-header">
+                <h1>
+                    校园访客
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        请假管理
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="" id="nav-search" style="margin-bottom: 10px">
+                                <form class="form-search" action="{:U('Visitor/leavel')}" method="get">
+                                    <input type="text" placeholder="学校名称" name="vs_ocodename" class="nav-search-input"  autocomplete="off" value="{$cond.vs_ocodename}"/>
+                                    <input type="text" placeholder="姓名" name="vs_username" class="nav-search-input"  autocomplete="off" value="{$cond.vs_username}"/>
+                                    开始时间:
+                                    <input type="text"  class="nav-search-input" id="begintime" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" name="starttime" placeholder="" value="{$cond.starttime}">
+                                    结束时间:
+                                    <input type="text"  class="nav-search-input" id="endtime" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" name="endtime" placeholder="" value="{$cond.endtime}">
+                                    <input type="submit" class="btn btn-primary btn-xs" value="搜索" style="border-radius:3px; height:28px; margin-top:-4px;">
+                                </form>
+                            </div><!-- #nav-search -->
+                            <div class="table-responsive">
+                                <form action="" method="post">
+                                    <table id="sample-table-1" class="table table-striped table-bordered table-hover" style="text-align:center;">
+                                        <thead>
+                                        <tr >
+                                            <th class="center">学校名称</th>
+                                            <th class="center">姓名</th>
+                                            <th class="center">所属</th>
+                                            <th class="center">电话</th>
+                                            <th class="center">事件内容</th>
+                                            <th class="center">通过类型</th>
+                                            <th class="center">操作人</th>
+                                            <th class="center">开始时间</th>
+                                            <th class="center">结束时间</th>
+                                            <th class="center">状态</th>
+                                            <th class="center">是否通过</th>
+                                            <th class="center">操作</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <volist id="info" name="info">
+                                            <tr>
+                                                <td class="center">{$info.vs_ocodename}</td>
+                                                <td class="center">{$info.vs_username}</td>
+                                                <td class="center">{$info.vs_classname}</td>
+                                                <td class="center">{$info.vs_tel}</td>
+                                                <td class="">{$info.event_context}</td>
+                                                <td class="center">{$info.pass_type}</td>
+                                                <td class="center">{$info.oper_id}</td>
+                                                <td class="center">{$info.begintime}</td>
+                                                <td class="center">{$info.endtime}</td>
+                                                <td class="center">{$info.state}</td>
+                                                <td class="center">{$info.passflag}</td>
+                                                <td class="center"><button type="button" class="btn btn-warning btn-xs delete_visitor" ab="visitstudentevent" rec_id="{$info.rec_id}">删除</button></td>
+                                            </tr>
+                                        </volist>
+                                        <tr>
+                                            <td colspan="13" id="pages"><div class="row"><div class="col-md-5"></div>{$page}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                                <a href="{:U('Visitor/addleavel')}">添加</a>
+                                <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">添加地区</button>-->
+                            </div><!-- /.table-responsive -->
+                        </div><!-- /span -->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+
+    <script>
+        var url = "<?php echo $_SERVER['HTTP_HOST'] ?>";
+        $('.delete_visitor').click(function () {
+            var table = $(this).attr('ab');
+            var rec_id = $(this).attr('rec_id');
+            $.ajax({
+                url:"http://"+url+"/index.php/Visitor/delete",
+                type:'POST',
+                data:{rec_id:rec_id,table:table},
+                dataType:'json',
+                success: function(data){
+                    if(data.success == true){
+                        window.location.reload();
+                    }else{
+                        alert('网络繁忙');
+                    }
+                }
+            })
+        });
+
+    </script>
+
+</block>
+

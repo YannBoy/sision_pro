@@ -1,0 +1,263 @@
+<extend name="Common:index"/>
+<block name="main">
+    <style>
+        #pages a,#pages span{
+
+            float: left;
+            color: #337AB7;
+            padding: 6px 12px;
+            margin-left: -1px;
+            position: relative;
+            line-height: 1.42857;
+            text-decoration: none;
+            background-color: #FFF;
+            border: 1px solid #DDD;
+        }
+
+        #pages span{
+            color: #fff;
+            z-index: 2;
+            cursor:pointer;
+            border-color: #337ab7;
+            background-color: #337ab7;
+        }
+    </style>
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">OA管理</a>
+                </li>
+                <li class="active">文件办理</li>
+            </ul><!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search" action="{:U('Admin/Office/oa_file')}" method="get">
+                    <span>
+                        <label>
+                            <select name="num" aria-controls="dataTables-example" class="form-control input-sm">
+                                
+                                <option value="10" <if condition="$num eq 10">selected</if>>10</option>
+                                <option value="20" <if condition="$num eq 20">selected</if>>20</option>
+                                <option value="30" <if condition="$num eq 30">selected</if>>30</option>
+                                <option value="50" <if condition="$num eq 50">selected</if>>50</option>
+                            </select>
+                        </label>
+                    </span>
+                    <span class="input-icon">
+
+                        <input type="submit" class="btn btn-primary btn-xs" value="排序" style="border-radius:3px; height:28px; margin-top:-4px; padding-right:24px;">
+                    </span>
+                </form>
+            </div><!-- #nav-search -->
+
+        </div>
+
+        <div class="page-content">
+            <!--<div class="page-header">-->
+                <!--<h1>-->
+                    <!--OA管理-->
+                    <!--<small>-->
+                        <!--<i class="icon-double-angle-right"></i>-->
+                        <!--文件办理-->
+                    <!--</small>-->
+                <!--</h1>-->
+            <!--</div>&lt;!&ndash; /.page-header &ndash;&gt;-->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="row">
+
+                        <div class="col-xs-12">
+                            <div style="margin-bottom:5px;">
+                                <a href="{:U('Office/all_file')}"><button type="button" class="btn btn-info btn-xs">浏览全部</button></a>
+                            </div>
+                            <div class="table-responsive">
+
+                                <table id="sample-table-1" class="table table-striped table-bordered table-hover" style="text-align:center;">
+                                    <thead>
+                                    <tr>
+                                        <th class="center">类型</th>
+                                        <th class="center col-lg-4">标题</th>
+                                        <th class="center">日期</th>
+                                        <th class="center">点击量</th>
+                                        <th class="center">状态</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <volist name="file" id="vo">
+                                        <tr>
+                                            <td class="center">
+                                                <?php
+                                                    if($vo['state'] == 0){
+                                                        echo '上级文件';
+                                                    }else{
+                                                        echo '本校文件';
+                                                    }
+                                                ?>
+                                            </td>
+                                            <td  data-toggle="modal" data-target="#myModal" style="cursor:pointer" class="get_file_info" id="{$vo.id}">{$vo.title}</td>
+                                            <td class="center">{$vo.regtime}</td>
+                                            <td class="center">{$vo.allnum}</td>
+                                            <td class="center">
+                                                <if condition="$vo['do_state'] eq 0 "> <p style="color:green">已办</p>
+                                                    <elseif condition="$vo['do_state'] eq 1"/> <p style="color:red">待办</p>
+                                                </if>
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                    <tr>
+                                        <td colspan="5" id="pages"><div class="row"><div class="col-md-5"></div>{$page}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <input type="hidden" id="id" value="{$id}"/>
+                                <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm1">发布新文件</button>
+                            </div><!-- /.table-responsive -->
+                        </div><!-- /span -->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+    <div style="float:right;display:block;position: absolute;left: 50%;top: 250px;display:none" id="lon" >
+        <center><img src="__PUBLIC__/Admin/images/lon.gif" alt="" width="60px" height="60px"  /></center>
+    </div>
+    <!--  弹出框-->
+    <div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="padding:25px">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3>新文件</h3>
+                <div style="float:right;display:block;position: absolute;left: 250px;top: 150px;display:none" id="lon_g" >
+                    <center><img src="__PUBLIC__/Admin/images/lon.gif" alt="" width="60px" height="60px"  /></center>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label>名称</label>
+                    <input type="text" class="form-control" id="title" placeholder="文件名称"> <br/>
+                    <label for="">字号</label> <br/>
+                    <input type="text" id="num1" style="width:200px"/>
+                    [<input type="text" id="num2" style="width:60px"/>]
+                    <input type="text" id="num3" style="width:60px"/>号
+                    <input type="hidden" id="url" value="<?php echo $_SERVER['HTTP_HOST'] ?>"/>
+                    <br/><br/>
+                    <label for="">类型</label><br/>
+                    <input type="radio" name="state" value="0" checked/> 上级文件
+                    <input type="radio" name="state" value="1" /> 本校文件
+                    <br/><br/>
+                    <label for="">发布日期</label>
+                    <input size="20" type="text" id="regtime"  readonly class="form_datetime" value="<?php echo $rq;?>">
+
+                </div>
+                <button type="button" class="btn btn-primary" name="sch_oafile_add">确定</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" class='oa_modals'>
+        <div class="modal-dialog" role="document" style="width:820px;height:650px;">
+            <div class="modal-content" style="height:680px">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">文件签约</h4>
+                    <input type="hidden" class="hidden_id" />
+                </div>
+                <div class="modal-body" >
+                    <div id="head">
+                        <ul>
+                            <li id="L1" onclick="Tab(1)"><a href="#">文件正文</a></li>
+                            <li id="L2" onclick="Tab(2)"><a href="#">签约流转</a></li>
+                        </ul>
+                    </div>
+                    <div id="d1" >
+                        <div class="d1_hear">
+                            <h3>转发: <span class="d1hear_1"></span></h3>
+                            类型: <span class="d1_1"> </span>   &nbsp;&nbsp;&nbsp;  字号: <span class="d1_2"> </span>  &nbsp;&nbsp;&nbsp;  发布日期: <span class="d1_3"> </span>  &nbsp;&nbsp;&nbsp; 阅读: <span class="d1_4"></span>
+                        </div>
+                        <div style="border-top:1px dashed #999999;height: 1px;overflow:hidden;margin-bottom: 10px;"></div>
+                        <div class="d1_content" style="width:760px;height:300px;overflow:auto;" >
+
+
+                        </div>
+                        <div class="d1_file">
+                            <h5>附件:</h5> <br/>
+                            <span class="file_src">
+                            </span>
+                        </div>
+
+                        <input type="hidden" value="__PUBLIC__" class="public"/>
+                    </div>
+                    <div id="d2" style="width:760px;height:410px;overflow:auto;">
+                        <table class="table table-bordered" name="people_table">
+                            <tr>
+                                <th class="center col-lg-2">姓名</th>
+                                <th class="center col-lg-3">办理时间</th>
+                                <th class="center col-lg-6">办理描述</th>
+                                <th class="center col-lg-1">操作</th>
+                            </tr>
+
+                        </table>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="" style="position:absolute;left:35%;top:50px;display:none" id="get_teachers">
+            <div class="modal-dialog modal-sm">
+            
+                <div class="modal-content" style="padding-top:25px;padding-left:25px;height:470px">
+                    <h3>选择教师</h3>
+
+                    <div>
+                        <select name="get_teacher_group">
+                            <option value="">请选择</option>
+                            <volist name="teacher" id="teacher">
+                                <option value="{$teacher.id}">{$teacher.name}</option>
+                            </volist>
+                        </select>
+                        <select name="get_teacher_group1" id="">
+                            <option value="">请选择</option>
+                        </select>
+                    </div>
+                    <div class="get_teacher_group" style="overflow: auto">
+
+                    </div>
+                    <div style="float:left;margin-top:20px">
+                        <button class="teacher_all">全选</button>
+                    </div>
+                    <div class="get_teacher_group1" style="overflow: auto">
+
+                    </div>
+                    <div style="float:left;margin-top:20px">
+                        <button class="teacher_null">清空</button>
+                    </div>
+                   
+                </div>
+                <div class="modal-footer">
+                     <button class="btn btn-info btn-xs" name="share_people" >确定</button>
+                    <button class="btn btn-danger btn-xs oa_file_button_none">关闭</button>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+</block>

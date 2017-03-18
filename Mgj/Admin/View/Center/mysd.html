@@ -1,0 +1,48 @@
+<extend name="Common:index" />
+<block name="main">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/elFinder/css/jquery-ui.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/elFinder/css/elfinder.min.css">
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">首页</a>
+                </li>
+                <li class="active">个人中心</li>
+                <li class="active">个人网盘</li>
+            </ul><!-- .breadcrumb -->
+        </div>
+        <div style="padding: 25px;padding-left: 40px">
+            <div class="row" style="height:530px">
+                <div class="col-xs-12">
+                    <span style='color:red'>*</span>支持中文命名
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div id="elfinder"></div>
+                    <input type="hidden" value="{$userid}" class="userid">
+                </div><!-- /.col -->
+            </div>
+        </div>
+    </div><!-- /.main-content -->
+    <script src="__PUBLIC__/Admin/elFinder/js/jquery-ui.min.js"></script>
+
+    <script src="__PUBLIC__/Admin/elFinder/js/elfinder.min.js"></script>
+    <script src="__PUBLIC__/Admin/elFinder/js/elfinder.full.js"></script>
+    <script src="__PUBLIC__/Admin/elFinder/js/i18n/elfinder.zh_CN.js"></script>
+    <script>
+        var url = $('#oa_url').val();
+        $().ready(function() {
+            var id= $('.userid').val();
+            var elf = $('#elfinder').elfinder({
+                url : '__PUBLIC__/Admin/elFinder/php/connector.php?id='+id,  // connector URL (REQUIRED)
+                lang: 'zh_CN'           // language (OPTIONAL)
+            }).elfinder('instance');
+        });
+</script>
+
+
+</block>

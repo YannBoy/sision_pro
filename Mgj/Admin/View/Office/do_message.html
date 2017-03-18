@@ -1,0 +1,324 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">OA管理</a>
+                </li>
+                <li class="active">短信发送</li>
+            </ul><!-- .breadcrumb -->
+
+
+        <div class="page-content" style="height:600px">
+
+                <a href="{:U('Office/message')}"><button class="btn btn-info btn-xs" style="float:right;margin-right:10px">历史记录</button></a>
+
+
+            <div class="row">
+
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+                    <div class="row">
+                        <div class="col-xs-12" >
+
+                            <div class="modal-body" style="padding-top:0px;padding-left: 0px">
+                                <div id="head">
+                                    <ul>
+                                        <!-- <li id="Q1" onclick="Tab1(1)"><a href="#">发个人</a></li>
+                                        <li id="Q2" onclick="Tab1(2)"><a href="#">发班级</a></li> -->
+                                        <li id="Q3" onclick="Tab1(3)"><a href="#">发老师</a></li>
+                                        <li id="Q4" onclick="Tab1(4)"><a href="#">发好友</a></li>
+                                    </ul>
+                                </div>
+                                <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;margin-top:20px"></div>
+                                <input type="hidden" class="ocode_id" value="<?php echo $_GET['ocode']?>">
+                                <!-- ################  L1   ################# -->
+                                <!-- <div id="l1">
+                                    <if condition="$ocode_type eq 1">
+                                        <p style="float: left;padding-top:5px;margin-left: 10px;">
+                                        其他:
+                                        <select name="ocode_bh" class="other_ocode1">
+
+                                            <option value="">{$ocode_name1}</option>
+                                            <volist name="data" id="data">
+                                                <option name="{$data.class_name}" value="{$data.class_bh}">{$data.class_name}</option>
+                                            </volist>
+                                        </select>
+                                            </p>
+                                        <else/>
+                                        <p style="float: left;margin-top:12px;margin-left: 20px;">{$ocode_name}<p>
+                                    </if>
+
+                                    <div style="width:720px;height:50px;margin:0 auto;padding-top: 5px">
+
+                                        选择班级: &nbsp;
+                                        <select name="classinfo" id="">
+                                            <option value="">请选择</option>
+                                            <volist name="class" id="class">
+                                            <option value="{$class.class_bh}">{$class.class_name}</option>
+                                            </volist>
+                                        </select>
+                                        <span style="margin-left: 10px;">发送时间:</span><input size="20" type="text" id="regtime"  readonly class="form_datetime" value="{$time}">
+                                        <span style="margin-left: 10px;">署名:</span>
+                                        <select name="identity" id="">
+                                            <option value="{$ocode_name1}-{$relname}">{$ocode_name1}-{$relname}</option>
+                                            <volist name="ident" id="ident">
+                                                <option value="{$ocode_name1}-{$ident.identity}">{$ocode_name1}-{$ident.identity}</option>
+                                            </volist>
+                                        </select>
+                                    </div>
+                                    <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;"></div>
+                                    <div style="overflow:auto;height:150px;width:700px;border:1px solid #ccc;margin:0 auto;padding-left:5px;padding-right: 5px" class="mess_peo">
+
+
+
+
+                                    </div>
+                                    <div style="margin-left:150px">
+                                    <input type="button" class="btn btn-primary btn-xs message_all" value="全选" />
+                                    <input type="button" class="btn btn-primary btn-xs message_allno" value="全部取消"/>
+                                        <span style="color:red"> &nbsp;(红色是已停用的学生账号)</span>
+                                    </div>
+                                    <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;"></div>
+                                    <div style="width:650px;height:350px;margin:0 auto">
+                                        <div style="">
+                                        <h3>发送内容</h3> <h5>(你还可以输入 <span style="color:red" class="num">230</span> 个字,超出的将无法发送)</h5>
+                                        <textarea class="content" cols="80" rows="6" style="resize:none;"></textarea>
+                                        </div>
+
+                                            <button class="btn btn-primary btn-sm pull-right one_send" style="margin-left:180px;margin-top:30px;">发送</button>
+                                    </div>
+
+                                </div> -->
+
+                                <!-- ################  L2   ################# -->
+                                <!-- <div id="l2">
+                                    <if condition="$ocode_type eq 1">
+                                        <p style="float: left;padding-top:5px;margin-left: 10px;">
+                                            其他:
+                                            <select name="ocode_bh" class="other_ocode1">
+                                                <option value="">{$ocode_name1}</option>
+                                                <volist name="data1" id="data1">
+                                                    <option value="{$data1.class_bh}">{$data1.class_name}</option>
+                                                </volist>
+                                            </select>
+                                        </p>
+                                        <else/>
+                                        <p style="float: left;margin-top:12px;margin-left: 20px;">{$ocode_name}<p>
+                                    </if>
+                                    <div style="width:720px;height:50px;margin:0 auto;padding-top: 5px">
+                                        年级: &nbsp;
+                                        <select name="classinfo1">
+                                            <option value="">请选择</option>
+                                            <option value="2016">1</option>
+                                            <option value="2015">2</option>
+                                            <option value="2014">3</option>
+                                            <option value="2013">4</option>
+                                            <option value="2012">5</option>
+                                        </select>
+                                        年级
+                                        <span style="margin-left: 10px;">发送时间:</span><input size="20" type="text" id="regtime1"  readonly class="form_datetime" value="{$time}">
+                                        <span style="margin-left: 10px;">署名:</span>
+                                        <select name="identity1" id="">
+                                            <option value="{$ocode_name1}-{$relname}">{$ocode_name1}-{$relname}</option>
+                                            <volist name="name1" id="name1">
+                                                <option value="{$ocode_name1}-{$name1.identity}">{$ocode_name1}-{$name1.identity}</option>
+                                            </volist>
+                                        </select>
+                                    </div>
+                                    <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;"></div>
+                                    <div style="overflow:auto;height:150px;width:700px;border:1px solid #ccc;margin:0 auto;padding-left:5px;padding-right: 5px" class="mess_peo1">
+
+
+
+
+                                    </div>
+                                    <div style="margin-left:150px">
+                                        <input type="button" class="btn btn-primary btn-xs message_all1" value="全选" />
+                                        <input type="button" class="btn btn-primary btn-xs message_allno1" value="全部取消"/>
+                                        <span style="color:red"> &nbsp;</span>
+                                    </div>
+                                    <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;"></div>
+                                    <div style="width:650px;height:350px;margin:0 auto">
+                                        <div>
+                                            <h3>发送内容</h3> <h5>(你还可以输入 <span style="color:red" class="num1">230</span> 个字,超出的将无法发送)</h5>
+                                            <textarea class="content1" cols="80" rows="6" style="resize:none;"></textarea>
+                                        </div>
+                                            <button class="btn btn-primary btn-sm pull-right all_send" style="margin-left:180px;margin-top:30px;">发送</button>
+                                    </div>
+
+                                </div> -->
+
+                                <!-- ################  L3  ################# -->
+                                <div id="l3">
+                                    <p style="float: left;margin-top:12px;margin-left: 20px;"><p>
+                                    <div style="width:750px;height:50px;margin:0 auto;padding-top: 5px">
+                                        分组: &nbsp;
+                                        <select name="get_teacher_group" class="clear_peo">
+
+                                            <option value="">请选择</option>
+                                            <volist name="teacher" id="teacher">
+                                                <option value="{$teacher.id}">{$teacher.name}</option>
+                                            </volist>
+                                        </select>
+                                        <select name="get_teacher_group1" class="get_group_teacher">
+                                            <option value="">请选择</option>
+                                        </select>
+                                        <span style="margin-left: 10px;">发送时间:</span><input size="20" type="text" id="regtime2"  readonly class="form_datetime" value="{$time}">
+                                        <span style="margin-left: 10px;">署名:</span>
+                                        <select name="identity2" id="">
+                                            <option value="{$ocode_name}-{$relname}">{$ocode_name}-{$relname}</option>
+                                            <volist name="name2" id="name2">
+                                                <option value="{$ocode_name1}-{$name2.identity}">{$ocode_name1}-{$name2.identity}</option>
+                                            </volist>
+                                        </select>
+
+                                    </div>
+                                    <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;"></div>
+                                    <div style="overflow:auto;height:150px;width:700px;border:1px solid #ccc;margin:0 auto;padding-left:5px;padding-right: 5px" class="mess_peo2">
+
+
+
+
+                                    </div>
+                                    <div style="margin-left:150px">
+                                        <input type="button" class="btn btn-primary btn-xs message_all2" value="全选" />
+                                        <input type="button" class="btn btn-primary btn-xs message_allno2" value="全部取消"/>
+                                        <span style="color:red"> &nbsp;</span>
+                                    </div>
+                                    <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;"></div>
+                                    <div style="width:650px;height:350px;margin:0 auto">
+                                        <div>
+                                            <h3>发送内容</h3> <h5>(你还可以输入 <span style="color:red" class="num2">230</span> 个字,超出的将无法发送)</h5>
+                                            <textarea class="content2" cols="80" rows="6" style="resize:none;"></textarea>
+                                        </div>
+
+                                            <button class="btn btn-primary pull-right btn-sm all_send2" style="margin-left:180px;margin-top:30px;">发送</button>
+
+                                    </div>
+
+                                </div>
+                                <!-- ################  L4   ################# -->
+                                <div id="l4">
+                                    <p style="float: left;margin-top:12px;margin-left: 20px;"><p>
+                                    <div style="width:700px;height:50px;margin:0 auto;padding-top: 5px">
+                                        分组: &nbsp;
+                                        <select name="get_friend_group" class="clear_peo">
+                                            <option value="">请选择</option>
+                                            <volist name="my_friend" id="my_friend">
+                                                <option value="{$my_friend.id}">{$my_friend.name}</option>
+                                            </volist>
+                                        </select>
+                                        <span style="margin-left: 10px;">发送时间:</span><input size="20" type="text" id="regtime3"  readonly class="form_datetime" value="{$time}">
+                                        <span style="margin-left: 10px;">署名:</span>
+                                        <select name="identity3" id="">
+                                            <option value="{$ocode_name}-{$relname}">{$ocode_name}-{$relname}</option>
+                                            <volist name="name3" id="name3">
+                                                <option value="{$ocode_name1}-{$name3.identity}">{$ocode_name1}-{$name3.identity}</option>
+                                            </volist>
+                                        </select>
+
+                                    </div>
+                                    <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;"></div>
+                                    <div style="overflow:auto;height:150px;width:700px;border:1px solid #ccc;margin:0 auto;padding-left:5px;padding-right: 5px" class="mess_peo3">
+
+
+
+
+                                    </div>
+                                    <div style="margin-left:150px">
+                                        <input type="button" class="btn btn-primary btn-xs message_all3" value="全选" />
+                                        <input type="button" class="btn btn-primary btn-xs message_allno3" value="全部取消"/>
+                                        <span style="color:red"> &nbsp;</span>
+                                    </div>
+                                    <div style="width:1000px;border-top:1px solid #eee ;margin-bottom: 5px;"></div>
+                                    <div style="width:650px;height:350px;margin:0 auto">
+                                        <div>
+                                            <h3>发送内容</h3> <h5>(你还可以输入 <span style="color:red" class="num3">230</span> 个字,超出的将无法发送)</h5>
+                                            <textarea class="content3" cols="80" rows="6" style="resize:none;"></textarea>
+                                        </div>
+
+                                            <button class="btn btn-primary pull-right btn-sm all_send3" style="margin-left:180px;margin-top:30px;">发送</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--<div class="modal-content" style="height:650px">-->
+                                <!--<div class="modal-header">-->
+
+                                    <!--<h4 class="modal-title" id="myModalLabel"> 创建短信</h4>-->
+                                <!--</div>-->
+                                <!--<div style="padding: 10px;padding-left: 30px">-->
+                                    <!--<div style="float:left;width:130px;height:100px;">-->
+                                        <!--<button class="btn btn-info btn-xs" style="margin-right:5px;margin-bottom: 5px">按学历</button>-->
+                                        <!--<button class="btn btn-info btn-xs" style="margin-right:5px;margin-bottom: 5px">按年级</button>-->
+                                        <!--<button class="btn btn-info btn-xs" style="margin-right:5px;margin-bottom: 5px">按班级</button>-->
+                                        <!--<button class="btn btn-info btn-xs" style="margin-right:5px;margin-bottom: 5px">按学生</button>-->
+                                        <!--<button class="btn btn-info btn-xs" style="margin-right:5px;margin-bottom: 5px">按教师</button>-->
+                                        <!--<button class="btn btn-info btn-xs" style="margin-right:5px;margin-bottom: 5px">按朋友</button>-->
+                                    <!--</div>-->
+                                    <!--<div style="width:380px;height:100px;float:left;">-->
+                                        <!--所有人员短信内容限定在250字符之内:-->
+                                        <!--<textarea class="content" cols="50" rows="4" style="resize:none;"></textarea>-->
+                                    <!--</div>-->
+                                    <!--<div style="width:100px;float:left;">-->
+                                        <!--定时发送:<input size="20" type="text" id="regtime"  readonly class="form_datetime" value="">-->
+                                    <!--</div>-->
+
+                                    <!--<div style="width:100px;float:left;margin-left:170px">-->
+                                        <!--署名: <br/>-->
+                                        <!--<select name="identity" id="">-->
+                                            <!--<option value="新登镇中-{$relname}">新登镇中-{$relname}</option>-->
+                                            <!--<volist name="ident" id="ident">e-->
+                                                <!--<option value="新登镇中-{ident.identity}">新登镇中-{$ident.identity}</option>-->
+                                            <!--</volist>-->
+                                        <!--</select>-->
+                                    <!--</div>-->
+
+                                <!--</div>-->
+
+
+                        <!--</div>&lt;!&ndash; /span &ndash;&gt;-->
+                    </div><!-- /row -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+    <input type="hidden" class="public" value='__PUBLIC__'/>
+    <input type="hidden" id="url" value="<?php echo $_SERVER['HTTP_HOST'] ?>"/>
+
+
+</block>

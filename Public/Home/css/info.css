@@ -1,0 +1,306 @@
+* {
+    word-wrap: break-word;
+}
+
+/*主体内容的背景*/
+body{
+	background:url("../images/ingo_bodybg.png") repeat scroll 0 0;
+}
+
+/*主体的边框*/
+.info{
+	width: 958px;
+	margin: 15px auto 100px;
+	overflow: hidden;
+    background: white;
+/*    border: 1px solid red;*/
+}
+
+/*主体信息选项部分*/
+.info_left{
+	width: 148px;
+    height: 1250px;
+	float: left;
+	background:#fafafa url(../images/d_order_navbg.gif);
+	/*border: 1px solid yellow;*/
+}
+
+
+/*头像展示*/
+.left_img{
+	width: 147px;
+	height: 204px;
+	margin: 0 auto;
+	padding: 20px 0;
+	/*border-bottom: 1px dashed #ddd;*/
+}
+
+.left_img img{
+	width: 110px;
+	height: 110px;
+	margin-left: 20px;
+	border-radius: 50%;
+}
+
+.left_img p{
+	color: #333;
+	width: 148px;
+	height: 20px;
+	padding: 0 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.vip_level0{
+	width: 60px;
+	height: 16px;
+	text-align: center;
+    margin-left: -12px;
+	display:inline-block;
+	background: url("../images/d_mogucdn.png") 2px 104px;
+}
+
+/*菜单选项*/
+.mu_nav{
+    letter-spacing: 0;
+    padding-bottom: 10px;
+}
+
+.mu_nav dt{
+    color: #464646;
+    font: 400 18px/38px "Microsoft YaHei";
+    padding-left: 14px;
+    line-height: 20px;
+    padding-top: 11px;
+}
+
+.mu_nav dd{
+	line-height: 30px;
+}
+
+.mu_nav dd a {
+    color: #666;
+    display: block;
+    padding-left: 24px;
+}
+
+.mu_nav dd a:hover{
+	text-decoration: none;
+	background: #f4f4f4 none repeat scroll 0 0;
+}
+
+a {
+    outline: medium none;
+    text-decoration: none;
+}
+
+/*主体信息修改信息页面(右侧部分)*/
+.info_right{
+	width: 808px;
+	float: right;
+	background: #FFFFFF;
+	padding-bottom: 13px;
+}
+
+.right_main{
+	width: 685px;
+	margin: 0 auto;
+	font-size: 14px;
+	padding-top: 30px;
+	margin-left: 50px;
+
+}
+
+/*信息标题*/
+
+.right_title{
+	height: 30px;
+    margin-bottom: 14px;
+    padding: 0 10px 0 20px;
+    width: 649px;
+    background: #f9f9f9 none repeat scroll 0 0;
+}
+
+.right_title span{
+	height: 30px;
+	color: #ff6aa2;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.right_basic dl{
+	margin-bottom: 12px;
+}
+
+.right_basic dd{
+	color: #666;
+	width: 105px;
+    float: left;
+    line-height: 26px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+.right_basic .unick input{
+    color: #666;
+    width: 255px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 5px;
+    font-weight: normal;
+    border: 1px solid #cfcfcf;
+}
+
+.right_basic dt{
+	color: #666;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.right_basic .sex input{
+	height: 24px;
+    margin-left: 10px;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+.right_basic .weibo input{
+	color: #666;
+	width: 255px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 5px;
+    font-weight: normal;
+    border: 1px solid #cfcfcf;
+
+}
+
+.right_basic .location select{
+	width: 150px;
+    font-weight: normal;
+}
+
+.right_basic select{
+	width: 90px;
+    height: 22px;
+    vertical-align: -4px;
+    margin-right: 10px;
+    font-weight: normal;
+    border: 1px solid #cfcfcf;
+}
+
+/*教育信息*/
+
+.right_basic .posr input{
+	color: #666;
+	width: 255px;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 5px;
+
+    border: 1px solid #cfcfcf;font-weight: normal;
+
+}
+
+.right_basic .posr dd{
+	color: #666;
+	width: 105px;
+    float: left;
+    line-height: 26px;
+    text-align: right;
+    vertical-align: middle;
+}
+
+input, textarea {
+	margin: 0;
+	padding: 0;
+    outline: medium none;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+textarea{
+	resize: none;
+    border-radius: 3px;
+    border: 1px solid #cfcfcf;
+}
+
+.gray_text{
+	height: 24px;
+	font-size: 12px;
+    padding: 0 5px;
+    line-height: 24px;
+    margin-right: 5px;
+    border-radius: 3px;
+    border: 1px solid #cfcfcf;
+}
+
+/*提交按钮*/
+.green_button {
+    width: 103px;
+	color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    height: 29px;
+    cursor: pointer;
+    line-height: 28px;
+    border-radius: 3px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    background: #ffad00;
+    border: medium none;
+}
+
+.d_list{
+    position: relative;
+}
+
+.fashion_list{
+    display:none;
+    width:500px;
+    height:80px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border:1px solid #ddd;
+}
+
+
+/*头像上传*/
+.head_bd{
+    border: 3px solid #e3e3e3;
+    margin-right: 15px;
+    vertical-align: top;
+}
+
+
+input[type=submit]{
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+.gray_button{
+    width: 65px;
+    height: 26px;
+    display: inline;
+    color: #333;
+    font-size: 16px;
+}
+
+.tfile{
+    position: absolute;
+    opacity: 0;
+    left: 255px;
+    top: 0;
+    height: 26px;
+}
+
+#viewAvartar{
+    width: 300px;
+}
+
+
+
+

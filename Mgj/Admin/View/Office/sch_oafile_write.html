@@ -1,0 +1,233 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">OA管理</a>
+                </li>
+                <li class="active">文件办理</li>
+            </ul><!-- .breadcrumb -->
+
+
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    OA管理
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        文件办理
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                        <tr>
+                            <td style="text-align:right;" class="col-md-2">文件标题：</td>
+                            <td >
+                                <input type="text" id="title" class="col-md-6" value="{$data.title}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;" class="col-md-2">发文字号：</td>
+                            <td >
+                                <input type="text" id="num1" style="width:200px" value="{$data.num1}"/>
+                                [<input type="text" id="num2" style="width:60px" value="{$data.num2}" />]
+                                <input type="text" id="num3" style="width:60px" value="{$data.num3}"/>号
+                            </td>
+                        </tr>
+                        <div id="dis"></div>
+                        <tr>
+                            <td style="text-align:right;" class="col-md-2">文件类型：</td>
+                            <td>
+                                <eq name="data['state']" value="0">
+                                    <input type="radio" name="state" value="0" checked/> 上级文件
+                                <input type="radio" name="state" value="1" /> 本校文件
+                                </eq>
+                                <eq name="data['state']" value="1">
+                                    <input type="radio" name="state" value="0" /> 上级文件
+                                    <input type="radio" name="state" value="1" checked/> 本校文件
+                                </eq>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;" class="col-md-2">发布日期：</td>
+                            <td>
+                                <input size="20" type="text" id="regtime"  readonly class="form_datetime" value="{$data.regtime}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;" class="col-md-2">签阅人员：</td>
+                            <td>
+                                <div style="width:500px;height:100px;border:1px solid #999" class="teacher_all_name">
+                                    <if condition="$data['all_people'] eq 1"> <button class="btn btn-info btn-xs" name="teacher_name" value="0">全体教师</button>
+                                        <else />
+                                        <volist name="peo" id="peo">
+                                            <button type="button" class="btn btn btn-info btn-xs">{$peo.name}</button> &nbsp;&nbsp;
+                                        </volist>
+                                    </if>
+                                </div>
+                                <br/>
+                                <button class="btn btn-info btn-xs" name="all_teacher">全体教师</button>
+                                <button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target=".bs-example-modal-sm" name="get_oa_teacher"> 添加人员</button>
+                                &nbsp;&nbsp;&nbsp;  <input type="checkbox" name="tel_state" value="1">发送短信提醒
+                            </td>
+                        </tr>
+                        <input type="hidden" id="id" value="{$data.id}"/>
+                        <tr>
+                            <td colspan="2">
+                                <form action="Index/add" method="post">
+                                    <script id="container" name="content" type="text/plain" style="margin:0 auto;width:900px;height:500px">{$data.content_info}</script>
+                                    <input type="hidden" id="url" value="<?php echo $_SERVER['HTTP_HOST'] ?>"/>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;" class="col-md-2">文件附件：</td>
+                            <td><span id="btn_upload"></span></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align:right;" class="col-md-2">附件列表：</td>
+                            <td>
+                                <div class="file_dis">
+                                    <volist name="file" id="vo">
+                                        <span class="col-lg-5">{$vo.name}</span>&nbsp;<button name="oa_file_del" id="{$vo.id}">删除</button>
+                                        <br/>
+                                    </volist>
+
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <button class="btn btn-info" type="button"  id="school_file_add">保存</button>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+
+
+            <!-- 弹出框 -->
+            <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id='no_model'>
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content" style="padding:25px;height:500px">
+                        <h3>选择教师</h3>
+
+                        <div>
+                        <select name="get_teacher_group">
+                            <option value="">请选择</option>
+                            <volist name="teacher" id="teacher">
+                            <option value="{$teacher.id}">{$teacher.name}</option>
+                            </volist>
+                        </select>
+                        <select name="get_teacher_group1" id="">
+                            <option value="">请选择</option>
+                        </select>
+                        </div>
+                        <div class="get_teacher_group" style="overflow: auto">
+
+                        </div>
+                        <div style="float:left;margin-top:20px">
+                        <button class="teacher_all">全选</button>
+                        </div>
+                        <div class="get_teacher_group1" style="overflow: auto">
+
+                        </div>
+                        <div style="float:left;margin-top:20px">
+                        <button class="teacher_null">清空</button>
+                        </div>
+                        <button class="btn btn-info btn-sm" name="teacher_all_add" style="margin-top:20px;margin-left:5px">确定</button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div><!-- /.page-content -->
+
+        <script src="__PUBLIC__/Admin/js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/Home/js/ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" src="__PUBLIC__/Home/js/ueditor.all.js"></script>
+        <script type="text/javascript" src="http://cdn.hcharts.cn/jquery/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="__PUBLIC__/Admin/assets/js/uploadify/jquery.uploadify.min.js"></script>
+        <!-- 实例化编辑器 -->
+        <script language="JavaScript" src="__PUBLIC__/Admin/assets/js/bootstrap-datetimepicker.js"></script>
+        <link href="__PUBLIC__/Admin/assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+        <script type="text/javascript">
+            var ue = UE.getEditor('container');
+            $('#school_mien_edit').click(function(){
+                var id = $('#id').val();
+                var title = $('#title').val();
+                var ordernum = $('#ordernum').val();
+                var html = UE.getEditor('container').getContent();
+                var url = $('#url').val();
+                $.ajax({
+                    url:"http://"+url+"/index.php/Comment/school_mien_edit",
+                    type:'POST',
+                    data:{id:id,content_info:html,title:title,ordernum:ordernum},
+                    dataType:'json',
+                    success:function(data){
+                        if(data[0].success == true){
+                            alert(data[0].msg);
+                        }else{
+                            alert(data[0].msg);
+                        }
+                    }
+                })
+            });
+            $(function () {
+                var url = $('#url').val();
+                var id = $('#id').val();
+                $('#btn_upload').uploadify({
+                    uploader: "http://"+url+"/index.php/Comment/oa_upload_file",            // 服务器处理地址
+                    swf: '__PUBLIC__/Admin/assets/js/uploadify/uploadify.swf',
+                    buttonText: "选择文件",                  //按钮文字
+                    height: 34,                             //按钮高度
+                    width: 82,                              //按钮宽度
+                    fileTypeExts: "*",           //允许的文件类型
+                    fileTypeDesc: "请选择文件",           //文件说明
+                    formData: { "imgType": "normal",'id':id }, //提交给服务器端的参数
+                    onUploadSuccess: function (file, data, response) {   //一个文件上传成功后的响应事件处理
+                        var name = file.name;
+                        var file_id = $('#id').val();
+                        $.ajax({
+                            url:"http://"+url+"/index.php/Comment/sch_oainfo_add",
+                            type:'POST',
+                            data:{file_id:file_id},
+                            dataType:'json',
+                            success:function(data){
+                                if(data[0].success == true){
+                                    $('.file_dis').html('');
+                                    for($i=0;$i<data[0].data.length;$i++){
+                                        html = '<span class="col-lg-5">'+data[0].data[$i].name+'</span> <button id='+data[0].data[$i].id+' name="oa_file_del" >删除</button> </br>'
+                                    $('.file_dis').append(html);
+                                    }
+                                }else{
+                                    $('.file_dis').html(data[0].msg);
+                                }
+                            }
+                        })
+                    }
+                });
+            });
+
+        </script>
+
+    </div>
+    <!-- /.main-content -->
+</block>
+
+
+

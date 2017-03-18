@@ -1,0 +1,110 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+            .growInfo{
+                float:left;
+                width:250px;
+                height:64px;
+                border-radius:5px;
+                margin-right: 20px;
+                padding:5px;
+                border:3px solid #00b7ee;
+            }
+            .table{
+                margin-bottom:0px;
+            }
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="{:U('Comment/index')}">学生列表</a>
+                </li>
+                <li class="active">个人档案</li>
+            </ul><!-- .breadcrumb -->
+
+
+        </div>
+
+        <div class="page-content">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+                    <div style="padding: 10px;width:780px;margin:0 auto;margin-top:10px">
+                        <table class="table table-bordered">
+                            <tr class="">
+                                <td class="center active" style="height: 82px;width:90px ">姓名</td>
+                                <td class="center">{$user.stu_name}</td>
+                                <td class="center active" style="width:120px">学籍编号</td>
+                                <td class="center" colspan="3">{$user.id_number}</td>
+                                <td class="center" rowspan="2" style="width: 130px;"></td>
+                            </tr>
+                            <tr>
+                                <td class="center active" style="height: 82px;">出生年月</td>
+                                <td class="center"></td>
+                                <td class="center active">籍贯</td>
+                                <td class="center">{$user.stu_place}</td>
+                                <td class="center active" style="width: 120px;">民族</td>
+                                <td class="center">{$user.family_name}</td>
+                            </tr>
+                        </table>
+                        <volist name="info" id="vo">
+                            <notempty name="vo.info">
+                            <table class="table table-bordered">
+                                <tr class="active">
+                                    <td rowspan="{$vo.count}" style="text-align:center;margin:0 auto;width:90px;line-height:28px;">{$vo.title}</td>
+                                    <foreach name="vo.val" key="k" item="v" >
+                                        <td class="center">{$v}</td>
+                                    </foreach>
+                                    <td class="center" style="width: 80px;">上报人</td>
+                                    <td class="center" style="width: 80px;">审核人</td>
+                                </tr>
+                                <foreach name="vo.info" key="k" item="v" >
+                                    <tr>
+                                        <foreach name="v" key="items" item="item">
+                                            <td class="center">{$item}</td>
+                                        </foreach>
+                                    </tr>
+                                </foreach>
+                            </table>
+                            </notempty>
+                        </volist>
+                    </div>
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+
+
+</block>

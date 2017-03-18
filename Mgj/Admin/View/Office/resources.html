@@ -1,0 +1,426 @@
+<extend name="Common:index"/>
+<block name="main">
+    <div class="main-content">
+        <style>
+            #pages a,#pages span{
+
+                float: left;
+                color: #337AB7;
+                padding: 6px 12px;
+                margin-left: -1px;
+                position: relative;
+                line-height: 1.42857;
+                text-decoration: none;
+                background-color: #FFF;
+                border: 1px solid #DDD;
+            }
+
+            #pages span{
+                color: #fff;
+                z-index: 2;
+                cursor:pointer;
+                border-color: #337ab7;
+                background-color: #337ab7;
+            }
+
+        </style>
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+            </script>
+
+            <ul class="breadcrumb">
+                <li>
+                    <i class="icon-home home-icon"></i>
+                    <a href="#">主页</a>
+                </li>
+
+                <li>
+                    <a href="#">OA管理</a>
+                </li>
+                <li class="active">资源管理</li>
+            </ul><!-- .breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search" action="{:U('Admin/Office/resources')}" method="get">
+                    <!--<span>-->
+                        <!--<label>-->
+                            <!--<select name="num" aria-controls="dataTables-example" class="form-control input-sm">-->
+                                <!--<option value="5" <if condition="$num eq 5">selected</if>>5</option>-->
+                                <!--<option value="10" <if condition="$num eq 10">selected</if>>10</option>-->
+                                <!--<option value="20" <if condition="$num eq 20">selected</if>>20</option>-->
+                                <!--<option value="30" <if condition="$num eq 30">selected</if>>30</option>-->
+                            <!--</select>-->
+                        <!--</label>-->
+                    <!--</span>-->
+                    <span>
+                        <label for="">
+                        <select name="type1" aria-controls="dataTables-example" class="form-control input-sm">
+                            <option value="" <if condition="$type1 eq 0">selected</if>>全部</option>
+                            <option value="1" <if condition="$type1 eq 1">selected</if>>教案</option>
+                            <option value="2" <if condition="$type1 eq 2">selected</if>>试卷</option>
+                            <option value="3" <if condition="$type1 eq 3">selected</if>>课件</option>
+                            <option value="4" <if condition="$type1 eq 4">selected</if>>其他</option>
+                        </select>
+                        </label>
+                    </span>
+                    <span>
+                        <label for="">
+                            <!--<select name="subject1" aria-controls="dataTables-example" class="form-control input-sm">-->
+                                <!--<option value="" <if condition="$subject1 eq $subject">selected</if>>{$subject}</option>-->
+                                <!--<option value="{$subject}上册" <if condition="$subject1 eq $subject.'上册'">selected</if>>{$subject}上册</option>-->
+                                <!--<option value="{$subject}下册" <if condition="$subject1 eq $subject.'下册'">selected</if>>{$subject}下册</option>-->
+                            <!--</select>-->
+                            <input type="text" style="width:195px" placeholder="输入学科(如:数学 or 数学下册)" name="subject1" class="nav-search-input" autocomplete="off" value="{$subject1}"/>
+                        </label>
+                    </span>
+                    <span class="input-icon">
+                        <input type="text" placeholder="标题名 ..." name="keyword" class="nav-seausernamerch-input" id="nav-search-input" autocomplete="off" value="{$keyword}"/>
+                         <input type="text" placeholder="用户姓名 ..." name="username" class="nav-search-input" autocomplete="off" value="{$username}"/>
+                        <input type="submit" class="btn btn-primary btn-xs" value="搜索" style="border-radius:3px; height:28px; margin-top:-4px; padding-right:24px;">
+                        <a href="{:U('Office/resources')}"><input type="button" class="btn btn-primary btn-xs" value="重置" style="border-radius:3px; height:28px; margin-top:-4px; padding-right:10px;"/></a>
+                        <i class="icon-search nav-search-icon"></i>
+                    </span>
+                </form>
+            </div><!-- #nav-search -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1>
+                    OA管理
+                    <small>
+                        <i class="icon-double-angle-right"></i>
+                        资源管理
+                    </small>
+                </h1>
+            </div><!-- /.page-header -->
+            <table class="table table-bordered" >
+                <tr>
+                    <th class="center col-lg-1">序号</th>
+                    <th class="center col-lg-1">类型</th>
+                    <th class="center col-lg-3">标题</th>
+                    <th class="center col-lg-1">发布者</th>
+                    <th class="center col-lg-1">学科</th>
+                    <th class="center col-lg-2">日期</th>
+                </tr>
+                <volist name="data" id="vo">
+                <tr>
+                    <td class="center">
+                        <?php
+                            if($_GET['p']){
+                                $p = ($_GET['p']-1)*15;
+                                echo $i+$p;
+                            }else{
+                                echo $i;
+                            }
+                        ?>
+                    </td>
+                    <td class="center">
+                        <?php
+                            if($vo['type'] == 1){
+                                echo '教案';
+                            }else if($vo['type'] == 2){
+                                echo '试卷';
+                            }else if($vo['type'] == 3){
+                                echo '课件';
+                            }else if($vo['type'] == 0){
+                                echo '其他';
+                            }
+                        ?>
+                    </td>
+                    <td>
+                        <if condition="$vo['old'] eq 1"><a href="/old_files/res/{$vo.srctitle}">{$vo.title}</a>
+                            <else />  <a href="__PUBLIC__/Uploads/img/{$vo.regtime}/<?php echo  urlencode($vo['srctitle']) ?>">{$vo.title}</a>
+                        </if>
+                       
+                    </td>
+                    <td class="center">{$vo.oper}</td>
+                    <th class="center">{$vo.subject}</th>
+                    <td class="center">{$vo.uptime}</td>
+                </tr>
+                </volist>
+                <tr>
+                    <td colspan="10" id="pages"><div class="row"><div class="col-md-5"></div>{$page}</td>
+                </tr>
+            </table>
+            <button type="button" class="btn btn-primary btn-xs" name="get_res_info" data-toggle="modal" data-target=".bs-example-modal-sm1">上传资源</button>
+            <div class="row">
+                <div class="col-xs-12">
+                    <!-- PAGE CONTENT BEGINS -->
+
+
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div><!-- /.page-content -->
+    </div><!-- /.main-content -->
+
+    <!--  弹出框-->
+    <div class="modal fade bs-example-modal-sm1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content" style="height:600px;width:600px;padding-top:0px;padding-left:25px;padding-right:25px;">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">资源中转站</h4>
+                </div>
+                <div style="float:right;display:block;position: absolute;left: 250px;top: 150px;display:none" id="lon_g" >
+                    <center><img src="__PUBLIC__/Admin/images/lon.gif" alt="" width="60px" height="60px"  /></center>
+                </div>
+                <span id="btn_upload"></span>
+                <table class="table table-bordered" name="table_tr">
+                    <tr>
+                        <th class="center col-lg-4">文件名</th>
+                        <th class="center col-lg-2">文件大小</th>
+                        <th class="center col-lg-4">修改时间</th>
+                        <th class="center col-lg-1">提交</th>
+                        <th class="center col-lg-1">删除</th>
+                    </tr>
+                </table>
+                <br/>
+                <button class="btn btn-info btn-xs" name="get_res_info">刷新</button>
+                <!--<div class="form-group">-->
+                    <!--<label>名称</label>-->
+                    <!--<input type="text" class="form-control" id="title" placeholder="文件名称不写默认上传文件原名"> <br/>-->
+                    <input type="hidden" id="url" value="<?php echo $_SERVER['HTTP_HOST'] ?>"/>
+                    <!--<label for="">类型</label>-->
+                    <!--<select name="type" id="">-->
+                        <!--<option value="0">教案</option>-->
+                        <!--<option value="1">试卷</option>-->
+                        <!--<option value="2">课件</option>-->
+                        <!--<option value="3">其他</option>-->
+                    <!--</select>-->
+                    <!--&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;-->
+                    <!--<label for="">年级</label>-->
+                    <!--<select name="grade" id="">-->
+                        <!--<option value="0">初中</option>-->
+                        <!--<option value="1">初一</option>-->
+                        <!--<option value="2">初二</option>-->
+                        <!--<option value="3">初三</option>-->
+                    <!--</select>-->
+                    <!--&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;-->
+                    <!--<label for="">学科</label>-->
+                    <!--<select name="subject" id="">-->
+                        <!--<option value="">请选择</option>-->
+                        <!--<option value="0">数学</option>-->
+                        <!--<option value="1">数学上册</option>-->
+                        <!--<option value="2">数学下册</option>-->
+                    <!--</select>-->
+                    <!--<br/>-->
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" style="padding-top: 150px">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div style="padding: 10px;">
+                    <h3>提交资源</h3>
+                    <div style="padding-left:20px;">
+                    <label for="">类型</label>
+                    <select name="type" id="">
+                    <option value="1">教案</option>
+                    <option value="2">试卷</option>
+                    <option value="3">课件</option>
+                    <option value="0">其他</option>
+                    </select>
+
+                        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                        <label for="">年级</label>
+                        <select name="grade" id="">
+                            <option value="0">初中</option>
+                            <option value="1">初一</option>
+                            <option value="2">初二</option>
+                            <option value="3">初三</option>
+                        </select>
+                    &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                    <label for="">学科</label>
+                    <select name="subject" id="">
+                    <option value="{$subject}">{$subject}</option>
+                    <option value="{$subject}上册">{$subject}上册</option>
+                    <option value="{$subject}下册">{$subject}下册</option>
+                    </select>     <button class="btn btn-primary btn-xs all_sub">其他门科</button>
+                    <br/> <br/>
+                        <label for="">单元</label>
+                        <select name="unit" id="">
+                            <option value="0">其他</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                        <label for="">章节</label>
+                        <select name="chapter" id="">
+                            <option value="0">其他</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                        &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;
+                        <label for="">小节</label>
+                        <select name="section" id="">
+                            <option value="0">其他</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                        </select>
+                        <br/><br/>
+                    <label for="">文件:</label>
+                        <input type="hidden" name="file_id"/>
+                    <input type="text" name="file_name" style="width:200px"/>(文件名可自行修改)
+                    <br/> <br/>
+                    <button class="btn btn-success" name="file_up">确定</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('button[name=get_res_info]').click(function(){
+            var url = $('#url').val();
+            $('table[name=table_tr]').html("<tr> <th class='center col-lg-4'>文件名</th> <th class='center col-lg-2'>文件大小</th> <th class='center col-lg-4'>修改时间</th> <th class='center col-lg-1'>提交</th> <th class='center col-lg-1'>删除</th> </tr>");
+            $.ajax({
+                url:"http://"+url+"/index.php/Comment/get_res_info",
+                type:'POST',
+                data:{},
+                dataType:'json',
+                success: function(data){
+                    if(data[0].success == true){
+                        if(data[0].success == true){
+                            for($i=0;$i<data[0].data.length;$i++){
+                                tr = " <tr> <td class='center'>"+data[0].data[$i].title+"</td> <td class='center'>"+data[0].data[$i].size+"b</td>  <td>"+data[0].data[$i].uptime+"</td> <td class='center'> <button class='btn btn-success btn-xs' name='file_tijiao' data-toggle='modal' data-target='.bs-example-modal-sm' id="+data[0].data[$i].id+"> 提交 </button> </td> <td class='center'><button class='btn btn-danger btn-xs' name='file_shachu' id="+data[0].data[$i].id+"> 删除 </button></td> </tr> "
+                                $('table[name=table_tr]').append(tr);
+                            }
+
+                        }
+                    }
+                }
+            });
+        });
+        $(function () {
+            var url = $('#url').val();
+            $('#btn_upload').uploadify({
+                uploader: "http://"+url+"/index.php/Comment/add_resources",           // 服务器处理地址
+                swf: '__PUBLIC__/Admin/assets/js/uploadify/uploadify.swf',
+                buttonText: "选择文件",                  //按钮文字
+                height: 34,                             //按钮高度
+                width: 82,                              //按钮宽度
+                fileTypeExts: "*.*",           //允许的文件类型
+                fileTypeDesc: "请选择图片文件",           //文件说明
+                multi: false,
+                formData: { "imgType": "normal" }, //提交给服务器端的参数
+                onUploadSuccess: function (file, data, response) {   //一个文件上传成功后的响应事件处理
+                    var name = file.name;
+                }
+            });
+        });
+
+        $('.all_sub').click(function(){
+            tr = "<option value='语文'>语文</option> " +
+            "<option value='语文上册' >语文上册</option>" +
+            " <option value='语文下册'>语文下册</option>"+
+            "<option value='数学'>数学</option> " +
+            "<option value='数学上册' >数学上册</option>" +
+            " <option value='数学下册'>数学下册</option>" +
+            "<option value='英语'>英语</option> " +
+            "<option value='英语上册' >英语上册</option>" +
+            " <option value='英语下册'>英语下册</option>" +
+            "<option value='历史'>历史</option> " +
+            "<option value='历史上册' >历史上册</option>" +
+            " <option value='历史下册'>历史下册</option>" +
+            "<option value='地理'>地理</option> " +
+            "<option value='地理上册' >地理上册</option>" +
+            " <option value='地理下册'>地理下册</option>" +
+            "<option value='政治'>政治</option> " +
+            "<option value='政治上册' >政治上册</option>" +
+            " <option value='政治下册'>政治下册</option>" +
+            "<option value='思品'>思品</option> " +
+            "<option value='思品上册' >思品上册</option>" +
+            " <option value='思品下册'>思品下册</option>" +
+            "<option value='音乐'>音乐</option> " +
+            "<option value='音乐上册' >音乐上册</option>" +
+            " <option value='音乐下册'>音乐下册</option>" +
+            "<option value='美术'>美术</option> " +
+            "<option value='美术上册' >美术上册</option>" +
+            " <option value='美术下册'>美术下册</option>" +
+            "<option value='体育'>体育</option> " +
+            "<option value='体育上册' >体育上册</option>" +
+            " <option value='体育下册'>体育下册</option>" +
+            "<option value='信息技术'>信息技术</option> " +
+            "<option value='信息技术上册' >信息技术上册</option>" +
+            " <option value='信息技术下册'>信息技术下册</option>" +
+            "<option value='物理'>物理</option> " +
+            "<option value='物理上册' >物理上册</option>" +
+            " <option value='物理下册'>物理下册</option>" +
+            "<option value='科学'>科学</option> " +
+            "<option value='科学上册' >科学上册</option>" +
+            " <option value='科学下册'>科学下册</option>" +
+            "<option value='社会'>社会</option> " +
+             "<option value='社会上册' >社会上册</option>" +
+             "<option value='社会下册'>社会下册</option>" +
+                    "<option value='心理'>心理</option> " +
+                    "<option value='心理上册' >心理上册</option>" +
+                    "<option value='心理下册'>心理下册</option>" +
+                    "<option value='化学'>化学</option> " +
+                    "<option value='化学上册' >化学上册</option>" +
+                    "<option value='化学下册'>化学下册</option>" +
+                    "<option value='班团课'>班团课</option> ";
+            $('select[name=subject]').html(tr);
+        })
+    </script>
+
+
+
+</block>

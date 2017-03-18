@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>杭州市富阳区新登镇中学</title>
+    <link rel="stylesheet" href="__PUBLIC__/Home/css/index.css">
+</head>
+<body>
+<div class="main">
+    <div style="margin:0 auto;width:1029px;height:144px;position: relative;left:0.1%;">
+        <embed src="__PUBLIC__/Home/image/top1.swf" width="1029" height="144"></embed>
+    </div>
+    <div class="main-container box-shadow">
+        <div class="main-navbar">
+            <ul>
+                <a href="{:U('Index/index')}"><li class="left">首页</li></a>
+                <li><img src="__PUBLIC__/Home/image/1.png" alt=""></li>
+                <volist name="navlist" id="navlist">
+                    <a href="{:U('Index/listnav',array('id'=>$navlist['id']))}"><li>{$navlist.const_name}</li></a>
+                    <li><img src="__PUBLIC__/Home/image/1.png" alt=""></li>
+                </volist>
+             <!--    <li style="float:right;padding-right:10px;">{$date}</li> -->
+            </ul>
+        </div>
+        <div class="main-mark">
+            <div class="mark-left fl">
+                <img src="__PUBLIC__/Home/image/2.png" alt="">
+            </div>
+            <div class="mark-right fr">
+                <img src="__PUBLIC__/Home/image/3.png" alt="">
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-cont">
+            <div class="main-cont-left border fl">
+                <div class="main-cont-left-top">
+                    <div class="main-cont-left-top-sch">
+                        <div class="top-sch-bk font-col fl">{$h5.const_name}</div>
+                    </div>
+                    <div class="main-cont-left-top-chara">
+                        <volist name="nav" id="nav">
+                        <div class="top-chara-writes font"><img src="__PUBLIC__/Home/image/icon4.png" alt="">
+                            <a href="{:U('Index/content',array('id'=>$nav['id'],'type'=>$nav['type']))}">
+                            <?php
+                                echo  mb_substr($nav['title'],0,33);
+                            ?>
+                            </a>
+                        </div>
+                        <hr style="height:1px;border:none;border-top:1px solid #dbe5ed;" />
+                        </volist>
+                    </div>
+                </div>
+                <div class="main-cont-left-bottom">
+                    <img src="__PUBLIC__/Home/image/9.png" alt="">
+                </div>
+            </div>
+            <div class="main-cont-right border-top fl">
+                <div class="main-cont-right-nav border-bottom">
+                    <div class="right-nav-news font">
+                        <img src="__PUBLIC__/Home/image/18.png" alt="">  首页  <i class="iconfont">&#xe603;</i>  {$h5.const_name}
+                    </div>
+                    <div class="right-nav-dyn">
+                        {$content.title}
+                    </div>
+                </div>
+                <div class="main-cont-right-cont shadow">
+                    <div class="main-cont-right-auth">
+                        作者: {$content.oper}  &nbsp;  发布日期: {$content.regtime}  &nbsp;  点击量: {$content.allnum}
+                    </div>
+                    <div class="mian-cont-right-syn margin-top">
+                        {$content.content_info}
+                    </div>
+
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="main-footer margin">
+            <div class="main-footer-import font" style="width:450px">
+                <p>版权所有：杭州市富阳区新登镇中学   &nbsp;建议使用IE9.0 分辨率 1024*768以上访问本网站</p>
+                <p>浙ICP备09007076号      &nbsp;网络信息中心联系电话： 0571-89987637</p>
+                <p>&nbsp;技术支持：杭州思讯</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
